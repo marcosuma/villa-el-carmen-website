@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Villa El Carmen, a luxury private villa in Puglia, Italy. Featuring 3 bedrooms, a private pool, and surrounded by ancient olive groves. Book your authentic Apulian escape.">
+    <title>Villa El Carmen - Your Apulian Escape</title>
+    <link rel="icon" type="image/png" href="./assets/icons/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #faf8f0; /* Sand */
+            color: #4e443a; /* Dark Brown */
+            font-weight: 300;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+        }
+        .elcarmen-section {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        #elcarmen-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            transform: translateX(-50%) translateY(-50%);
+            background-size: cover;
+        }
+        .btn-primary {
+            background-color: #c0bc88; /* Khaki */
+            color: #faf8f0;
+            transition: background-color 0.3s ease;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+        }
+        .btn-primary:hover {
+            background-color: #b0ae7c; /* Darker Khaki */
+        }
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid #faf8f0;
+            color: #faf8f0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+        }
+        .btn-secondary:hover {
+            background-color: #faf8f0;
+            color: #4e443a;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+        }
+        .section-title p {
+            font-size: 1.125rem;
+            font-family: 'Lato', sans-serif;
+            color: #857f72; /* Grayish Brown */
+            max-width: 600px;
+            margin: 0.5rem auto 0;
+            font-weight: 400;
+        }
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        /* Animation on scroll */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Carousel styles */
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-slide {
+            flex: 0 0 100%;
+            width: 100%;
+        }
+        /* Interactive Flex Gallery */
+        .flex-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .flex-gallery-row {
+            display: flex;
+            gap: 1rem;
+            width: 100%;
+        }
+        .flex-gallery-item {
+            flex: 1;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: flex 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+        }
+        .flex-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .flex-gallery-item:hover {
+            flex: 4; /* Expand hovered item */
+        }
+        .flex-gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        /* Custom text and bg colors for theme */
+        .text-theme-muted {
+            color: #706b62;
+        }
+        .bg-theme-white {
+            background-color: #ffffff;
+        }
+        .bg-theme-sand {
+             background-color: #faf8f0;
+        }
+        .footer-bg {
+            background-color: #4e443a;
+        }
+        .bg-theme-dot-active {
+            background-color: #4e443a;
+        }
+        .bg-theme-dot-inactive {
+            background-color: #c0bc88;
+        }
+        .text-theme-carousel-arrow {
+            color: #4e443a;
+        }
+        /* Responsive height for elcarmen section on mobile */
+        @media (max-width: 768px) {
+            .elcarmen-section {
+                height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body class="leading-normal tracking-normal">
+
+    <!-- Header -->
+    <header class="fixed w-full z-30 top-0 text-white bg-black bg-opacity-50 backdrop-blur-sm">
+        <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+            <div class="pl-4 flex items-center">
+                <a class="flex items-center text-white text-2xl no-underline hover:no-underline" href="#">
+                    <!-- Your Logo -->
+                    <img src="./assets/icons/logo.png" alt="Villa El Carmen Logo" class="h-10 w-10 mr-3 rounded-full">
+                    <span style="font-family: 'Cormorant Garamond', serif; font-weight: 700;">Villa El Carmen</span>
+                </a>
+            </div>
+            <div class="block lg:hidden pr-4">
+                <button id="nav-toggle" class="flex items-center p-1 text-white hover:text-gray-300 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                    <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+                </button>
+            </div>
+            <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-black bg-opacity-50 lg:bg-transparent text-center p-4 lg:p-0 z-20" id="nav-content">
+                <ul class="list-reset lg:flex justify-end flex-1 items-center" style="font-family: 'Lato', sans-serif;">
+                    <li class="mr-3"><a class="inline-block py-2 px-4 text-white no-underline hover:text-gray-200" href="#about">About</a></li>
+                    <li class="mr-3"><a class="inline-block py-2 px-4 text-white no-underline hover:text-gray-200" href="#features">Features</a></li>
+                    <li class="mr-3"><a class="inline-block py-2 px-4 text-white no-underline hover:text-gray-200" href="#dining">Dining</a></li>
+                    <li class="mr-3"><a class="inline-block py-2 px-4 text-white no-underline hover:text-gray-200" href="#gallery">Gallery</a></li>
+                    <li class="mr-3"><a class="inline-block py-2 px-4 text-white no-underline hover:text-gray-200" href="#location">Location</a></li>
+                    <li class="mr-3"><a class="inline-block py-2 px-4 text-white no-underline hover:text-gray-200" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- El Carmen Section with Video -->
+        <section class="elcarmen-section flex items-center justify-center text-white">
+            <video autoplay loop muted playsinline id="elcarmen-video">
+                <source src="./assets/videos/villa-el-carmen-main.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="text-center bg-black bg-opacity-50 p-8 rounded-lg z-10">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 leading-tight">Welcome to Villa El Carmen</h1>
+                <p class="text-xl md:text-2xl font-light mb-8" style="font-family: 'Lato', sans-serif;">Your private sanctuary in the heart of Puglia, Italy.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://www.airbnb.it/rooms/1205785008353242688?guests=1&adults=1&s=67&unique_share_id=7ea54479-e2de-4be0-b4f5-f5d7e9d074e7" target="_blank" rel="noopener noreferrer" class="btn-primary font-bold py-3 px-8 rounded-full text-lg uppercase tracking-wider">Book on Airbnb</a>
+                    <a href="#about" class="btn-secondary font-bold py-3 px-8 rounded-full text-lg uppercase tracking-wider">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-theme-sand">
+            <div class="container mx-auto px-6 lg:px-20 text-center fade-in-up">
+                <h2 class="text-4xl font-bold mb-4">An Authentic Apulian Experience</h2>
+                <p class="text-lg text-theme-muted max-w-3xl mx-auto leading-relaxed">
+                    Nestled amidst the serene landscapes of Puglia, Villa El Carmen offers a unique blend of rustic charm and modern luxury. With <strong>3 bedrooms and 3 bathrooms</strong>, our villa is perfect for families and groups. It's a destination where you can unwind, reconnect with nature, and create memories that will last a lifetime.
+                </p>
+            </div>
+        </section>
+
+        <!-- Historic Lamia Section -->
+        <section id="architecture" class="py-20 bg-theme-white">
+            <div class="container mx-auto px-6 lg:px-20">
+                <div class="section-title fade-in-up">
+                    <h2>Historic Charm</h2>
+                    <p>The heart of our villa is a beautifully restored ancient lamia, preserving the authentic soul of Puglia.</p>
+                </div>
+                <div class="max-w-3xl mx-auto text-center fade-in-up">
+                    <img src="./assets/images/interior-2.jpg" alt="The vaulted stone ceiling of the historic lamia at Villa El Carmen" class="rounded-lg shadow-2xl w-full">
+                    <h3 class="text-3xl font-bold mt-6">The Ancient Lamia</h3>
+                    <p class="text-lg text-theme-muted max-w-2xl mx-auto leading-relaxed mt-4">
+                        Experience the unique character of staying in a traditional Apulian stone structure, updated with every modern comfort. The thick walls and classic architecture provide a cool and tranquil retreat from the summer sun.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-20 bg-theme-sand">
+            <div class="container mx-auto px-6 lg:px-20">
+                <div class="section-title fade-in-up">
+                    <h2>The Soul of the Villa</h2>
+                    <p>Discover the elements that make Villa El Carmen a truly special retreat.</p>
+                </div>
+                
+                <!-- Highlights Section -->
+                <div class="container mx-auto px-6 lg:px-20 mb-16">
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center fade-in-up">
+                        <!-- Guests -->
+                        <div class="flex flex-col items-center text-theme-muted">
+                            <img src="./assets/icons/guests.png" class="w-12 h-12 mb-3 object-contain" alt="Guests icon">
+                            <p class="font-semibold text-lg">5 Guests</p>
+                        </div>
+                        <!-- Rooms -->
+                        <div class="flex flex-col items-center text-theme-muted">
+                            <img src="./assets/icons/bedroom.png" class="w-12 h-12 mb-3 object-contain" alt="Bedroom icon">
+                            <p class="font-semibold text-lg">3 Rooms</p>
+                        </div>
+                        <!-- Starlink -->
+                        <div class="flex flex-col items-center text-theme-muted">
+                            <img src="./assets/icons/wifi.png" class="w-12 h-12 mb-3 object-contain" alt="WiFi icon">
+                            <p class="font-semibold text-lg">Starlink WiFi</p>
+                        </div>
+                        <!-- Private Pool -->
+                        <div class="flex flex-col items-center text-theme-muted">
+                            <img src="./assets/icons/swimming-pool.png" class="w-12 h-12 mb-3 object-contain" alt="Swimming pool icon">
+                            <p class="font-semibold text-lg">Private Pool</p>
+                        </div>
+                        <!-- BBQ Area -->
+                        <div class="flex flex-col items-center text-theme-muted">
+                            <img src="./assets/icons/barbecue.png" class="w-12 h-12 mb-3 object-contain" alt="BBQ icon">
+                            <p class="font-semibold text-lg">BBQ Area</p>
+                        </div>
+                        <!-- Air Conditioned -->
+                        <div class="flex flex-col items-center text-theme-muted">
+                            <img src="./assets/icons/air-conditioning.png" class="w-12 h-12 mb-3 object-contain" alt="Air conditioning icon">
+                            <p class="font-semibold text-lg">Air Conditioned</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- The Pool -->
+                    <div class="fade-in-up">
+                        <div class="bg-theme-white rounded-lg shadow-xl overflow-hidden feature-card">
+                            <img src="./assets/images/pool.jpg" alt="The 40m2 pool at Villa El Carmen surrounded by loungers" class="w-full h-64 object-cover feature-image-clickable cursor-pointer">
+                            <div class="p-8">
+                                <h3 class="text-3xl font-bold mb-3">The Azure Pool</h3>
+                                <p class="text-theme-muted leading-relaxed">
+                                    Immerse yourself in our stunning 40m² swimming pool. Flanked by comfortable loungers and kissed by the Italian sun, it’s the perfect spot to cool off, relax with a book, or simply float your cares away while gazing at the olive groves.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- The Olive Grove -->
+                    <div class="fade-in-up" style="transition-delay: 200ms;">
+                        <div class="bg-theme-white rounded-lg shadow-xl overflow-hidden feature-card">
+                             <img src="./assets/images/olive-trees-front.png" alt="Ancient olive trees with the villa in the background" class="w-full h-64 object-cover feature-image-clickable cursor-pointer">
+                            <div class="p-8">
+                                <h3 class="text-3xl font-bold mb-3">Our Ancient Olive Grove</h3>
+                                <p class="text-theme-muted leading-relaxed">
+                                    The villa is enveloped by acres of ancient olive trees. Take a stroll through the groves and breathe in the fragrant air. From these very trees, we produce our own exquisite, cold-pressed olive oil – a true taste of Puglia.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Olive Oil Section -->
+        <section class="py-20 bg-theme-white">
+            <div class="container mx-auto px-6 lg:px-20 fade-in-up">
+                <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+                    <div class="md:w-1/2">
+                        <img src="./assets/images/olive-oil-making.png" alt="Freshly picked olives being prepared for oil production" class="rounded-lg shadow-2xl w-full feature-image-clickable cursor-pointer">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h2 class="text-4xl font-bold mb-4">Liquid Gold: Our Signature Olive Oil</h2>
+                        <p class="text-lg text-theme-muted mb-4 leading-relaxed">
+                            At Villa El Carmen, we are proud to share our passion for authentic Apulian flavors. Our extra virgin olive oil is lovingly crafted from olives hand-picked from our own groves. It's a gift from our land to your table.
+                        </p>
+                        <p class="text-lg text-theme-muted font-semibold">Guests are welcome to a complimentary bottle to enjoy during their stay and purchase more to take home.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Dining Section Carousel -->
+        <section id="dining" class="py-20 bg-theme-sand">
+            <div class="container mx-auto px-6 lg:px-20 fade-in-up">
+                <div class="section-title">
+                    <h2>Apulian Feasts & Alfresco Dining</h2>
+                </div>
+                <div id="dining-carousel" class="carousel-container max-w-4xl mx-auto rounded-lg shadow-2xl bg-theme-white">
+                    <div class="carousel-slides">
+                        <!-- Slide 1: Happy Hour -->
+                        <div class="carousel-slide p-4 md:p-8">
+                            <div class="flex flex-col md:flex-row items-center gap-8">
+                                <div class="md:w-1/2">
+                                    <img src="./assets/images/IMG_6803.png" alt="Friends enjoying happy hour with drinks and snacks" class="rounded-lg shadow-lg w-full feature-image-clickable cursor-pointer">
+                                </div>
+                                <div class="md:w-1/2">
+                                    <h3 class="text-3xl font-bold mb-4">Happy Hour with Friends</h3>
+                                    <p class="text-theme-muted leading-relaxed">
+                                        Gather your favorite people as the sun begins to set. The terrace is the perfect stage for clinking glasses of Aperol Spritz, sharing local taralli, and creating joyful memories together.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2: Wine O'Clock -->
+                        <div class="carousel-slide p-4 md:p-8">
+                            <div class="flex flex-col md:flex-row items-center gap-8">
+                                <div class="md:w-1/2">
+                                    <img src="./assets/images/IMG_7506.jpeg" alt="Wine glasses by the poolside" class="rounded-lg shadow-lg w-full feature-image-clickable cursor-pointer">
+                                </div>
+                                <div class="md:w-1/2">
+                                    <h3 class="text-3xl font-bold mb-4">Wine O'Clock by the Pool</h3>
+                                    <p class="text-theme-muted leading-relaxed">
+                                        There's no better way to unwind than with a crisp glass of local white wine by the shimmering pool. Let the Apulian sun warm your skin as you sip, relax, and float your cares away.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 3: Private Chef -->
+                        <div class="carousel-slide p-4 md:p-8">
+                            <div class="flex flex-col md:flex-row items-center gap-8">
+                                <div class="md:w-1/2">
+                                    <img src="./assets/images/IMG_7418 2.jpeg" alt="A private chef preparing a meal in the villa's kitchen" class="rounded-lg shadow-lg w-full feature-image-clickable cursor-pointer">
+                                </div>
+                                <div class="md:w-1/2">
+                                    <h3 class="text-3xl font-bold mb-4">Dine with Your Private Chef</h3>
+                                    <p class="text-theme-muted leading-relaxed">
+                                        For a truly unforgettable evening, live the experience of private chefs cooking local food. Indulge in an exclusive multi-course meal crafted from the finest local ingredients, all in the comfort of your own villa.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Navigation Buttons -->
+                    <button id="dining-prev" class="absolute top-1/2 left-0 md:left-2 transform -translate-y-1/2 bg-white bg-opacity-75 hover:bg-opacity-100 rounded-full p-2 shadow-md z-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-theme-carousel-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                    </button>
+                    <button id="dining-next" class="absolute top-1/2 right-0 md:right-2 transform -translate-y-1/2 bg-white bg-opacity-75 hover:bg-opacity-100 rounded-full p-2 shadow-md z-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-theme-carousel-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                    </button>
+                     <!-- Navigation Dots -->
+                    <div id="dining-dots" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2"></div>
+                </div>
+            </div>
+        </section>  
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-20 bg-theme-white">
+            <div class="container mx-auto px-6 lg:px-20">
+                <div class="section-title fade-in-up">
+                    <h2>Moments at the Villa</h2>
+                    <p>Explore the beauty and tranquility that awaits you.</p>
+                </div>
+                <div class="flex-gallery fade-in-up">
+                    <div class="flex-gallery-row">
+                        <div class="flex-gallery-item"><img src="./assets/images/villa-by-night.jpeg" alt="Villa El Carmen illuminated at night under a starry sky."></div>
+                        <div class="flex-gallery-item"><img src="./assets/images/cave.png" alt="A comfortable outdoor seating area on the villa's terrace."></div>
+                        <div class="flex-gallery-item"><img src="./assets/images/IMG_2550.jpeg" alt="A detailed shot of the stone exterior of the lamia."></div>
+                        <div class="flex-gallery-item"><img src="./assets/images/IMG_6879.jpeg" alt="Sunlight filtering through the leaves of an olive tree."></div>
+                    </div>
+                    <div class="flex-gallery-row">
+                        <div class="flex-gallery-item"><img src="./assets/images/IMG_8136.jpeg" alt="A beautifully set dining table ready for an alfresco meal."></div>
+                        <div class="flex-gallery-item"><img src="./assets/images/IMG_7103.jpeg" alt="The private pool area with comfortable sun loungers."></div>
+                        <div class="flex-gallery-item"><img src="./assets/images/IMG_7373 (1).png" alt="A cozy bedroom inside the villa with rustic decor."></div>
+                        <div class="flex-gallery-item"><img src="./assets/images/IMG_2526.jpeg" alt="A pathway leading through the villa's gardens."></div>
+                    </div>
+                    <div class="flex-gallery-row">
+                        <div class="flex-gallery-item"><img src="./assets/images/olive-trees.jpg" alt="A wide view of the ancient olive groves surrounding the property."></div>
+                        <div class="flex-gallery-item"><img src="./assets/images/pool-by-night.jpeg" alt="The villa's pool glowing under the evening lights."></div>
+                        <div class="flex-gallery-item"><img src="./assets/images/IMG_2522.jpeg" alt="Architectural detail of the villa's stone archways."></div>
+                        <div class="flex-gallery-item"><img src="./assets/images/IMG_6881.jpeg" alt="A hammock gently swaying between two olive trees."></div>
+                    </div>
+                    <div class="flex-gallery-row">
+                        <div class="flex-gallery-item"><img src="./assets/images/IMG_8141.jpeg" alt="A modern bathroom with elegant fixtures."></div>
+                        <div class="flex-gallery-item"><img src="./assets/images/IMG_6885.jpeg" alt="Fresh lemons and local produce on a kitchen counter."></div>
+                        <div class="flex-gallery-item"><img src="./assets/images/IMG_7075.jpeg" alt="An aerial view of the villa and its pool."></div>
+                        <div class="flex-gallery-item"><img src="./assets/images/interior.jpg" alt="The stylish and comfortable living area of the villa."></div>
+                    </div>
+                    <div class="flex-gallery-row">
+                        <div class="flex-gallery-item"><img src="./assets/images/IMG_3606.jpeg" alt="The outdoor barbecue and dining area."></div>
+                        <div class="flex-gallery-item"><img src="./assets/images/IMG_7361.png" alt="A close-up of the beautiful stonework of the villa."></div>
+                        <div class="flex-gallery-item"><img src="./assets/images/IMG_8138.jpeg" alt="Another view of a well-appointed bedroom."></div>
+                        <div class="flex-gallery-item"><img src="./assets/images/IMG_6891.jpeg" alt="A relaxing corner on the terrace with comfortable seating."></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section id="location" class="py-20 bg-theme-sand">
+            <div class="container mx-auto px-6 lg:px-20">
+                <div class="section-title fade-in-up">
+                    <h2>Our Location</h2>
+                    <p>Perfectly situated in the idyllic Valle d'Itria, the heart of authentic Puglia.</p>
+                </div>
+                <div class="max-w-4xl mx-auto text-center fade-in-up">
+                    <div class="rounded-lg shadow-2xl overflow-hidden mb-8">
+                         <img src="./assets/images/puglia-landscape.png" alt="A map showing the location of Villa El Carmen in Puglia" class="w-full">
+                    </div>
+                    <p class="text-lg text-theme-muted max-w-3xl mx-auto leading-relaxed mt-4 mb-8">
+                        Villa El Carmen is your peaceful retreat, surrounded by olive groves yet just a short drive from the enchanting white-washed towns of Cisternino, Ostuni, and Martina Franca. Explore local markets, savor incredible cuisine, and discover the timeless beauty of the Apulian countryside.
+                    </p>
+                    <a href="https://maps.app.goo.gl/2uRBACUf5y8xNXch9" target="_blank" rel="noopener noreferrer" class="btn-primary font-bold py-3 px-8 rounded-full text-lg uppercase tracking-wider inline-block">View on Google Maps</a>
+                </div>
+            </div>
+        </section>    
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-theme-white">
+            <div class="container mx-auto px-6 lg:px-20">
+                 <div class="section-title fade-in-up">
+                    <h2>Inquire About Your Stay</h2>
+                    <p>We would love to welcome you to Villa El Carmen. For direct bookings or questions, please get in touch.</p>
+                </div>
+                <div class="max-w-2xl mx-auto text-center bg-theme-white p-8 rounded-lg shadow-xl fade-in-up">
+                    <p class="text-lg text-theme-muted mb-8 leading-relaxed">You can reach out to us directly via email or send us a message on Instagram for the quickest response.</p>
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                        <a href="mailto:villaelcarmensanvito@gmail.com" class="btn-primary font-bold py-3 px-8 rounded-full text-lg uppercase tracking-wider inline-flex items-center justify-center">
+                            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            Email Us
+                        </a>
+                        <a href="https://www.instagram.com/villa_elcarmen_puglia/" target="_blank" rel="noopener noreferrer" class="btn-primary font-bold py-3 px-8 rounded-full text-lg uppercase tracking-wider inline-flex items-center justify-center">
+                             <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.585-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.585-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.585.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>
+                            Message on Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-bg text-white py-10">
+        <div class="container mx-auto text-center">
+            <p class="text-2xl font-bold mb-2">Villa El Carmen</p>
+            <p>Puglia, Italy</p>
+            <p class="mt-4">
+                <a href="mailto:villaelcarmensanvito@gmail.com" class="hover:underline">villaelcarmensanvito@gmail.com</a>
+            </p>
+            <div class="flex justify-center mt-4 space-x-6">
+                 <a href="https://www.instagram.com/villa_elcarmen_puglia/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-400">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.585-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.585-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.585.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>
+                 </a>
+            </div>
+            <p class="text-sm text-gray-400 mt-8">&copy; 2024 Villa El Carmen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 p-4">
+        <span id="lightbox-close" class="absolute top-5 right-8 text-white text-5xl font-bold cursor-pointer hover:text-gray-300 transition-colors">&times;</span>
+        <img id="lightbox-image" src="" alt="Enlarged view" class="max-w-full max-h-full rounded-lg">
+    </div>
+
+    <script>
+        // Mobile nav toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navContent = document.getElementById('nav-content');
+        navToggle.addEventListener('click', function() {
+            navContent.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        const elements = document.querySelectorAll('.fade-in-up');
+        elements.forEach(el => observer.observe(el));
+
+        // Dining Carousel Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('#dining-carousel .carousel-slide');
+            const slidesContainer = document.querySelector('#dining-carousel .carousel-slides');
+            const nextBtn = document.getElementById('dining-next');
+            const prevBtn = document.getElementById('dining-prev');
+            const dotsContainer = document.getElementById('dining-dots');
+            let currentSlide = 0;
+            let slideInterval;
+
+            if (!slides.length) return;
+
+            // Create dots
+            slides.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.classList.add('w-3', 'h-3', 'rounded-full', 'transition-colors', 'duration-300');
+                if (i === 0) {
+                    dot.classList.add('bg-theme-dot-active');
+                } else {
+                    dot.classList.add('bg-theme-dot-inactive');
+                }
+                dot.addEventListener('click', () => {
+                    goToSlide(i);
+                    resetInterval();
+                });
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = dotsContainer.querySelectorAll('button');
+
+            function goToSlide(slideIndex) {
+                slidesContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
+                currentSlide = slideIndex;
+                updateDots();
+            }
+
+            function updateDots() {
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('bg-theme-dot-active', i === currentSlide);
+                    dot.classList.toggle('bg-theme-dot-inactive', i !== currentSlide);
+                });
+            }
+
+            function showNextSlide() {
+                const nextSlide = (currentSlide + 1) % slides.length;
+                goToSlide(nextSlide);
+            }
+            
+            function showPrevSlide() {
+                const prevSlide = (currentSlide - 1 + slides.length) % slides.length;
+                goToSlide(prevSlide);
+            }
+
+            function startInterval() {
+                slideInterval = setInterval(showNextSlide, 5000); // Change slide every 5 seconds
+            }
+
+            function resetInterval() {
+                clearInterval(slideInterval);
+                startInterval();
+            }
+
+            nextBtn.addEventListener('click', () => {
+                showNextSlide();
+                resetInterval();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                showPrevSlide();
+                resetInterval();
+            });
+            
+            startInterval();
+
+            // Lightbox functionality
+            const clickableImages = document.querySelectorAll('.feature-image-clickable');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxClose = document.getElementById('lightbox-close');
+
+            clickableImages.forEach(image => {
+                image.addEventListener('click', () => {
+                    const imgSrc = image.getAttribute('src');
+                    lightboxImage.setAttribute('src', imgSrc);
+                    lightbox.classList.remove('hidden');
+                    lightbox.classList.add('flex');
+                });
+            });
+
+            const closeLightbox = () => {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+            };
+
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
