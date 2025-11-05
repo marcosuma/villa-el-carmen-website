@@ -1,0 +1,46 @@
+{
+  "@context": "https://schema.org",
+  "@type": "VacationRental",
+  "name": "Villa El Carmen",
+  "url": "https://elcarmenpuglia.com/",
+  "description": "Private villa rental in Puglia's Valle d'Itria. Historic lamia, 3 bedrooms, 3 bathrooms, 40m² pool, Starlink WiFi, BBQ, air conditioning, and on-site extra virgin olive oil.",
+  "image": [
+    "https://elcarmenpuglia.com/assets/images/villa-by-night.jpeg",
+    "https://elcarmenpuglia.com/assets/images/pool.jpg",
+    "https://elcarmenpuglia.com/assets/images/olive-trees.jpg"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "Puglia",
+    "addressCountry": "IT"
+  },
+  "hasMap": "https://maps.app.goo.gl/2uRBACUf5y8xNXch9",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": null,
+    "longitude": null
+  },
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Private pool (40m²)", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Starlink WiFi", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Air conditioning", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "BBQ area", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Private chef on request", "value": true }
+  ],
+  "numberOfRooms": 3,
+  "numberOfBathroomsTotal": 3,
+  "tourBookingPage": "https://www.airbnb.it/rooms/1205785008353242688",
+  "sameAs": [
+    "https://www.instagram.com/villa_elcarmen_puglia/"
+  ],
+  "containedInPlace": {
+    "@type": "Place",
+    "name": "Valle d'Itria, Puglia, Italy"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Ostuni, Cisternino, Martina Franca, San Vito dei Normanni, Ceglie Messapica"
+  }
+}
+
+
