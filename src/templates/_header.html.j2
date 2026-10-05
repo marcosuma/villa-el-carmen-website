@@ -1,0 +1,31 @@
+<header class="site-header">
+  <div class="container mx-auto flex flex-wrap items-center justify-between py-2 px-4">
+    <a class="flex items-center text-white text-2xl" href="{{ lang.path }}">
+      <img src="/assets/icons/web/logo.webp" width="40" height="40" alt="" class="h-10 w-10 mr-3 rounded-full object-cover">
+      <span class="font-display font-bold">{{ site.name }}</span>
+    </a>
+    <button type="button" class="lg:hidden p-2 text-white" data-nav-toggle aria-controls="site-nav" aria-expanded="false">
+      <span class="sr-only">{{ page.nav.menu }}</span>
+      <svg class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+    </button>
+    <nav id="site-nav" class="site-nav hidden lg:flex" aria-label="{{ page.nav.menu }}">
+      <ul class="flex flex-col lg:flex-row items-center gap-1 lg:gap-2">
+        <li><a href="#villa">{{ page.nav.villa }}</a></li>
+        <li><a href="#location">{{ page.nav.location }}</a></li>
+        <li><a href="#faq">{{ page.nav.faq }}</a></li>
+        <li><a href="#book" class="nav-book">{{ page.nav.book }}</a></li>
+      </ul>
+      <ul class="language-switcher" aria-label="{{ page.nav.languages }}">
+        {% for language in site.languages %}
+        <li>
+          {% if language.code == lang.code %}
+          <span aria-current="page">{{ language.short }}</span>
+          {% else %}
+          <a href="{{ language.path }}" hreflang="{{ language.code }}" lang="{{ language.code }}" title="{{ language.label }}">{{ language.short }}</a>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

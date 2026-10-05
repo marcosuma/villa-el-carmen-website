@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "title": "Villa with Trullo & Pool near Ostuni, Puglia | El Carmen",
+    "description": "Private villa with a restored trullo, pool and 1 ha of olive trees near Ostuni, Puglia. 3 bedrooms, sleeps 5, Starlink WiFi, 25 min to the beach.",
+    "og_title": "Villa El Carmen: villa with trullo and pool near Ostuni",
+    "og_description": "A peaceful base for exploring Puglia: restored trullo, private pool and one hectare of olive trees between Ostuni and the sea."
+  },
+  "nav": {
+    "villa": "The villa",
+    "location": "Location",
+    "faq": "FAQ",
+    "book": "Book",
+    "menu": "Menu",
+    "languages": "Languages"
+  },
+  "hero": {
+    "h1": "A villa with a restored trullo and pool near Ostuni",
+    "subtitle": "A private retreat among one hectare of olive trees in Puglia. 3 bedrooms, sleeps 5.",
+    "cta_primary": "Check availability on Airbnb",
+    "cta_secondary": "Discover the villa",
+    "video_label": "Video of Villa El Carmen: the pool, the villa and the olive grove"
+  },
+  "facts": {
+    "guests": "Sleeps 5",
+    "bedrooms": "3 bedrooms",
+    "bathrooms": "3 bathrooms",
+    "pool": "Private pool",
+    "wifi": "Starlink WiFi",
+    "air_conditioning": "Air conditioning",
+    "barbecue": "Outdoor kitchen & BBQ",
+    "parking": "Private parking"
+  },
+  "about": {
+    "h2": "A peaceful base for exploring Puglia",
+    "paragraphs": [
+      "Villa El Carmen is a private villa set in more than one hectare of olive groves in the countryside of San Vito dei Normanni, between Ostuni and the Adriatic coast. The house brings together a restored trullo and a traditional lamia with modern comforts: three bedrooms, three bathrooms, air conditioning and heating throughout, and fast Starlink WiFi.",
+      "It is made for families and friends who want one quiet base for their week in Puglia: mornings by the pool, afternoons on the beaches of Specchiolla and Torre Guaceto, evenings in the white town of Ostuni or around the outdoor table under the olive trees."
+    ]
+  },
+  "trullo": {
+    "h2": "A restored trullo and a historic lamia",
+    "intro": "The stone heart of the villa: vaulted ceilings, thick walls that keep the rooms cool in summer, and the craftsmanship of the Apulian countryside.",
+    "cards": [
+      {
+        "h3": "The trullo",
+        "body": "Our restored trullo keeps its original dry-stone dome and niches, now a quiet corner to read and rest. Trulli are the most recognisable buildings of Puglia, and having one all to yourself is part of the experience."
+      },
+      {
+        "h3": "The lamia",
+        "body": "The lamia, with its vaulted stone ceilings, is home to the kitchen and the dining room. Every room has been renovated with care, pairing traditional materials with modern comfort."
+      }
+    ]
+  },
+  "features": [
+    {
+      "h3": "The pool",
+      "body": "A 40 m² swimming pool with sun loungers, surrounded by lawn and olive trees and softly lit at night. The perfect place to cool off after a day of sightseeing."
+    },
+    {
+      "h3": "One hectare of olive trees",
+      "body": "The villa is surrounded by olive trees. Walk through the grove, enjoy privacy and silence, and taste the oil we make from these very trees."
+    }
+  ],
+  "work": {
+    "h2": "Room to work, if you need it",
+    "paragraphs": [
+      "Fast, reliable Starlink WiFi covers the whole property, and two dedicated desks, one of them a height-adjustable standing desk, look out over the olive grove.",
+      "Ideal for longer stays in spring and early autumn, when Puglia is quieter and the weather is still warm."
+    ]
+  },
+  "olive_oil": {
+    "h2": "Liquid gold: our own olive oil",
+    "body": "We make extra virgin olive oil from olives picked in our own grove. It is a gift from our land to your table.",
+    "note": "Every stay includes a complimentary bottle, and you can buy more to take home."
+  },
+  "dining": {
+    "h2": "Apulian evenings and alfresco dining",
+    "intro": "An outdoor kitchen with barbecue, a table for ten and long summer evenings.",
+    "slides": [
+      {
+        "h3": "Aperitivo at sunset",
+        "body": "Gather on the terrace as the sun goes down, with a spritz, local taralli and a board of cheese and cured meats."
+      },
+      {
+        "h3": "Dinner under the olive trees",
+        "body": "The covered outdoor dining area seats ten, next to a fully equipped outdoor kitchen and barbecue: made for long dinners with family and friends."
+      },
+      {
+        "h3": "Private chef and cooking class",
+        "body": "On request we can arrange a private chef or a hands-on cooking class at the villa: learn to make fresh orecchiette and taste traditional Apulian dishes."
+      }
+    ],
+    "previous": "Previous slide",
+    "next": "Next slide"
+  },
+  "gallery": {
+    "h2": "Moments at the villa",
+    "intro": "Rooms, pool, olive grove and evenings at Villa El Carmen.",
+    "close": "Close"
+  },
+  "location": {
+    "h2": "Where we are",
+    "intro": "In the countryside of San Vito dei Normanni (Brindisi), between Ostuni and the Adriatic sea: quiet and private, yet within easy reach of Puglia's most beautiful towns and beaches.",
+    "distances_title": "Driving times from the villa",
+    "distance_labels": {
+      "san_vito": "San Vito dei Normanni (shops and restaurants)",
+      "ostuni": "Ostuni, the White City",
+      "specchiolla": "Specchiolla beach",
+      "torre_guaceto": "Torre Guaceto nature reserve",
+      "brindisi_airport": "Brindisi airport",
+      "lecce": "Lecce",
+      "alberobello": "Alberobello and its trulli",
+      "polignano": "Polignano a Mare",
+      "bari_airport": "Bari airport"
+    },
+    "time_formats": {"minutes": "{m} min", "hours": "{h} h", "hours_minutes": "{h} h {m}"},
+    "beaches_title": "Beaches nearby",
+    "beaches": [
+      "Specchiolla and Apani: sandy beaches and small rocky coves, about 25–30 minutes away.",
+      "Torre Guaceto: a protected nature reserve with dunes and crystal-clear water, about 30 minutes away.",
+      "The coast of Ostuni and, for a day trip, the Ionian beaches around Porto Cesareo, about an hour away."
+    ],
+    "car_note": "A car is essential to explore the area: the villa is in the countryside and public transport is limited. We are happy to help you arrange a rental car or an airport transfer.",
+    "map_button": "View on Google Maps"
+  },
+  "faq": {
+    "h2": "Frequently asked questions",
+    "items": [
+      {"question": "How far is the villa from the beach?", "answer": "The nearest beaches, Specchiolla and Apani, are about 25–30 minutes by car, and the Torre Guaceto nature reserve about 30 minutes. The Ionian coast near Porto Cesareo is about an hour away."},
+      {"question": "Do I need a car?", "answer": "Yes. The villa is in the countryside and buses are infrequent, so a car is the best way to reach beaches, towns and restaurants. We can help you arrange a rental car or a transfer."},
+      {"question": "Which airport is closest?", "answer": "Brindisi airport is about 30 minutes away. Bari airport, with more international flights, is about 1 hour 30 minutes away."},
+      {"question": "Is the pool private?", "answer": "Yes. The 40 m² pool is for our guests only, with sun loungers and lighting for the evening."},
+      {"question": "Is the villa suitable for families with children?", "answer": "Yes. Many of our guests are families with children: the house is spacious and the grounds are quiet and private."},
+      {"question": "Can I work remotely from the villa?", "answer": "Yes. Starlink WiFi covers the whole property and there are two dedicated desks, one of them a standing desk."},
+      {"question": "What are the check-in and check-out times?", "answer": "Check-in is between 4 pm and 9 pm, and check-out is by 10 am."},
+      {"question": "When is the villa open, and what is the minimum stay?", "answer": "The villa is open from April to early October. The minimum stay is 3 to 6 nights, depending on the season."},
+      {"question": "Are pets allowed?", "answer": "We are sorry, but pets are not allowed."},
+      {"question": "How do I book?", "answer": "Bookings are made through Airbnb, where you can see live availability and prices. For any question before booking, write to us by email or on Instagram."}
+    ]
+  },
+  "book": {
+    "h2": "Book your stay",
+    "body": "See availability and prices for your dates on Airbnb, where you can book securely.",
+    "cta": "See dates and prices on Airbnb",
+    "trust": "Guest Favourite on Airbnb, rated 5.0 by our guests.",
+    "questions": "Questions before booking? Write to us.",
+    "email_label": "Email",
+    "instagram_label": "Instagram"
+  },
+  "footer": {
+    "tagline": "Villa with trullo and pool among the olive trees",
+    "location": "San Vito dei Normanni (BR), Puglia, Italy",
+    "cin_label": "CIN",
+    "cis_label": "CIS",
+    "rights": "All rights reserved."
+  },
+  "not_found": {
+    "title": "Page not found",
+    "body": "The page you are looking for does not exist. Choose your language to go back to the villa.",
+    "home": "Villa El Carmen in English"
+  },
+  "alts": {
+    "villa-night": "Villa El Carmen lit up at night, with an olive tree in front",
+    "villa-pool-night": "The villa and the private pool at night",
+    "pool-aerial": "Aerial view of the private pool and sun loungers",
+    "pool-steps-night": "The pool lit at night, with steps into the water",
+    "living-room": "Living room with sofa under a vaulted stone ceiling",
+    "kitchen-vaulted": "Kitchen with vaulted ceiling and white cabinets",
+    "master-bedroom": "Master bedroom with king-size bed",
+    "double-bedroom": "Double bedroom with a window onto the olive grove",
+    "single-bedroom": "Single bedroom with desk",
+    "bedroom-wardrobe": "Bedroom with a large white wardrobe",
+    "stone-arch": "Original stone arch inside the villa",
+    "amphora-niche": "Terracotta amphora in a white niche",
+    "olive-tree-pool-night": "Old olive tree and the lit pool at night",
+    "garden-night": "Garden path lit at night",
+    "stone-niche": "Stone niche with a chair and a glass demijohn",
+    "olive-trees": "Olive trees under a blue sky",
+    "trullo-interior": "Inside the restored trullo, with its dry-stone dome",
+    "lamia-dining": "Dining room under the vaulted ceiling of the lamia",
+    "pool-day": "The private pool by day, with the villa behind",
+    "olive-grove": "The olive grove around the villa",
+    "workspace-olive-view": "Desk by a window overlooking the olive grove",
+    "olive-oil-mill": "Freshly pressed extra virgin olive oil at the mill",
+    "aperitivo": "Aperitivo board with wine on the terrace",
+    "outdoor-dining": "Covered outdoor dining table for ten",
+    "orecchiette": "Fresh orecchiette made by hand during a cooking class",
+    "countryside-aerial": "Aerial view of the olive groves around the villa"
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "title": "Villa con trullo e piscina vicino a Ostuni | Villa El Carmen",
+    "description": "Villa privata con trullo restaurato, piscina e 1 ettaro di ulivi vicino a Ostuni, in Puglia. 3 camere, 5 ospiti, WiFi Starlink, mare a 25 minuti.",
+    "og_title": "Villa El Carmen: villa con trullo e piscina vicino a Ostuni",
+    "og_description": "La base tranquilla per scoprire la Puglia: trullo restaurato, piscina privata e un ettaro di ulivi tra Ostuni e il mare."
+  },
+  "nav": {
+    "villa": "La villa",
+    "location": "Dove siamo",
+    "faq": "Domande",
+    "book": "Prenota",
+    "menu": "Menu",
+    "languages": "Lingue"
+  },
+  "hero": {
+    "h1": "Villa con trullo restaurato e piscina vicino a Ostuni",
+    "subtitle": "Un rifugio privato tra un ettaro di ulivi in Puglia. 3 camere, fino a 5 ospiti.",
+    "cta_primary": "Verifica le date su Airbnb",
+    "cta_secondary": "Scopri la villa",
+    "video_label": "Video di Villa El Carmen: la piscina, la villa e l'uliveto"
+  },
+  "facts": {
+    "guests": "5 ospiti",
+    "bedrooms": "3 camere",
+    "bathrooms": "3 bagni",
+    "pool": "Piscina privata",
+    "wifi": "WiFi Starlink",
+    "air_conditioning": "Aria condizionata",
+    "barbecue": "Cucina esterna e barbecue",
+    "parking": "Parcheggio privato"
+  },
+  "about": {
+    "h2": "La base tranquilla per scoprire la Puglia",
+    "paragraphs": [
+      "Villa El Carmen è una villa privata immersa in oltre un ettaro di ulivi, nella campagna di San Vito dei Normanni, tra Ostuni e la costa adriatica. La casa unisce un trullo restaurato e una lamia tradizionale con tutti i comfort moderni: tre camere, tre bagni, aria condizionata e riscaldamento in ogni ambiente e WiFi Starlink veloce.",
+      "È pensata per famiglie e gruppi di amici che cercano un'unica base tranquilla per la loro settimana in Puglia: la mattina in piscina, il pomeriggio sulle spiagge di Specchiolla e Torre Guaceto, la sera nella Città Bianca di Ostuni o a tavola all'aperto sotto gli ulivi."
+    ]
+  },
+  "trullo": {
+    "h2": "Un trullo restaurato e una lamia storica",
+    "intro": "Il cuore in pietra della villa: soffitti a volta, muri spessi che tengono fresche le stanze d'estate e il lavoro artigiano della campagna pugliese.",
+    "cards": [
+      {
+        "h3": "Il trullo",
+        "body": "Il nostro trullo restaurato conserva la cupola originale in pietra a secco e le sue nicchie: oggi è un angolo tranquillo dove leggere e riposare. I trulli sono l'architettura simbolo della Puglia e averne uno tutto per voi fa parte dell'esperienza."
+      },
+      {
+        "h3": "La lamia",
+        "body": "La lamia, con i suoi soffitti a volta in pietra, ospita la cucina e la sala da pranzo. Ogni ambiente è stato ristrutturato con cura, unendo materiali tradizionali e comfort moderni."
+      }
+    ]
+  },
+  "features": [
+    {
+      "h3": "La piscina",
+      "body": "Una piscina di 40 m² con lettini, circondata da prato e ulivi e illuminata la sera. Il posto ideale per rinfrescarsi dopo una giornata in giro."
+    },
+    {
+      "h3": "Un ettaro di ulivi",
+      "body": "La villa è circondata dagli ulivi. Passeggia nell'uliveto, goditi privacy e silenzio e assaggia l'olio che produciamo proprio da questi alberi."
+    }
+  ],
+  "work": {
+    "h2": "Spazio per lavorare, se serve",
+    "paragraphs": [
+      "Il WiFi Starlink, veloce e affidabile, copre tutta la proprietà, e due scrivanie dedicate, una delle quali regolabile in altezza, guardano sull'uliveto.",
+      "Perfetta per soggiorni lunghi in primavera e a inizio autunno, quando la Puglia è più tranquilla e fa ancora caldo."
+    ]
+  },
+  "olive_oil": {
+    "h2": "Oro liquido: il nostro olio",
+    "body": "Produciamo olio extravergine d'oliva con le olive raccolte nel nostro uliveto. Un regalo della nostra terra alla vostra tavola.",
+    "note": "Ogni soggiorno include una bottiglia in omaggio, e potete acquistarne altre da portare a casa."
+  },
+  "dining": {
+    "h2": "Serate pugliesi e cene all'aperto",
+    "intro": "Una cucina esterna con barbecue, un tavolo per dieci e lunghe serate d'estate.",
+    "slides": [
+      {
+        "h3": "Aperitivo al tramonto",
+        "body": "Ritrovatevi sulla terrazza al calar del sole con uno spritz, i taralli e un tagliere di formaggi e salumi locali."
+      },
+      {
+        "h3": "Cena sotto gli ulivi",
+        "body": "La zona pranzo esterna coperta ospita dieci persone, accanto a una cucina esterna attrezzata con barbecue: perfetta per lunghe cene con famiglia e amici."
+      },
+      {
+        "h3": "Chef privato e corso di cucina",
+        "body": "Su richiesta organizziamo uno chef privato o un corso di cucina in villa: imparate a fare le orecchiette fresche e assaggiate i piatti della tradizione pugliese."
+      }
+    ],
+    "previous": "Slide precedente",
+    "next": "Slide successiva"
+  },
+  "gallery": {
+    "h2": "Momenti in villa",
+    "intro": "Le stanze, la piscina, l'uliveto e le serate a Villa El Carmen.",
+    "close": "Chiudi"
+  },
+  "location": {
+    "h2": "Dove siamo",
+    "intro": "Nella campagna di San Vito dei Normanni (Brindisi), tra Ostuni e il mare Adriatico: tranquilla e riservata, ma a breve distanza dai borghi e dalle spiagge più belle della Puglia.",
+    "distances_title": "Tempi in auto dalla villa",
+    "distance_labels": {
+      "san_vito": "San Vito dei Normanni (negozi e ristoranti)",
+      "ostuni": "Ostuni, la Città Bianca",
+      "specchiolla": "Spiaggia di Specchiolla",
+      "torre_guaceto": "Riserva naturale di Torre Guaceto",
+      "brindisi_airport": "Aeroporto di Brindisi",
+      "lecce": "Lecce",
+      "alberobello": "Alberobello e i suoi trulli",
+      "polignano": "Polignano a Mare",
+      "bari_airport": "Aeroporto di Bari"
+    },
+    "time_formats": {"minutes": "{m} min", "hours": "{h} h", "hours_minutes": "{h} h {m}"},
+    "beaches_title": "Le spiagge vicine",
+    "beaches": [
+      "Specchiolla e Apani: spiagge di sabbia e piccole calette, a circa 25–30 minuti.",
+      "Torre Guaceto: riserva naturale protetta con dune e acqua cristallina, a circa 30 minuti.",
+      "La costa di Ostuni e, per una gita, le spiagge ioniche intorno a Porto Cesareo, a circa un'ora."
+    ],
+    "car_note": "Per esplorare la zona l'auto è indispensabile: la villa è in campagna e i mezzi pubblici sono pochi. Vi aiutiamo volentieri a noleggiare un'auto o a prenotare un transfer dall'aeroporto.",
+    "map_button": "Apri in Google Maps"
+  },
+  "faq": {
+    "h2": "Domande frequenti",
+    "items": [
+      {"question": "Quanto dista la villa dal mare?", "answer": "Le spiagge più vicine, Specchiolla e Apani, sono a circa 25–30 minuti in auto e la riserva di Torre Guaceto a circa 30 minuti. La costa ionica vicino a Porto Cesareo è a circa un'ora."},
+      {"question": "Serve l'auto?", "answer": "Sì. La villa è in campagna e gli autobus sono rari: l'auto è il modo migliore per raggiungere spiagge, paesi e ristoranti. Possiamo aiutarvi a noleggiarla o a organizzare un transfer."},
+      {"question": "Qual è l'aeroporto più vicino?", "answer": "L'aeroporto di Brindisi è a circa 30 minuti. L'aeroporto di Bari, con più voli internazionali, è a circa 1 ora e 30 minuti."},
+      {"question": "La piscina è privata?", "answer": "Sì. La piscina di 40 m² è riservata ai nostri ospiti, con lettini e illuminazione per la sera."},
+      {"question": "La villa è adatta alle famiglie con bambini?", "answer": "Sì. Molti dei nostri ospiti sono famiglie con bambini: la casa è spaziosa e la proprietà è tranquilla e riservata."},
+      {"question": "Posso lavorare da remoto dalla villa?", "answer": "Sì. Il WiFi Starlink copre tutta la proprietà e ci sono due scrivanie dedicate, una delle quali regolabile in altezza."},
+      {"question": "Quali sono gli orari di check-in e check-out?", "answer": "Il check-in è dalle 16:00 alle 21:00, il check-out entro le 10:00."},
+      {"question": "Quando è aperta la villa e qual è il soggiorno minimo?", "answer": "La villa è aperta da aprile a inizio ottobre. Il soggiorno minimo va da 3 a 6 notti, a seconda del periodo."},
+      {"question": "Sono ammessi animali?", "answer": "Ci dispiace, ma gli animali non sono ammessi."},
+      {"question": "Come si prenota?", "answer": "Le prenotazioni si fanno su Airbnb, dove trovate disponibilità e prezzi aggiornati. Per qualsiasi domanda prima di prenotare, scriveteci via email o su Instagram."}
+    ]
+  },
+  "book": {
+    "h2": "Prenota il tuo soggiorno",
+    "body": "Controlla disponibilità e prezzi per le tue date su Airbnb, dove puoi prenotare in sicurezza.",
+    "cta": "Vedi date e prezzi su Airbnb",
+    "trust": "\"Amato dagli ospiti\" su Airbnb, con una valutazione di 5,0.",
+    "questions": "Domande prima di prenotare? Scriveteci.",
+    "email_label": "Email",
+    "instagram_label": "Instagram"
+  },
+  "footer": {
+    "tagline": "Villa con trullo e piscina tra gli ulivi",
+    "location": "San Vito dei Normanni (BR), Puglia, Italia",
+    "cin_label": "CIN",
+    "cis_label": "CIS",
+    "rights": "Tutti i diritti riservati."
+  },
+  "not_found": {
+    "title": "Pagina non trovata",
+    "body": "La pagina che cerchi non esiste. Scegli la lingua per tornare alla villa.",
+    "home": "Villa El Carmen in italiano"
+  },
+  "alts": {
+    "villa-night": "Villa El Carmen illuminata di sera, con un ulivo davanti",
+    "villa-pool-night": "La villa e la piscina privata di sera",
+    "pool-aerial": "Vista aerea della piscina privata e dei lettini",
+    "pool-steps-night": "La piscina illuminata di sera, con la scaletta d'ingresso",
+    "living-room": "Soggiorno con divano sotto un soffitto a volta in pietra",
+    "kitchen-vaulted": "Cucina con soffitto a volta e mobili bianchi",
+    "master-bedroom": "Camera padronale con letto king size",
+    "double-bedroom": "Camera matrimoniale con finestra sull'uliveto",
+    "single-bedroom": "Camera singola con scrivania",
+    "bedroom-wardrobe": "Camera con un grande armadio bianco",
+    "stone-arch": "Arco originale in pietra all'interno della villa",
+    "amphora-niche": "Anfora in terracotta in una nicchia bianca",
+    "olive-tree-pool-night": "Ulivo secolare e piscina illuminata di sera",
+    "garden-night": "Vialetto del giardino illuminato di sera",
+    "stone-niche": "Nicchia in pietra con sedia e damigiana di vetro",
+    "olive-trees": "Ulivi sotto il cielo azzurro",
+    "trullo-interior": "L'interno del trullo restaurato, con la cupola in pietra a secco",
+    "lamia-dining": "Sala da pranzo sotto il soffitto a volta della lamia",
+    "pool-day": "La piscina privata di giorno, con la villa sullo sfondo",
+    "olive-grove": "L'uliveto intorno alla villa",
+    "workspace-olive-view": "Scrivania davanti a una finestra sull'uliveto",
+    "olive-oil-mill": "Olio extravergine appena franto al frantoio",
+    "aperitivo": "Tagliere per l'aperitivo con vino sulla terrazza",
+    "outdoor-dining": "Tavolo da pranzo esterno coperto per dieci persone",
+    "orecchiette": "Orecchiette fresche fatte a mano durante un corso di cucina",
+    "countryside-aerial": "Vista aerea degli uliveti intorno alla villa"
+  }
+}

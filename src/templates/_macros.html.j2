@@ -1,0 +1,15 @@
+{% macro picture(img, slug, alt, sizes, class="", eager=False, clickable=False) -%}
+{%- set image = img[slug] -%}
+<img src="{{ image.src }}" srcset="{{ image.srcset }}" sizes="{{ sizes }}"
+     width="{{ image.width }}" height="{{ image.height }}" alt="{{ alt }}"
+     class="{{ class }}{% if clickable %} js-lightbox cursor-zoom-in{% endif %}"
+     {% if clickable %}data-full="{{ image.full }}"{% endif %}
+     {% if eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
+{%- endmacro %}
+
+{% macro section_title(title, intro="") -%}
+<div class="section-title fade-in-up">
+  <h2>{{ title }}</h2>
+  {% if intro %}<p>{{ intro }}</p>{% endif %}
+</div>
+{%- endmacro %}

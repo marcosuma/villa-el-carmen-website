@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ lang.code }}">
+<head>
+{% with title=page.not_found.title ~ " | " ~ site.name, description=page.meta.description,
+        og_title=page.meta.og_title, og_description=page.meta.og_description,
+        robots="noindex,follow" %}
+{% include "_head.html.j2" %}
+{% endwith %}
+</head>
+<body class="bg-theme-sand min-h-screen flex flex-col">
+<main class="flex-1 flex items-center justify-center px-6 py-24">
+  <div class="text-center max-w-xl">
+    <img src="/assets/icons/web/logo.webp" width="80" height="80" alt="" class="mx-auto mb-6 h-20 w-20 rounded-full object-cover">
+    <h1 class="text-5xl font-bold mb-4">{{ page.not_found.title }}</h1>
+    <p class="text-lg text-theme-muted mb-8">{{ page.not_found.body }}</p>
+    <ul class="space-y-3">
+      {% for language in site.languages %}
+      <li><a href="{{ language.path }}" hreflang="{{ language.code }}" lang="{{ language.code }}" class="btn-primary inline-block py-2 px-6 rounded-full">{{ pages[language.code].not_found.home }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</main>
+</body>
+</html>

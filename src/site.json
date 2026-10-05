@@ -1,0 +1,55 @@
+{
+  "base_url": "https://elcarmenpuglia.com",
+  "name": "Villa El Carmen",
+  "default_language": "en",
+  "languages": [
+    {"code": "en", "path": "/", "locale": "en_GB", "label": "English", "short": "EN", "airbnb_domain": "www.airbnb.com"},
+    {"code": "it", "path": "/it/", "locale": "it_IT", "label": "Italiano", "short": "IT", "airbnb_domain": "www.airbnb.it"},
+    {"code": "de", "path": "/de/", "locale": "de_DE", "label": "Deutsch", "short": "DE", "airbnb_domain": "www.airbnb.de"},
+    {"code": "fr", "path": "/fr/", "locale": "fr_FR", "label": "Français", "short": "FR", "airbnb_domain": "www.airbnb.fr"},
+    {"code": "es", "path": "/es/", "locale": "es_ES", "label": "Español", "short": "ES", "airbnb_domain": "www.airbnb.es"}
+  ],
+  "airbnb_listing_id": "1205785008353242688",
+  "email": "villaelcarmensanvito@gmail.com",
+  "instagram_url": "https://www.instagram.com/villa_elcarmen_puglia/",
+  "google_maps_url": "https://maps.app.goo.gl/2uRBACUf5y8xNXch9",
+  "cin": "IT074017C200100796",
+  "cis": "BR07401791000058399",
+  "geo": {"latitude": 40.6266, "longitude": 17.6693},
+  "address": {
+    "locality": "San Vito dei Normanni",
+    "postal_code": "72019",
+    "province": "BR",
+    "region": "Puglia",
+    "country": "IT"
+  },
+  "facts": {
+    "guests": 5,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "pool_m2": 40,
+    "olive_grove_hectares": 1,
+    "parking_spaces": 4,
+    "checkin_time": "16:00",
+    "checkout_time": "10:00"
+  },
+  "distances": [
+    {"key": "san_vito", "minutes": 10},
+    {"key": "ostuni", "minutes": 25},
+    {"key": "specchiolla", "minutes": 25},
+    {"key": "torre_guaceto", "minutes": 30},
+    {"key": "brindisi_airport", "minutes": 30},
+    {"key": "lecce", "minutes": 55},
+    {"key": "alberobello", "minutes": 60},
+    {"key": "polignano", "minutes": 60},
+    {"key": "bari_airport", "minutes": 90}
+  ],
+  "gallery": [
+    "villa-night", "villa-pool-night", "pool-aerial", "pool-steps-night",
+    "living-room", "kitchen-vaulted", "master-bedroom", "double-bedroom",
+    "single-bedroom", "bedroom-wardrobe", "stone-arch", "amphora-niche",
+    "olive-tree-pool-night", "garden-night", "stone-niche", "olive-trees"
+  ],
+  "hero": {"video": "/assets/video/villa-el-carmen.mp4", "poster": "/assets/img/hero-poster.webp"},
+  "og_image": {"path": "/assets/img/og-villa-el-carmen.jpg", "width": 1200, "height": 630}
+}

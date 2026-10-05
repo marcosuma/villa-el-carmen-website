@@ -1,0 +1,239 @@
+{% from "_macros.html.j2" import picture, section_title %}
+<!DOCTYPE html>
+<html lang="{{ lang.code }}">
+<head>
+{% with title=page.meta.title, description=page.meta.description, og_title=page.meta.og_title,
+        og_description=page.meta.og_description, robots="index,follow,max-image-preview:large" %}
+{% include "_head.html.j2" %}
+{% endwith %}
+<link rel="preload" as="image" href="{{ site.hero.poster }}" fetchpriority="high">
+<script type="application/ld+json">
+{{ structured_data|safe }}
+</script>
+</head>
+<body class="leading-normal tracking-normal">
+<a href="#main" class="skip-link">{{ page.nav.villa }}</a>
+
+{% include "_header.html.j2" %}
+
+<main id="main">
+  <section class="hero" aria-label="{{ page.hero.h1 }}">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata"
+           poster="{{ site.hero.poster }}" aria-label="{{ page.hero.video_label }}">
+      <source src="{{ site.hero.video }}" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="relative z-10 text-center text-white px-6 max-w-4xl">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">{{ page.hero.h1 }}</h1>
+      <p class="text-lg md:text-2xl font-light mb-8">{{ page.hero.subtitle }}</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="{{ airbnb }}" target="_blank" rel="noopener" class="btn-primary py-3 px-8 rounded-full text-lg uppercase tracking-wider">{{ page.hero.cta_primary }}</a>
+        <a href="#villa" class="btn-secondary py-3 px-8 rounded-full text-lg uppercase tracking-wider">{{ page.hero.cta_secondary }}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10 bg-theme-white border-b border-theme-line" aria-label="{{ page.nav.villa }}">
+    <ul class="container mx-auto px-6 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-6 text-center text-theme-muted">
+      {% set fact_icons = [
+        ("guests", "/assets/icons/web/guests.webp", page.facts.guests),
+        ("bedrooms", "/assets/icons/web/bedroom.webp", page.facts.bedrooms),
+        ("bathrooms", None, page.facts.bathrooms),
+        ("pool", "/assets/icons/web/swimming-pool.webp", page.facts.pool),
+        ("wifi", "/assets/icons/web/wifi.webp", page.facts.wifi),
+        ("ac", "/assets/icons/web/air-conditioning.webp", page.facts.air_conditioning),
+        ("bbq", "/assets/icons/web/barbecue.webp", page.facts.barbecue),
+        ("parking", None, page.facts.parking),
+      ] %}
+      {% for key, icon, label in fact_icons %}
+      <li class="flex flex-col items-center">
+        {% if icon %}
+        <img src="{{ icon }}" width="48" height="48" alt="" class="w-10 h-10 mb-2 object-contain" loading="lazy">
+        {% elif key == "bathrooms" %}
+        <svg class="w-10 h-10 mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 12h18v2a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5v-2Z"/><path d="M6 12V6a2 2 0 0 1 4 0"/><path d="M7 19l-1 2M17 19l1 2"/></svg>
+        {% else %}
+        <svg class="w-10 h-10 mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg>
+        {% endif %}
+        <span class="font-semibold">{{ label }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section id="villa" class="py-20 bg-theme-sand">
+    <div class="container mx-auto px-6 lg:px-20 text-center fade-in-up">
+      <h2 class="text-4xl font-bold mb-6">{{ page.about.h2 }}</h2>
+      {% for paragraph in page.about.paragraphs %}
+      <p class="text-lg text-theme-muted max-w-3xl mx-auto leading-relaxed mb-4">{{ paragraph }}</p>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="py-20 bg-theme-white">
+    <div class="container mx-auto px-6 lg:px-20">
+      {{ section_title(page.trullo.h2, page.trullo.intro) }}
+      <div class="grid md:grid-cols-2 gap-12">
+        {% for card, slug in zip(page.trullo.cards, ["trullo-interior", "lamia-dining"]) %}
+        <article class="bg-theme-sand rounded-lg shadow-xl overflow-hidden feature-card fade-in-up">
+          {{ picture(img, slug, page.alts[slug], "(min-width: 768px) 50vw, 100vw", "w-full h-80 object-cover", clickable=True) }}
+          <div class="p-8">
+            <h3 class="text-3xl font-bold mb-3">{{ card.h3 }}</h3>
+            <p class="text-theme-muted leading-relaxed">{{ card.body }}</p>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-theme-sand">
+    <div class="container mx-auto px-6 lg:px-20 grid md:grid-cols-2 gap-12">
+      {% for card, slug in zip(page.features, ["pool-day", "olive-grove"]) %}
+      <article class="bg-theme-white rounded-lg shadow-xl overflow-hidden feature-card fade-in-up">
+        {{ picture(img, slug, page.alts[slug], "(min-width: 768px) 50vw, 100vw", "w-full h-64 object-cover", clickable=True) }}
+        <div class="p-8">
+          <h3 class="text-3xl font-bold mb-3">{{ card.h3 }}</h3>
+          <p class="text-theme-muted leading-relaxed">{{ card.body }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="py-20 bg-theme-white">
+    <div class="container mx-auto px-6 lg:px-20 flex flex-col md:flex-row items-center gap-12 fade-in-up">
+      <div class="md:w-1/2">
+        {{ picture(img, "workspace-olive-view", page.alts["workspace-olive-view"], "(min-width: 768px) 50vw, 100vw", "rounded-lg shadow-2xl w-full max-h-[32rem] object-cover", clickable=True) }}
+      </div>
+      <div class="md:w-1/2">
+        <h2 class="text-4xl font-bold mb-4">{{ page.work.h2 }}</h2>
+        {% for paragraph in page.work.paragraphs %}
+        <p class="text-lg text-theme-muted mb-4 leading-relaxed">{{ paragraph }}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-theme-sand">
+    <div class="container mx-auto px-6 lg:px-20 flex flex-col md:flex-row-reverse items-center gap-12 fade-in-up">
+      <div class="md:w-1/2">
+        {{ picture(img, "olive-oil-mill", page.alts["olive-oil-mill"], "(min-width: 768px) 50vw, 100vw", "rounded-lg shadow-2xl w-full max-h-[32rem] object-cover", clickable=True) }}
+      </div>
+      <div class="md:w-1/2">
+        <h2 class="text-4xl font-bold mb-4">{{ page.olive_oil.h2 }}</h2>
+        <p class="text-lg text-theme-muted mb-4 leading-relaxed">{{ page.olive_oil.body }}</p>
+        <p class="text-lg text-theme-muted font-semibold">{{ page.olive_oil.note }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-theme-white">
+    <div class="container mx-auto px-6 lg:px-20">
+      {{ section_title(page.dining.h2, page.dining.intro) }}
+      <div class="carousel max-w-4xl mx-auto rounded-lg shadow-2xl bg-theme-sand fade-in-up" data-carousel>
+        <div class="carousel-track">
+          {% for slide, slug in zip(page.dining.slides, ["aperitivo", "outdoor-dining", "orecchiette"]) %}
+          <div class="carousel-slide p-4 md:p-8" role="group" aria-roledescription="slide" aria-label="{{ loop.index }} / {{ loop.length }}">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+              <div class="md:w-1/2">
+                {{ picture(img, slug, page.alts[slug], "(min-width: 768px) 28rem, 90vw", "rounded-lg shadow-lg w-full h-72 object-cover", clickable=True) }}
+              </div>
+              <div class="md:w-1/2">
+                <h3 class="text-3xl font-bold mb-4">{{ slide.h3 }}</h3>
+                <p class="text-theme-muted leading-relaxed">{{ slide.body }}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <button type="button" class="carousel-button left-2" data-carousel-prev aria-label="{{ page.dining.previous }}">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button type="button" class="carousel-button right-2" data-carousel-next aria-label="{{ page.dining.next }}">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+        <div class="carousel-dots" data-carousel-dots></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-theme-sand">
+    <div class="container mx-auto px-6 lg:px-20">
+      {{ section_title(page.gallery.h2, page.gallery.intro) }}
+      <div class="gallery fade-in-up">
+        {% for row in site.gallery|batch(4) %}
+        <div class="gallery-row">
+          {% for slug in row %}
+          <div class="gallery-item">
+            {{ picture(img, slug, page.alts[slug], "(min-width: 768px) 25vw, 50vw", "", clickable=True) }}
+          </div>
+          {% endfor %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section id="location" class="py-20 bg-theme-white">
+    <div class="container mx-auto px-6 lg:px-20">
+      {{ section_title(page.location.h2, page.location.intro) }}
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div class="fade-in-up">
+          {{ picture(img, "countryside-aerial", page.alts["countryside-aerial"], "(min-width: 1024px) 50vw, 100vw", "rounded-lg shadow-2xl w-full") }}
+          <p class="mt-6 text-theme-muted leading-relaxed">{{ page.location.car_note }}</p>
+          <a href="{{ site.google_maps_url }}" target="_blank" rel="noopener" class="btn-primary inline-block mt-6 py-3 px-8 rounded-full uppercase tracking-wider">{{ page.location.map_button }}</a>
+        </div>
+        <div class="fade-in-up">
+          <h3 class="text-3xl font-bold mb-4">{{ page.location.distances_title }}</h3>
+          <dl class="distance-list">
+            {% for label, duration in distances %}
+            <div><dt>{{ label }}</dt><dd>{{ duration }}</dd></div>
+            {% endfor %}
+          </dl>
+          <h3 class="text-3xl font-bold mt-10 mb-4">{{ page.location.beaches_title }}</h3>
+          <ul class="list-disc pl-6 space-y-2 text-theme-muted">
+            {% for beach in page.location.beaches %}<li>{{ beach }}</li>{% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="py-20 bg-theme-sand">
+    <div class="container mx-auto px-6 lg:px-20 max-w-3xl">
+      {{ section_title(page.faq.h2) }}
+      <div class="space-y-4 fade-in-up">
+        {% for item in page.faq.items %}
+        <details class="faq-item">
+          <summary>{{ item.question }}</summary>
+          <p>{{ item.answer }}</p>
+        </details>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section id="book" class="py-20 bg-theme-white">
+    <div class="container mx-auto px-6 lg:px-20 max-w-3xl text-center fade-in-up">
+      <h2 class="text-4xl font-bold mb-4">{{ page.book.h2 }}</h2>
+      <p class="text-lg text-theme-muted mb-4 leading-relaxed">{{ page.book.body }}</p>
+      <p class="text-theme-muted mb-8 font-semibold">{{ page.book.trust }}</p>
+      <a href="{{ airbnb }}" target="_blank" rel="noopener" class="btn-primary inline-block py-4 px-10 rounded-full text-lg uppercase tracking-wider">{{ page.book.cta }}</a>
+      <p class="mt-10 text-theme-muted">{{ page.book.questions }}</p>
+      <div class="mt-4 flex flex-col sm:flex-row justify-center gap-4">
+        <a href="mailto:{{ site.email }}" class="btn-outline py-2 px-6 rounded-full">{{ page.book.email_label }}</a>
+        <a href="{{ site.instagram_url }}" target="_blank" rel="noopener" class="btn-outline py-2 px-6 rounded-full">{{ page.book.instagram_label }}</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+{% include "_footer.html.j2" %}
+
+<div id="lightbox" class="lightbox" hidden>
+  <button type="button" class="lightbox-close" aria-label="{{ page.gallery.close }}">&times;</button>
+  <img alt="" class="lightbox-image">
+</div>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

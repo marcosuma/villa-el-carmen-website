@@ -1,0 +1,19 @@
+<footer class="footer-bg text-white py-12">
+  <div class="container mx-auto px-6 text-center">
+    <p class="font-display text-3xl font-bold mb-2">{{ site.name }}</p>
+    <p class="mb-1">{{ page.footer.tagline }}</p>
+    <p class="text-sm opacity-80">{{ page.footer.location }}</p>
+    <p class="mt-4"><a href="mailto:{{ site.email }}" class="hover:underline">{{ site.email }}</a></p>
+    <p class="mt-2"><a href="{{ site.instagram_url }}" target="_blank" rel="noopener" class="hover:underline">Instagram @villa_elcarmen_puglia</a></p>
+    <p class="mt-6 text-sm flex flex-col sm:flex-row justify-center gap-1 sm:gap-4">
+      <span>{{ page.footer.cin_label }}: <span class="font-semibold">{{ site.cin }}</span></span>
+      <span>{{ page.footer.cis_label }}: <span class="font-semibold">{{ site.cis }}</span></span>
+    </p>
+    <ul class="mt-6 flex justify-center gap-4 text-sm" aria-label="{{ page.nav.languages }}">
+      {% for language in site.languages %}
+      <li><a href="{{ language.path }}" hreflang="{{ language.code }}" lang="{{ language.code }}" class="hover:underline">{{ language.label }}</a></li>
+      {% endfor %}
+    </ul>
+    <p class="text-sm text-gray-300 mt-8">&copy; {{ year }} {{ site.name }}. {{ page.footer.rights }}</p>
+  </div>
+</footer>

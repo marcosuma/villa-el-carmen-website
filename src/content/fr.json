@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "title": "Villa avec trullo et piscine près d'Ostuni | Villa El Carmen",
+    "description": "Villa privée avec trullo restauré, piscine et 1 ha d'oliviers près d'Ostuni, dans les Pouilles. 3 chambres, 5 voyageurs, WiFi Starlink, mer à 25 min.",
+    "og_title": "Villa El Carmen : villa avec trullo et piscine près d'Ostuni",
+    "og_description": "La base au calme pour découvrir les Pouilles : trullo restauré, piscine privée et un hectare d'oliviers entre Ostuni et la mer."
+  },
+  "nav": {
+    "villa": "La villa",
+    "location": "Situation",
+    "faq": "FAQ",
+    "book": "Réserver",
+    "menu": "Menu",
+    "languages": "Langues"
+  },
+  "hero": {
+    "h1": "Villa avec trullo restauré et piscine près d'Ostuni",
+    "subtitle": "Un refuge privé au milieu d'un hectare d'oliviers dans les Pouilles. 3 chambres, jusqu'à 5 voyageurs.",
+    "cta_primary": "Voir les disponibilités sur Airbnb",
+    "cta_secondary": "Découvrir la villa",
+    "video_label": "Vidéo de la Villa El Carmen : la piscine, la villa et l'oliveraie"
+  },
+  "facts": {
+    "guests": "5 voyageurs",
+    "bedrooms": "3 chambres",
+    "bathrooms": "3 salles de bain",
+    "pool": "Piscine privée",
+    "wifi": "WiFi Starlink",
+    "air_conditioning": "Climatisation",
+    "barbecue": "Cuisine extérieure et barbecue",
+    "parking": "Parking privé"
+  },
+  "about": {
+    "h2": "La base au calme pour découvrir les Pouilles",
+    "paragraphs": [
+      "La Villa El Carmen est une villa privée au cœur de plus d'un hectare d'oliveraies, dans la campagne de San Vito dei Normanni, entre Ostuni et la côte adriatique. La maison réunit un trullo restauré et une lamia traditionnelle avec tout le confort moderne : trois chambres, trois salles de bain, climatisation et chauffage dans chaque pièce, et un WiFi Starlink rapide.",
+      "Elle est pensée pour les familles et les amis qui cherchent une seule base tranquille pour leur semaine dans les Pouilles : le matin à la piscine, l'après-midi sur les plages de Specchiolla et de Torre Guaceto, le soir dans la ville blanche d'Ostuni ou à table sous les oliviers."
+    ]
+  },
+  "trullo": {
+    "h2": "Un trullo restauré et une lamia historique",
+    "intro": "Le cœur de pierre de la villa : plafonds voûtés, murs épais qui gardent les pièces au frais l'été, et le savoir-faire de la campagne des Pouilles.",
+    "cards": [
+      {
+        "h3": "Le trullo",
+        "body": "Notre trullo restauré conserve sa coupole d'origine en pierre sèche et ses niches : c'est aujourd'hui un coin tranquille pour lire et se reposer. Les trulli sont le symbole des Pouilles, et en avoir un rien que pour vous fait partie de l'expérience."
+      },
+      {
+        "h3": "La lamia",
+        "body": "La lamia, avec ses plafonds voûtés en pierre, accueille la cuisine et la salle à manger. Chaque pièce a été rénovée avec soin, en alliant matériaux traditionnels et confort moderne."
+      }
+    ]
+  },
+  "features": [
+    {
+      "h3": "La piscine",
+      "body": "Une piscine de 40 m² avec transats, entourée de pelouse et d'oliviers et éclairée le soir. L'endroit idéal pour se rafraîchir après une journée de visites."
+    },
+    {
+      "h3": "Un hectare d'oliviers",
+      "body": "La villa est entourée d'oliviers. Promenez-vous dans l'oliveraie, profitez du calme et de l'intimité, et goûtez l'huile que nous produisons avec ces arbres."
+    }
+  ],
+  "work": {
+    "h2": "De quoi travailler, si besoin",
+    "paragraphs": [
+      "Un WiFi Starlink rapide et fiable couvre toute la propriété, et deux bureaux dédiés, dont un réglable en hauteur, donnent sur l'oliveraie.",
+      "Idéal pour les longs séjours au printemps et au début de l'automne, quand les Pouilles sont plus calmes et qu'il fait encore chaud."
+    ]
+  },
+  "olive_oil": {
+    "h2": "L'or liquide : notre huile d'olive",
+    "body": "Nous produisons une huile d'olive vierge extra avec les olives cueillies dans notre oliveraie. Un cadeau de notre terre pour votre table.",
+    "note": "Chaque séjour comprend une bouteille offerte, et vous pouvez en acheter d'autres à emporter."
+  },
+  "dining": {
+    "h2": "Soirées des Pouilles et repas en plein air",
+    "intro": "Une cuisine extérieure avec barbecue, une table pour dix et de longues soirées d'été.",
+    "slides": [
+      {
+        "h3": "Apéritif au coucher du soleil",
+        "body": "Retrouvez-vous sur la terrasse au coucher du soleil, avec un spritz, des taralli et une planche de fromages et charcuteries locales."
+      },
+      {
+        "h3": "Dîner sous les oliviers",
+        "body": "L'espace repas extérieur couvert accueille dix personnes, à côté d'une cuisine extérieure équipée avec barbecue : parfait pour de longs dîners en famille ou entre amis."
+      },
+      {
+        "h3": "Chef privé et cours de cuisine",
+        "body": "Sur demande, nous organisons un chef privé ou un cours de cuisine à la villa : apprenez à faire des orecchiette fraîches et goûtez les plats traditionnels des Pouilles."
+      }
+    ],
+    "previous": "Diapositive précédente",
+    "next": "Diapositive suivante"
+  },
+  "gallery": {
+    "h2": "Moments à la villa",
+    "intro": "Les chambres, la piscine, l'oliveraie et les soirées à la Villa El Carmen.",
+    "close": "Fermer"
+  },
+  "location": {
+    "h2": "Où nous trouver",
+    "intro": "Dans la campagne de San Vito dei Normanni (Brindisi), entre Ostuni et la mer Adriatique : calme et préservée, mais à deux pas des plus belles villes et plages des Pouilles.",
+    "distances_title": "Temps de trajet en voiture depuis la villa",
+    "distance_labels": {
+      "san_vito": "San Vito dei Normanni (commerces et restaurants)",
+      "ostuni": "Ostuni, la Ville blanche",
+      "specchiolla": "Plage de Specchiolla",
+      "torre_guaceto": "Réserve naturelle de Torre Guaceto",
+      "brindisi_airport": "Aéroport de Brindisi",
+      "lecce": "Lecce",
+      "alberobello": "Alberobello et ses trulli",
+      "polignano": "Polignano a Mare",
+      "bari_airport": "Aéroport de Bari"
+    },
+    "time_formats": {"minutes": "{m} min", "hours": "{h} h", "hours_minutes": "{h} h {m}"},
+    "beaches_title": "Les plages à proximité",
+    "beaches": [
+      "Specchiolla et Apani : plages de sable et petites criques rocheuses, à environ 25–30 minutes.",
+      "Torre Guaceto : une réserve naturelle protégée, avec dunes et eau cristalline, à environ 30 minutes.",
+      "La côte d'Ostuni et, pour une excursion, les plages ioniennes autour de Porto Cesareo, à environ une heure."
+    ],
+    "car_note": "Une voiture est indispensable pour découvrir la région : la villa est à la campagne et les transports en commun sont rares. Nous vous aidons volontiers à louer une voiture ou à réserver un transfert depuis l'aéroport.",
+    "map_button": "Ouvrir dans Google Maps"
+  },
+  "faq": {
+    "h2": "Questions fréquentes",
+    "items": [
+      {"question": "À quelle distance de la mer se trouve la villa ?", "answer": "Les plages les plus proches, Specchiolla et Apani, sont à environ 25–30 minutes en voiture, et la réserve de Torre Guaceto à environ 30 minutes. La côte ionienne près de Porto Cesareo est à environ une heure."},
+      {"question": "Faut-il une voiture ?", "answer": "Oui. La villa est à la campagne et les bus sont rares : la voiture est le meilleur moyen de rejoindre plages, villes et restaurants. Nous pouvons vous aider à louer une voiture ou à organiser un transfert."},
+      {"question": "Quel est l'aéroport le plus proche ?", "answer": "L'aéroport de Brindisi est à environ 30 minutes. L'aéroport de Bari, avec plus de vols internationaux, est à environ 1 h 30."},
+      {"question": "La piscine est-elle privée ?", "answer": "Oui. La piscine de 40 m² est réservée à nos hôtes, avec transats et éclairage pour le soir."},
+      {"question": "La villa convient-elle aux familles avec enfants ?", "answer": "Oui. Beaucoup de nos hôtes sont des familles avec enfants : la maison est spacieuse et la propriété calme et préservée."},
+      {"question": "Peut-on télétravailler depuis la villa ?", "answer": "Oui. Le WiFi Starlink couvre toute la propriété et il y a deux bureaux dédiés, dont un réglable en hauteur."},
+      {"question": "Quels sont les horaires d'arrivée et de départ ?", "answer": "L'arrivée se fait entre 16 h et 21 h, le départ avant 10 h."},
+      {"question": "Quand la villa est-elle ouverte et quelle est la durée minimum de séjour ?", "answer": "La villa est ouverte d'avril à début octobre. Le séjour minimum est de 3 à 6 nuits selon la saison."},
+      {"question": "Les animaux sont-ils acceptés ?", "answer": "Nous sommes désolés, mais les animaux ne sont pas acceptés."},
+      {"question": "Comment réserver ?", "answer": "Les réservations se font sur Airbnb, où vous trouverez les disponibilités et les prix à jour. Pour toute question avant de réserver, écrivez-nous par e-mail ou sur Instagram."}
+    ]
+  },
+  "book": {
+    "h2": "Réservez votre séjour",
+    "body": "Consultez les disponibilités et les prix pour vos dates sur Airbnb, où vous pouvez réserver en toute sécurité.",
+    "cta": "Voir dates et prix sur Airbnb",
+    "trust": "\"Coup de cœur voyageurs\" sur Airbnb, noté 5,0 par nos hôtes.",
+    "questions": "Des questions avant de réserver ? Écrivez-nous.",
+    "email_label": "E-mail",
+    "instagram_label": "Instagram"
+  },
+  "footer": {
+    "tagline": "Villa avec trullo et piscine au milieu des oliviers",
+    "location": "San Vito dei Normanni (BR), Pouilles, Italie",
+    "cin_label": "CIN",
+    "cis_label": "CIS",
+    "rights": "Tous droits réservés."
+  },
+  "not_found": {
+    "title": "Page introuvable",
+    "body": "La page que vous cherchez n'existe pas. Choisissez votre langue pour revenir à la villa.",
+    "home": "Villa El Carmen en français"
+  },
+  "alts": {
+    "villa-night": "La Villa El Carmen éclairée le soir, avec un olivier devant",
+    "villa-pool-night": "La villa et la piscine privée le soir",
+    "pool-aerial": "Vue aérienne de la piscine privée et des transats",
+    "pool-steps-night": "La piscine éclairée le soir, avec son escalier d'accès",
+    "living-room": "Salon avec canapé sous un plafond voûté en pierre",
+    "kitchen-vaulted": "Cuisine avec plafond voûté et meubles blancs",
+    "master-bedroom": "Chambre principale avec lit king size",
+    "double-bedroom": "Chambre double avec fenêtre sur l'oliveraie",
+    "single-bedroom": "Chambre simple avec bureau",
+    "bedroom-wardrobe": "Chambre avec une grande armoire blanche",
+    "stone-arch": "Arc d'origine en pierre à l'intérieur de la villa",
+    "amphora-niche": "Amphore en terre cuite dans une niche blanche",
+    "olive-tree-pool-night": "Vieil olivier et piscine éclairée le soir",
+    "garden-night": "Allée du jardin éclairée le soir",
+    "stone-niche": "Niche en pierre avec une chaise et une dame-jeanne en verre",
+    "olive-trees": "Oliviers sous un ciel bleu",
+    "trullo-interior": "L'intérieur du trullo restauré, avec sa coupole en pierre sèche",
+    "lamia-dining": "Salle à manger sous le plafond voûté de la lamia",
+    "pool-day": "La piscine privée de jour, avec la villa en arrière-plan",
+    "olive-grove": "L'oliveraie autour de la villa",
+    "workspace-olive-view": "Bureau devant une fenêtre donnant sur l'oliveraie",
+    "olive-oil-mill": "Huile d'olive vierge extra fraîchement pressée au moulin",
+    "aperitivo": "Planche apéritive avec du vin sur la terrasse",
+    "outdoor-dining": "Table de repas extérieure couverte pour dix personnes",
+    "orecchiette": "Orecchiette fraîches faites à la main pendant un cours de cuisine",
+    "countryside-aerial": "Vue aérienne des oliveraies autour de la villa"
+  }
+}
