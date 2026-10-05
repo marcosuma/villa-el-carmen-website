@@ -1,0 +1,158 @@
+{
+  "widths": [
+    480,
+    960,
+    1600
+  ],
+  "quality": 76,
+  "images": [
+    {
+      "slug": "workspace-olive-view",
+      "source": "assets/images/IMG_2522.jpeg"
+    },
+    {
+      "slug": "standing-desk",
+      "source": "assets/images/IMG_2526.jpeg"
+    },
+    {
+      "slug": "kitchen-vaulted",
+      "source": "assets/images/IMG_2550.jpeg"
+    },
+    {
+      "slug": "stone-niche",
+      "source": "assets/images/IMG_3606.jpeg"
+    },
+    {
+      "slug": "aperitivo",
+      "source": "assets/images/IMG_6803.png"
+    },
+    {
+      "slug": "garden-night",
+      "source": "assets/images/IMG_6879.jpeg"
+    },
+    {
+      "slug": "olive-tree-pool-night",
+      "source": "assets/images/IMG_6881.jpeg"
+    },
+    {
+      "slug": "pool-night",
+      "source": "assets/images/IMG_6885.jpeg"
+    },
+    {
+      "slug": "villa-pool-night",
+      "source": "assets/images/IMG_6891.jpeg"
+    },
+    {
+      "slug": "outdoor-dining",
+      "source": "assets/images/IMG_7075.jpeg"
+    },
+    {
+      "slug": "bedroom-wardrobe",
+      "source": "assets/images/IMG_7103.jpeg"
+    },
+    {
+      "slug": "stone-arch",
+      "source": "assets/images/IMG_7361.png"
+    },
+    {
+      "slug": "amphora-niche",
+      "source": "assets/images/IMG_7373 (1).png"
+    },
+    {
+      "slug": "orecchiette",
+      "source": "assets/images/IMG_7418 2.jpeg"
+    },
+    {
+      "slug": "pool-day",
+      "source": "assets/images/IMG_7506.jpeg"
+    },
+    {
+      "slug": "single-bedroom",
+      "source": "assets/images/IMG_8136.jpeg"
+    },
+    {
+      "slug": "double-bedroom",
+      "source": "assets/images/IMG_8138.jpeg"
+    },
+    {
+      "slug": "master-bedroom",
+      "source": "assets/images/IMG_8141.jpeg"
+    },
+    {
+      "slug": "trullo-interior",
+      "source": "assets/images/cave.png"
+    },
+    {
+      "slug": "lamia-dining",
+      "source": "assets/images/interior-2.jpg"
+    },
+    {
+      "slug": "living-room",
+      "source": "assets/images/interior.jpg"
+    },
+    {
+      "slug": "olive-oil-mill",
+      "source": "assets/images/olive-oil-making.png"
+    },
+    {
+      "slug": "olive-grove",
+      "source": "assets/images/olive-trees-front.png"
+    },
+    {
+      "slug": "olive-trees",
+      "source": "assets/images/olive-trees.jpg"
+    },
+    {
+      "slug": "pool-steps-night",
+      "source": "assets/images/pool-by-night.jpeg"
+    },
+    {
+      "slug": "pool-aerial",
+      "source": "assets/images/pool.jpg"
+    },
+    {
+      "slug": "countryside-aerial",
+      "source": "assets/images/puglia-landscape.png"
+    },
+    {
+      "slug": "villa-night",
+      "source": "assets/images/villa-by-night.jpeg"
+    }
+  ],
+  "og_image": {
+    "source": "assets/images/IMG_7506.jpeg",
+    "output": "assets/img/og-villa-el-carmen.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "video": {
+    "source": "assets/videos/villa-el-carmen-main.mov",
+    "output": "assets/video/villa-el-carmen.mp4",
+    "poster": "assets/img/hero-poster.webp",
+    "width": 1280,
+    "crf": 32,
+    "poster_at_seconds": 1.0,
+    "fps": 24,
+    "duration_seconds": 24
+  },
+  "icons": {
+    "source_dir": "assets/icons",
+    "output_dir": "assets/icons/web",
+    "size": 96,
+    "names": [
+      "guests",
+      "bedroom",
+      "swimming-pool",
+      "wifi",
+      "air-conditioning",
+      "barbecue"
+    ]
+  },
+  "logo": {
+    "source": "assets/icons/logo.png",
+    "size": 180,
+    "web_size": 80,
+    "webp": "assets/icons/web/logo.webp",
+    "favicon": "assets/icons/web/favicon.png"
+  }
+}
