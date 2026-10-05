@@ -1,0 +1,11 @@
+{
+  "name": "villa-el-carmen-css",
+  "private": true,
+  "description": "Compiles src/styles/site.css with Tailwind into assets/css/site.css",
+  "scripts": {
+    "css": "tailwindcss -c tailwind.config.js -i ../../src/styles/site.css -o ../../assets/css/site.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.19"
+  }
+}
