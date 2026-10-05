@@ -108,3 +108,30 @@ def test_committed_output_matches_sources(built_site, name):
     fresh = (built_site / name).read_text(encoding="utf-8")
     assert committed.replace(str(2026), "YEAR") == fresh.replace(str(2026), "YEAR")
 
+
+def vercel_rules() -> tuple[set[str], set[str]]:
+    """(top-level entries re-included, sub-paths excluded again) from .vercelignore."""
+    lines = (ROOT / ".vercelignore").read_text(encoding="utf-8").splitlines()
+    rules = [line.strip() for line in lines if line.strip() and not line.startswith("#")]
+    allowed = {rule[1:] for rule in rules if rule.startswith("!")}
+    excluded = {rule for rule in rules if not rule.startswith(("!", "/"))}
+    return allowed, excluded
+
+
+@pytest.mark.parametrize("code", LANGUAGE_FILES)
+def test_vercel_deploys_every_asset_a_page_uses(built_site, code):
+    allowed, excluded = vercel_rules()
+    page = read_page(built_site, code)
+    local = {asset.lstrip("/") for asset in page.assets if asset.startswith("/")}
+    not_deployed = sorted(
+        asset
+        for asset in local
+        if asset.split("/")[0] not in allowed or any(asset.startswith(f"{e}/") for e in excluded)
+    )
+    assert not_deployed == []
+
+
+def test_vercel_keeps_build_sources_off_the_site():
+    allowed, _ = vercel_rules()
+    assert {"index.html", "404.html", "robots.txt", "sitemap.xml"} <= allowed
+    assert not allowed & {"src", "sitebuild", "tests", "tools", "docs", "README.md"}
