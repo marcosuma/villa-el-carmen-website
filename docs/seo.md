@@ -41,7 +41,8 @@ change means editing those too.
 | Polignano a Mare | 60 min | 48 min |
 | Bari airport | 1 h 30 | 1 h 12 |
 
-The Airbnb listing still uses the Google Maps times.
+The Airbnb listing (summary and "Your place" section, all 5 languages) shows
+the same shortened times since 6 October 2026.
 
 ## Languages
 
