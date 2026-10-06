@@ -34,15 +34,15 @@
     "checkout_time": "10:00"
   },
   "distances": [
-    {"key": "san_vito", "minutes": 10},
-    {"key": "ostuni", "minutes": 25},
-    {"key": "specchiolla", "minutes": 25},
-    {"key": "torre_guaceto", "minutes": 30},
-    {"key": "brindisi_airport", "minutes": 30},
-    {"key": "lecce", "minutes": 55},
-    {"key": "alberobello", "minutes": 60},
-    {"key": "polignano", "minutes": 60},
-    {"key": "bari_airport", "minutes": 90}
+    {"key": "san_vito", "minutes": 8},
+    {"key": "ostuni", "minutes": 20},
+    {"key": "specchiolla", "minutes": 20},
+    {"key": "torre_guaceto", "minutes": 24},
+    {"key": "brindisi_airport", "minutes": 24},
+    {"key": "lecce", "minutes": 44},
+    {"key": "alberobello", "minutes": 48},
+    {"key": "polignano", "minutes": 48},
+    {"key": "bari_airport", "minutes": 72}
   ],
   "gallery": [
     "villa-night", "villa-pool-night", "pool-aerial", "pool-steps-night",

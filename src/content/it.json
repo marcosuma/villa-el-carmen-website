@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Villa con trullo e piscina vicino a Ostuni | Villa El Carmen",
-    "description": "Villa privata con trullo restaurato, piscina e 1 ettaro di ulivi vicino a Ostuni, in Puglia. 3 camere, 5 ospiti, WiFi Starlink, mare a 25 minuti.",
+    "description": "Villa privata con trullo restaurato, piscina e 1 ettaro di ulivi vicino a Ostuni, in Puglia. 3 camere, 5 ospiti, WiFi Starlink, mare a 20 minuti.",
     "og_title": "Villa El Carmen: villa con trullo e piscina vicino a Ostuni",
     "og_description": "La base tranquilla per scoprire la Puglia: trullo restaurato, piscina privata e un ettaro di ulivi tra Ostuni e il mare."
   },
@@ -116,9 +116,9 @@
     "time_formats": {"minutes": "{m} min", "hours": "{h} h", "hours_minutes": "{h} h {m}"},
     "beaches_title": "Le spiagge vicine",
     "beaches": [
-      "Specchiolla e Apani: spiagge di sabbia e piccole calette, a circa 25–30 minuti.",
-      "Torre Guaceto: riserva naturale protetta con dune e acqua cristallina, a circa 30 minuti.",
-      "La costa di Ostuni e, per una gita, le spiagge ioniche intorno a Porto Cesareo, a circa un'ora."
+      "Specchiolla e Apani: spiagge di sabbia e piccole calette, a circa 20–24 minuti.",
+      "Torre Guaceto: riserva naturale protetta con dune e acqua cristallina, a circa 24 minuti.",
+      "La costa di Ostuni e, per una gita, le spiagge ioniche intorno a Porto Cesareo, a circa 48 minuti."
     ],
     "car_note": "Per esplorare la zona l'auto è indispensabile: la villa è in campagna e i mezzi pubblici sono pochi. Vi aiutiamo volentieri a noleggiare un'auto o a prenotare un transfer dall'aeroporto.",
     "map_button": "Apri in Google Maps"
@@ -126,9 +126,9 @@
   "faq": {
     "h2": "Domande frequenti",
     "items": [
-      {"question": "Quanto dista la villa dal mare?", "answer": "Le spiagge più vicine, Specchiolla e Apani, sono a circa 25–30 minuti in auto e la riserva di Torre Guaceto a circa 30 minuti. La costa ionica vicino a Porto Cesareo è a circa un'ora."},
+      {"question": "Quanto dista la villa dal mare?", "answer": "Le spiagge più vicine, Specchiolla e Apani, sono a circa 20–24 minuti in auto e la riserva di Torre Guaceto a circa 24 minuti. La costa ionica vicino a Porto Cesareo è a circa 48 minuti."},
       {"question": "Serve l'auto?", "answer": "Sì. La villa è in campagna e gli autobus sono rari: l'auto è il modo migliore per raggiungere spiagge, paesi e ristoranti. Possiamo aiutarvi a noleggiarla o a organizzare un transfer."},
-      {"question": "Qual è l'aeroporto più vicino?", "answer": "L'aeroporto di Brindisi è a circa 30 minuti. L'aeroporto di Bari, con più voli internazionali, è a circa 1 ora e 30 minuti."},
+      {"question": "Qual è l'aeroporto più vicino?", "answer": "L'aeroporto di Brindisi è a circa 24 minuti. L'aeroporto di Bari, con più voli internazionali, è a circa 1 ora e 12 minuti."},
       {"question": "La piscina è privata?", "answer": "Sì. La piscina di 40 m² è riservata ai nostri ospiti, con lettini e illuminazione per la sera."},
       {"question": "La villa è adatta alle famiglie con bambini?", "answer": "Sì. Molti dei nostri ospiti sono famiglie con bambini: la casa è spaziosa e la proprietà è tranquilla e riservata."},
       {"question": "Posso lavorare da remoto dalla villa?", "answer": "Sì. Il WiFi Starlink copre tutta la proprietà e ci sono due scrivanie dedicate, una delle quali regolabile in altezza."},

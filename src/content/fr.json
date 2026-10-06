@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Villa avec trullo et piscine près d'Ostuni | Villa El Carmen",
-    "description": "Villa privée avec trullo restauré, piscine et 1 ha d'oliviers près d'Ostuni, dans les Pouilles. 3 chambres, 5 voyageurs, WiFi Starlink, mer à 25 min.",
+    "description": "Villa privée avec trullo restauré, piscine et 1 ha d'oliviers près d'Ostuni, dans les Pouilles. 3 chambres, 5 voyageurs, WiFi Starlink, mer à 20 min.",
     "og_title": "Villa El Carmen : villa avec trullo et piscine près d'Ostuni",
     "og_description": "La base au calme pour découvrir les Pouilles : trullo restauré, piscine privée et un hectare d'oliviers entre Ostuni et la mer."
   },
@@ -116,9 +116,9 @@
     "time_formats": {"minutes": "{m} min", "hours": "{h} h", "hours_minutes": "{h} h {m}"},
     "beaches_title": "Les plages à proximité",
     "beaches": [
-      "Specchiolla et Apani : plages de sable et petites criques rocheuses, à environ 25–30 minutes.",
-      "Torre Guaceto : une réserve naturelle protégée, avec dunes et eau cristalline, à environ 30 minutes.",
-      "La côte d'Ostuni et, pour une excursion, les plages ioniennes autour de Porto Cesareo, à environ une heure."
+      "Specchiolla et Apani : plages de sable et petites criques rocheuses, à environ 20–24 minutes.",
+      "Torre Guaceto : une réserve naturelle protégée, avec dunes et eau cristalline, à environ 24 minutes.",
+      "La côte d'Ostuni et, pour une excursion, les plages ioniennes autour de Porto Cesareo, à environ 48 minutes."
     ],
     "car_note": "Une voiture est indispensable pour découvrir la région : la villa est à la campagne et les transports en commun sont rares. Nous vous aidons volontiers à louer une voiture ou à réserver un transfert depuis l'aéroport.",
     "map_button": "Ouvrir dans Google Maps"
@@ -126,9 +126,9 @@
   "faq": {
     "h2": "Questions fréquentes",
     "items": [
-      {"question": "À quelle distance de la mer se trouve la villa ?", "answer": "Les plages les plus proches, Specchiolla et Apani, sont à environ 25–30 minutes en voiture, et la réserve de Torre Guaceto à environ 30 minutes. La côte ionienne près de Porto Cesareo est à environ une heure."},
+      {"question": "À quelle distance de la mer se trouve la villa ?", "answer": "Les plages les plus proches, Specchiolla et Apani, sont à environ 20–24 minutes en voiture, et la réserve de Torre Guaceto à environ 24 minutes. La côte ionienne près de Porto Cesareo est à environ 48 minutes."},
       {"question": "Faut-il une voiture ?", "answer": "Oui. La villa est à la campagne et les bus sont rares : la voiture est le meilleur moyen de rejoindre plages, villes et restaurants. Nous pouvons vous aider à louer une voiture ou à organiser un transfert."},
-      {"question": "Quel est l'aéroport le plus proche ?", "answer": "L'aéroport de Brindisi est à environ 30 minutes. L'aéroport de Bari, avec plus de vols internationaux, est à environ 1 h 30."},
+      {"question": "Quel est l'aéroport le plus proche ?", "answer": "L'aéroport de Brindisi est à environ 24 minutes. L'aéroport de Bari, avec plus de vols internationaux, est à environ 1 h 12."},
       {"question": "La piscine est-elle privée ?", "answer": "Oui. La piscine de 40 m² est réservée à nos hôtes, avec transats et éclairage pour le soir."},
       {"question": "La villa convient-elle aux familles avec enfants ?", "answer": "Oui. Beaucoup de nos hôtes sont des familles avec enfants : la maison est spacieuse et la propriété calme et préservée."},
       {"question": "Peut-on télétravailler depuis la villa ?", "answer": "Oui. Le WiFi Starlink couvre toute la propriété et il y a deux bureaux dédiés, dont un réglable en hauteur."},
