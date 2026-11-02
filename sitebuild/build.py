@@ -143,6 +143,8 @@ def build(root: Path = ROOT, today: date | None = None) -> list[Path]:
         ("404.html", not_found),
         ("sitemap.xml", sitemap_xml(site, today)),
         ("robots.txt", robots_txt(site)),
+        # IndexNow ownership proof: a file named after the key, containing the key.
+        (f"{site.indexnow_key}.txt", site.indexnow_key),
     ):
         path = root / name
         path.write_text(text, encoding="utf-8")

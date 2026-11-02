@@ -117,6 +117,7 @@ class SiteConfig(Strict):
     hero: Hero
     og_image: OgImage
     pricing: Pricing
+    indexnow_key: str = Field(pattern=r"^[A-Za-z0-9-]{8,128}$")
 
     @field_validator("languages")
     @classmethod

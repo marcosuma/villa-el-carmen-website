@@ -64,5 +64,6 @@
       {"start": "09-07", "end": "09-30", "price": 540, "min_nights": 4},
       {"start": "10-01", "end": "10-06", "price": 420, "min_nights": 3}
     ]
-  }
+  },
+  "indexnow_key": "749b52b918ca4541b87182d9bb6d2638"
 }

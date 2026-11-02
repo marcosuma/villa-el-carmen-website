@@ -15,7 +15,8 @@ LANGUAGE_FILES = {
     "fr": "fr/index.html",
     "es": "es/index.html",
 }
-GENERATED = [*LANGUAGE_FILES.values(), "404.html", "robots.txt"]
+INDEXNOW_KEY = json.loads((ROOT / "src" / "site.json").read_text(encoding="utf-8"))["indexnow_key"]
+GENERATED = [*LANGUAGE_FILES.values(), "404.html", "robots.txt", f"{INDEXNOW_KEY}.txt"]
 
 
 def read_page(root: Path, code: str):
@@ -147,7 +148,19 @@ def test_page_faq_includes_the_price_question(built_site, pages, code):
     assert html.count(f"<summary>{pages[code].prices.faq_question}</summary>") == 1
 
 
+def test_build_writes_the_indexnow_key_file(built_site, site):
+    key_file = built_site / f"{site.indexnow_key}.txt"
+
+    assert key_file.read_text(encoding="utf-8") == site.indexnow_key
+
+
+def test_vercel_deploys_the_indexnow_key_file(site):
+    allowed, _ = vercel_rules()
+
+    assert f"{site.indexnow_key}.txt" in allowed
+
+
 def test_vercel_keeps_build_sources_off_the_site():
     allowed, _ = vercel_rules()
     assert {"index.html", "404.html", "robots.txt", "sitemap.xml"} <= allowed
-    assert not allowed & {"src", "sitebuild", "tests", "tools", "docs", "README.md"}
+    assert not allowed & {"src", "sitebuild", "tests", "tools", "docs", "README.md", ".github"}

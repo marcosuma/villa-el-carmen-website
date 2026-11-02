@@ -1,0 +1,36 @@
+# Tell Bing and the other IndexNow search engines when a page changes.
+# Runs after a push to main that touches a generated page; the script waits until
+# Vercel serves the new version before submitting. Run it by hand from the Actions
+# tab ("Run workflow") to submit every page.
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "*/index.html"
+  workflow_dispatch:
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements-dev.txt
+      - name: Submit changed pages
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            python -m sitebuild.indexnow --all
+          else
+            git diff --name-only "$BEFORE" "$AFTER" | python -m sitebuild.indexnow --changed-files -
+          fi
