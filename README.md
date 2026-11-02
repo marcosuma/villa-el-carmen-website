@@ -43,6 +43,7 @@ npm --prefix tools/css ci
 |---|---|
 | Change text in any language | edit `src/content/<lang>.json`, then `.venv/bin/python -m sitebuild.build` |
 | Change a shared fact (distance, guests, CIN) | edit `src/site.json`, then rebuild |
+| Change prices or seasons | edit `pricing` in `src/site.json`, rebuild; also update the plan in the pricing check's `prompts/weekly_check.md` |
 | Change the layout | edit `src/templates/`, rebuild, then recompile the CSS (below) |
 | Recompile the CSS | `npm --prefix tools/css run css` |
 | Add or replace a photo | put the original in `assets/images/`, map it in `src/media.json`, run `.venv/bin/python -m sitebuild.media --no-video`, then rebuild |
@@ -60,6 +61,12 @@ Push to GitHub: Vercel deploys every branch as a preview and `main` to
 production. `.vercelignore` limits the deployment to the generated pages and
 `assets/` (without the full-size originals), and `vercel.json` sets trailing
 slashes and cache headers.
+
+After a push to `main` that changes a page, the **IndexNow** GitHub workflow
+waits until Vercel serves the new HTML and submits the changed URLs to Bing
+and the other IndexNow search engines. To submit every page, run the workflow
+by hand from the Actions tab. To see the request without sending it:
+`.venv/bin/python -m sitebuild.indexnow --all --dry-run`.
 
 ## Legal identifiers
 

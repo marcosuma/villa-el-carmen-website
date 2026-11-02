@@ -64,11 +64,35 @@ Each page has one JSON-LD graph with:
   rooms, occupancy, amenities, `petsAllowed: false`, and the CIN and CIS as
   `PropertyValue` identifiers. The Airbnb listing and Instagram are listed
   under `sameAs`.
-- `FAQPage` with the questions shown on that page, in its language.
+- `LodgingBusiness.priceRange` from the cheapest and dearest season
+  (`€420–€740` in 2027).
+- `FAQPage` with the questions shown on that page, in its language, including
+  the price question generated from the seasons.
 
 There is deliberately no `aggregateRating`. Google ignores self-served
 reviews on a business's own site and may treat them as spam, so the 5.0
 Airbnb rating appears only as visible text.
+
+## AI assistants and agents
+
+ChatGPT, Gemini, Copilot, Perplexity and Claude answer travel questions from
+search indexes and the pages they can quote. Decisions:
+
+- **Facts in plain HTML, from one source.** Seasons, prices per night and
+  minimum stays come from `pricing` in `src/site.json` and appear as a table, a
+  closure note and an FAQ answer in every language, plus `priceRange` in the
+  JSON-LD. Prices are what the Airbnb rule sets charge; the text says Airbnb
+  adds its fees and shows the final price, without guessing other charges.
+- **Be in more than Google.** Bing feeds Copilot and is one of ChatGPT
+  search's sources; Claude's web search uses Brave. A November 2026 test
+  search outside Google returned the Airbnb listing but not this site. The
+  site pings IndexNow on every page change (`sitebuild/indexnow.py`,
+  `.github/workflows/indexnow.yml`); add it to Bing Webmaster Tools too
+  (import from Search Console) so Bing reads the sitemap and reports traffic.
+- **Open to AI crawlers.** `robots.txt` allows every user agent, including
+  OAI-SearchBot, and Vercel has no firewall rules blocking bots.
+- **No llms.txt.** Google said in June 2026 that Search ignores it, and studies
+  find AI crawlers rarely request it.
 
 ## Technical
 
@@ -90,5 +114,9 @@ Airbnb rating appears only as visible text.
 2. In Google Search Console (domain property), submit
    `https://elcarmenpuglia.com/sitemap.xml` and inspect `/` and `/it/`.
 3. Check the structured data with Google's Rich Results Test.
-4. Keep the Google Business Profile, if any, consistent with the name,
-   address and website shown here.
+4. Keep the Google Business Profile consistent with the name, address and
+   website shown here.
+5. Check the IndexNow workflow run in the GitHub Actions tab.
+6. When the season plan changes, update `pricing` in `src/site.json` and the
+   plan in the pricing check's prompt, so the site, Airbnb and the weekly
+   check agree.

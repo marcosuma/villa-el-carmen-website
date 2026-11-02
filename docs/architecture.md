@@ -37,6 +37,13 @@
   distance, and the same number of FAQ items.
 - `sitebuild/seo.py`: URLs, hreflang alternates, structured data, sitemap
   and robots.txt.
+- `sitebuild/pricing.py`: turns the season plan into the table rows, the
+  closure note, the price FAQ answer and the JSON-LD price range. Language
+  files hold only templates with `{placeholders}`; the build refuses a
+  template with a missing or unknown placeholder.
+- `sitebuild/indexnow.py`: maps a git diff to page URLs, waits until Vercel
+  serves the committed HTML and submits the URLs to IndexNow. Run by
+  `.github/workflows/indexnow.yml` after pushes to `main`.
 - `sitebuild/build.py`: renders every page with `StrictUndefined`, so a
   missing string fails the build instead of printing an empty gap.
 - `sitebuild/media.py`: resizes photos to WebP at 480/960/1600 px (never
