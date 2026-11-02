@@ -76,6 +76,11 @@
   .distance-list dt { color: #4e443a; }
   .distance-list dd { font-weight: 700; white-space: nowrap; }
 
+  .price-table { width: 100%; border-collapse: collapse; text-align: left; font-size: .95rem; }
+  .price-table th { font-weight: 700; color: #4e443a; padding: .6rem .5rem; border-bottom: 2px solid #c0bc88; }
+  .price-table td { padding: .6rem .5rem; border-bottom: 1px solid #e8e2d0; color: #6b6559; }
+  .price-table td:nth-child(2) { font-weight: 700; color: #4e443a; white-space: nowrap; }
+
   .faq-item { background: #fff; border-radius: .5rem; box-shadow: 0 1px 3px rgb(0 0 0 / .08); }
   .faq-item summary { cursor: pointer; padding: 1rem 1.25rem; font-weight: 700; list-style: none; position: relative; padding-right: 2.5rem; }
   .faq-item summary::-webkit-details-marker { display: none; }

@@ -147,6 +147,7 @@
     "email_label": "Email",
     "instagram_label": "Instagram"
   },
+  "prices": {"title": "Stagioni e prezzi {year}", "dates_header": "Date", "price_header": "A notte", "stay_header": "Soggiorno minimo", "price_format": "{price} €", "nights_format": "{nights} notti", "months": ["gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"], "day_format": "{day} {month}", "note": "Prezzi a notte per l'intera villa, che ospita fino a {guests} persone. Le commissioni di Airbnb si aggiungono al momento della prenotazione: Airbnb mostra il prezzo finale per le tue date.", "closed_note": "La villa è chiusa dal {closed_from} al {closed_to}.", "faq_question": "Quanto costa la villa a notte?", "faq_answer": "Nel {year} l'intera villa costa da {min_price} a {max_price} a notte a seconda della stagione, con un soggiorno minimo da {min_nights} a {max_nights} notti. Le commissioni di Airbnb si aggiungono al momento della prenotazione: Airbnb mostra il prezzo finale per le tue date."},
   "footer": {
     "tagline": "Villa con trullo e piscina tra gli ulivi",
     "location": "San Vito dei Normanni (BR), Puglia, Italia",

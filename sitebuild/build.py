@@ -20,6 +20,7 @@ from sitebuild.content import (
     load_site,
 )
 from sitebuild.models import ImageInfo, Language, PageContent, SiteConfig
+from sitebuild.pricing import closed_note, faq_items, season_rows
 from sitebuild.seo import (
     airbnb_url,
     alternates,
@@ -97,6 +98,13 @@ def page_context(
             for d in site.distances
         ],
         "other_languages": [other for other in site.languages if other.code != language.code],
+        "faq_items": faq_items(site, page),
+        "prices": {
+            "title": page.prices.title.format(year=site.pricing.year),
+            "rows": season_rows(site.pricing, page.prices),
+            "note": page.prices.note.format(guests=site.facts.guests),
+            "closed": closed_note(site.pricing, page.prices),
+        },
         "structured_data": structured_data(site, language, page),
         "year": today.year,
     }

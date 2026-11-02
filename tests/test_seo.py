@@ -55,7 +55,15 @@ def test_structured_data_contains_cin_cis_and_faq(site, pages):
     assert identifiers == {"CIN": "IT074017C200100796", "CIS": "BR07401791000058399"}
     assert lodging["containsPlace"]["occupancy"]["maxValue"] == 5
     faq = next(node for node in data["@graph"] if node["@type"] == "FAQPage")
-    assert len(faq["mainEntity"]) == len(pages["it"].faq.items)
+    assert len(faq["mainEntity"]) == len(pages["it"].faq.items) + 1
+    assert pages["it"].prices.faq_question in {item["name"] for item in faq["mainEntity"]}
+
+
+def test_structured_data_gives_the_nightly_price_range(site, pages):
+    data = json.loads(structured_data(site, site.language("en"), pages["en"]))
+    lodging = next(node for node in data["@graph"] if node["@type"] == "LodgingBusiness")
+
+    assert lodging["priceRange"] == "€420–€740"
 
 
 def test_structured_data_cannot_close_script_tag(site, pages):

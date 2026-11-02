@@ -147,6 +147,7 @@
     "email_label": "Email",
     "instagram_label": "Instagram"
   },
+  "prices": {"title": "Temporadas y precios {year}", "dates_header": "Fechas", "price_header": "Por noche", "stay_header": "Estancia mínima", "price_format": "{price} €", "nights_format": "{nights} noches", "months": ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic"], "day_format": "{day} {month}", "note": "Precios por noche para toda la villa, con capacidad para {guests} huéspedes. Las tarifas de Airbnb se añaden al reservar; Airbnb muestra el precio final para tus fechas.", "closed_note": "La villa está cerrada del {closed_from} al {closed_to}.", "faq_question": "¿Cuánto cuesta la villa por noche?", "faq_answer": "En {year}, la villa entera cuesta de {min_price} a {max_price} por noche según la temporada, con una estancia mínima de {min_nights} a {max_nights} noches. Las tarifas de Airbnb se añaden al reservar; Airbnb muestra el precio final para tus fechas."},
   "footer": {
     "tagline": "Villa con trullo y piscina entre olivos",
     "location": "San Vito dei Normanni (BR), Puglia, Italia",

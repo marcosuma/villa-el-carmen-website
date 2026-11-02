@@ -80,6 +80,7 @@
       "checkinTime": "16:00",
       "checkoutTime": "10:00",
       "numberOfRooms": 3,
+      "priceRange": "€420–€740",
       "petsAllowed": false,
       "amenityFeature": [
         {
@@ -207,6 +208,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Lo sentimos, pero no se admiten mascotas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta la villa por noche?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En 2027, la villa entera cuesta de 420 € a 740 € por noche según la temporada, con una estancia mínima de 3 a 6 noches. Las tarifas de Airbnb se añaden al reservar; Airbnb muestra el precio final para tus fechas."
           }
         },
         {
@@ -665,6 +674,10 @@ loading="lazy" decoding="async">
           <p>Lo sentimos, pero no se admiten mascotas.</p>
         </details>
         <details class="faq-item">
+          <summary>¿Cuánto cuesta la villa por noche?</summary>
+          <p>En 2027, la villa entera cuesta de 420 € a 740 € por noche según la temporada, con una estancia mínima de 3 a 6 noches. Las tarifas de Airbnb se añaden al reservar; Airbnb muestra el precio final para tus fechas.</p>
+        </details>
+        <details class="faq-item">
           <summary>¿Cómo se reserva?</summary>
           <p>Las reservas se hacen en Airbnb, donde encontraréis la disponibilidad y los precios actualizados. Para cualquier pregunta antes de reservar, escribidnos por email o en Instagram.</p>
         </details>
@@ -676,7 +689,24 @@ loading="lazy" decoding="async">
     <div class="container mx-auto px-6 lg:px-20 max-w-3xl text-center fade-in-up">
       <h2 class="text-4xl font-bold mb-4">Reserva tu estancia</h2>
       <p class="text-lg text-theme-muted mb-4 leading-relaxed">Consulta la disponibilidad y los precios para tus fechas en Airbnb, donde puedes reservar con seguridad.</p>
-      <p class="text-theme-muted mb-8 font-semibold">&#34;Favorito entre huéspedes&#34; en Airbnb, con una valoración de 5,0.</p>
+      <h3 class="text-2xl font-bold mt-10 mb-4">Temporadas y precios 2027</h3>
+      <table class="price-table">
+        <thead>
+          <tr><th scope="col">Fechas</th><th scope="col">Por noche</th><th scope="col">Estancia mínima</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1 abr – 31 may</td><td>420 €</td><td>3 noches</td></tr>
+          <tr><td>1 jun – 14 jun</td><td>500 €</td><td>3 noches</td></tr>
+          <tr><td>15 jun – 9 jul</td><td>580 €</td><td>4 noches</td></tr>
+          <tr><td>10 jul – 7 ago</td><td>660 €</td><td>5 noches</td></tr>
+          <tr><td>8 ago – 22 ago</td><td>740 €</td><td>6 noches</td></tr>
+          <tr><td>23 ago – 6 sept</td><td>580 €</td><td>4 noches</td></tr>
+          <tr><td>7 sept – 30 sept</td><td>540 €</td><td>4 noches</td></tr>
+          <tr><td>1 oct – 6 oct</td><td>420 €</td><td>3 noches</td></tr>
+        </tbody>
+      </table>
+      <p class="text-sm text-theme-muted mt-4 leading-relaxed">Precios por noche para toda la villa, con capacidad para 5 huéspedes. Las tarifas de Airbnb se añaden al reservar; Airbnb muestra el precio final para tus fechas. La villa está cerrada del 7 oct al 31 mar.</p>
+      <p class="text-theme-muted mt-10 mb-8 font-semibold">&#34;Favorito entre huéspedes&#34; en Airbnb, con una valoración de 5,0.</p>
       <a href="https://www.airbnb.es/rooms/1205785008353242688" target="_blank" rel="noopener" class="btn-primary inline-block py-4 px-10 rounded-full text-lg uppercase tracking-wider">Ver fechas y precios en Airbnb</a>
       <p class="mt-10 text-theme-muted">¿Preguntas antes de reservar? Escríbenos.</p>
       <div class="mt-4 flex flex-col sm:flex-row justify-center gap-4">

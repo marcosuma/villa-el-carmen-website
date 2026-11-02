@@ -147,6 +147,7 @@
     "email_label": "E-Mail",
     "instagram_label": "Instagram"
   },
+  "prices": {"title": "Saisons und Preise {year}", "dates_header": "Zeitraum", "price_header": "Pro Nacht", "stay_header": "Mindestaufenthalt", "price_format": "{price} €", "nights_format": "{nights} Nächte", "months": ["Jan.", "Feb.", "März", "Apr.", "Mai", "Juni", "Juli", "Aug.", "Sept.", "Okt.", "Nov.", "Dez."], "day_format": "{day}. {month}", "note": "Preise pro Nacht für die ganze Villa, die bis zu {guests} Gästen Platz bietet. Die Airbnb-Gebühren kommen bei der Buchung hinzu; den Endpreis für Ihre Reisedaten zeigt Airbnb.", "closed_note": "Die Villa ist vom {closed_from} bis {closed_to} geschlossen.", "faq_question": "Was kostet die Villa pro Nacht?", "faq_answer": "{year} kostet die ganze Villa je nach Saison {min_price} bis {max_price} pro Nacht, bei einem Mindestaufenthalt von {min_nights} bis {max_nights} Nächten. Die Airbnb-Gebühren kommen bei der Buchung hinzu; den Endpreis für Ihre Reisedaten zeigt Airbnb."},
   "footer": {
     "tagline": "Villa mit Trullo und Pool im Olivenhain",
     "location": "San Vito dei Normanni (BR), Apulien, Italien",

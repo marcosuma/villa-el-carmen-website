@@ -7,6 +7,7 @@ from pydantic import ValidationError
 
 from sitebuild import ROOT
 from sitebuild.models import ImageInfo, PageContent, SiteConfig
+from sitebuild.pricing import template_problems
 
 SRC = ROOT / "src"
 
@@ -71,6 +72,7 @@ def check_page(
     missing_labels = sorted(distance_keys - set(page.location.distance_labels))
     if missing_labels:
         problems.append(f"{code}: missing distance label for {', '.join(missing_labels)}")
+    problems += [f"{code}: {problem}" for problem in template_problems(page.prices)]
     return problems
 
 

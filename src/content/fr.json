@@ -147,6 +147,7 @@
     "email_label": "E-mail",
     "instagram_label": "Instagram"
   },
+  "prices": {"title": "Saisons et tarifs {year}", "dates_header": "Dates", "price_header": "Par nuit", "stay_header": "Séjour minimum", "price_format": "{price} €", "nights_format": "{nights} nuits", "months": ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."], "day_format": "{day} {month}", "note": "Prix par nuit pour toute la villa, qui accueille jusqu'à {guests} voyageurs. Les frais Airbnb s'ajoutent à la réservation ; Airbnb affiche le prix final pour vos dates.", "closed_note": "La villa est fermée du {closed_from} au {closed_to}.", "faq_question": "Combien coûte la villa par nuit ?", "faq_answer": "En {year}, la villa entière coûte de {min_price} à {max_price} par nuit selon la saison, avec un séjour minimum de {min_nights} à {max_nights} nuits. Les frais Airbnb s'ajoutent à la réservation ; Airbnb affiche le prix final pour vos dates."},
   "footer": {
     "tagline": "Villa avec trullo et piscine au milieu des oliviers",
     "location": "San Vito dei Normanni (BR), Pouilles, Italie",

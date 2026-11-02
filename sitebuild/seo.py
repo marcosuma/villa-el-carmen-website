@@ -1,10 +1,12 @@
 """URLs, hreflang alternates, structured data and the sitemap."""
 
 import json
+from collections.abc import Sequence
 from datetime import date
 from xml.sax.saxutils import escape
 
-from sitebuild.models import Language, PageContent, SiteConfig
+from sitebuild.models import FaqItem, Language, PageContent, SiteConfig
+from sitebuild.pricing import faq_items, price_range_label
 
 X_DEFAULT = "x-default"
 
@@ -69,6 +71,7 @@ def lodging_schema(site: SiteConfig, language: Language, page: PageContent) -> d
         "checkinTime": facts.checkin_time,
         "checkoutTime": facts.checkout_time,
         "numberOfRooms": facts.bedrooms,
+        "priceRange": price_range_label(site.pricing),
         "petsAllowed": False,
         "amenityFeature": [
             {"@type": "LocationFeatureSpecification", "name": name, "value": True}
@@ -88,7 +91,7 @@ def lodging_schema(site: SiteConfig, language: Language, page: PageContent) -> d
     }
 
 
-def faq_schema(page: PageContent) -> dict:
+def faq_schema(items: Sequence[FaqItem]) -> dict:
     return {
         "@type": "FAQPage",
         "mainEntity": [
@@ -97,7 +100,7 @@ def faq_schema(page: PageContent) -> dict:
                 "name": item.question,
                 "acceptedAnswer": {"@type": "Answer", "text": item.answer},
             }
-            for item in page.faq.items
+            for item in items
         ],
     }
 
@@ -114,7 +117,7 @@ def structured_data(site: SiteConfig, language: Language, page: PageContent) -> 
                 "inLanguage": [lang.code for lang in site.languages],
             },
             lodging_schema(site, language, page),
-            faq_schema(page),
+            faq_schema(faq_items(site, page)),
         ],
     }
     # "</" inside a JSON string would close the <script> element early.

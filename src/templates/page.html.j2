@@ -203,7 +203,7 @@
     <div class="container mx-auto px-6 lg:px-20 max-w-3xl">
       {{ section_title(page.faq.h2) }}
       <div class="space-y-4 fade-in-up">
-        {% for item in page.faq.items %}
+        {% for item in faq_items %}
         <details class="faq-item">
           <summary>{{ item.question }}</summary>
           <p>{{ item.answer }}</p>
@@ -217,7 +217,19 @@
     <div class="container mx-auto px-6 lg:px-20 max-w-3xl text-center fade-in-up">
       <h2 class="text-4xl font-bold mb-4">{{ page.book.h2 }}</h2>
       <p class="text-lg text-theme-muted mb-4 leading-relaxed">{{ page.book.body }}</p>
-      <p class="text-theme-muted mb-8 font-semibold">{{ page.book.trust }}</p>
+      <h3 class="text-2xl font-bold mt-10 mb-4">{{ prices.title }}</h3>
+      <table class="price-table">
+        <thead>
+          <tr><th scope="col">{{ page.prices.dates_header }}</th><th scope="col">{{ page.prices.price_header }}</th><th scope="col">{{ page.prices.stay_header }}</th></tr>
+        </thead>
+        <tbody>
+          {% for row in prices.rows %}
+          <tr><td>{{ row.dates }}</td><td>{{ row.price }}</td><td>{{ row.stay }}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <p class="text-sm text-theme-muted mt-4 leading-relaxed">{{ prices.note }} {{ prices.closed }}</p>
+      <p class="text-theme-muted mt-10 mb-8 font-semibold">{{ page.book.trust }}</p>
       <a href="{{ airbnb }}" target="_blank" rel="noopener" class="btn-primary inline-block py-4 px-10 rounded-full text-lg uppercase tracking-wider">{{ page.book.cta }}</a>
       <p class="mt-10 text-theme-muted">{{ page.book.questions }}</p>
       <div class="mt-4 flex flex-col sm:flex-row justify-center gap-4">

@@ -80,6 +80,7 @@
       "checkinTime": "16:00",
       "checkoutTime": "10:00",
       "numberOfRooms": 3,
+      "priceRange": "€420–€740",
       "petsAllowed": false,
       "amenityFeature": [
         {
@@ -207,6 +208,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "We are sorry, but pets are not allowed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does the villa cost per night?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In 2027 the whole villa costs from €420 to €740 per night depending on the season, with a minimum stay of 3 to 6 nights. Airbnb's fees are added when you book, and Airbnb shows the final price for your dates."
           }
         },
         {
@@ -665,6 +674,10 @@ loading="lazy" decoding="async">
           <p>We are sorry, but pets are not allowed.</p>
         </details>
         <details class="faq-item">
+          <summary>How much does the villa cost per night?</summary>
+          <p>In 2027 the whole villa costs from €420 to €740 per night depending on the season, with a minimum stay of 3 to 6 nights. Airbnb&#39;s fees are added when you book, and Airbnb shows the final price for your dates.</p>
+        </details>
+        <details class="faq-item">
           <summary>How do I book?</summary>
           <p>Bookings are made through Airbnb, where you can see live availability and prices. For any question before booking, write to us by email or on Instagram.</p>
         </details>
@@ -676,7 +689,24 @@ loading="lazy" decoding="async">
     <div class="container mx-auto px-6 lg:px-20 max-w-3xl text-center fade-in-up">
       <h2 class="text-4xl font-bold mb-4">Book your stay</h2>
       <p class="text-lg text-theme-muted mb-4 leading-relaxed">See availability and prices for your dates on Airbnb, where you can book securely.</p>
-      <p class="text-theme-muted mb-8 font-semibold">Guest Favourite on Airbnb, rated 5.0 by our guests.</p>
+      <h3 class="text-2xl font-bold mt-10 mb-4">Seasons and prices 2027</h3>
+      <table class="price-table">
+        <thead>
+          <tr><th scope="col">Dates</th><th scope="col">Per night</th><th scope="col">Minimum stay</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1 Apr – 31 May</td><td>€420</td><td>3 nights</td></tr>
+          <tr><td>1 Jun – 14 Jun</td><td>€500</td><td>3 nights</td></tr>
+          <tr><td>15 Jun – 9 Jul</td><td>€580</td><td>4 nights</td></tr>
+          <tr><td>10 Jul – 7 Aug</td><td>€660</td><td>5 nights</td></tr>
+          <tr><td>8 Aug – 22 Aug</td><td>€740</td><td>6 nights</td></tr>
+          <tr><td>23 Aug – 6 Sep</td><td>€580</td><td>4 nights</td></tr>
+          <tr><td>7 Sep – 30 Sep</td><td>€540</td><td>4 nights</td></tr>
+          <tr><td>1 Oct – 6 Oct</td><td>€420</td><td>3 nights</td></tr>
+        </tbody>
+      </table>
+      <p class="text-sm text-theme-muted mt-4 leading-relaxed">Prices per night for the whole villa, which sleeps up to 5. Airbnb&#39;s fees are added when you book, and Airbnb shows the final price for your dates. The villa is closed from 7 Oct to 31 Mar.</p>
+      <p class="text-theme-muted mt-10 mb-8 font-semibold">Guest Favourite on Airbnb, rated 5.0 by our guests.</p>
       <a href="https://www.airbnb.com/rooms/1205785008353242688" target="_blank" rel="noopener" class="btn-primary inline-block py-4 px-10 rounded-full text-lg uppercase tracking-wider">See dates and prices on Airbnb</a>
       <p class="mt-10 text-theme-muted">Questions before booking? Write to us.</p>
       <div class="mt-4 flex flex-col sm:flex-row justify-center gap-4">

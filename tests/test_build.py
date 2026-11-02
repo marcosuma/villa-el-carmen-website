@@ -131,6 +131,22 @@ def test_vercel_deploys_every_asset_a_page_uses(built_site, code):
     assert not_deployed == []
 
 
+@pytest.mark.parametrize("code", LANGUAGE_FILES)
+def test_page_lists_every_season_with_price_and_minimum_stay(built_site, site, code):
+    html = (built_site / LANGUAGE_FILES[code]).read_text(encoding="utf-8")
+    table = html[html.index('class="price-table"') : html.index("</table>")]
+
+    assert table.count("<tr><td>") == len(site.pricing.seasons)
+    assert "740" in table and "420" in table
+
+
+@pytest.mark.parametrize("code", LANGUAGE_FILES)
+def test_page_faq_includes_the_price_question(built_site, pages, code):
+    html = (built_site / LANGUAGE_FILES[code]).read_text(encoding="utf-8")
+
+    assert html.count(f"<summary>{pages[code].prices.faq_question}</summary>") == 1
+
+
 def test_vercel_keeps_build_sources_off_the_site():
     allowed, _ = vercel_rules()
     assert {"index.html", "404.html", "robots.txt", "sitemap.xml"} <= allowed

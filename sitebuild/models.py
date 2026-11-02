@@ -1,6 +1,8 @@
 """Typed shapes of the site configuration and the per-language copy."""
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+from datetime import date
+
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 
 class Strict(BaseModel):
@@ -45,6 +47,46 @@ class Distance(Strict):
     minutes: int = Field(gt=0)
 
 
+class Season(Strict):
+    start: str = Field(pattern=r"^\d{2}-\d{2}$", description="MM-DD, first night")
+    end: str = Field(pattern=r"^\d{2}-\d{2}$", description="MM-DD, last night")
+    price: int = Field(gt=0, description="Euro per night for the whole villa")
+    min_nights: int = Field(gt=0)
+
+
+class Pricing(Strict):
+    year: int = Field(ge=2026)
+    seasons: list[Season] = Field(min_length=1)
+
+    def season_dates(self) -> list[tuple[date, date, Season]]:
+        return [
+            (
+                date.fromisoformat(f"{self.year}-{season.start}"),
+                date.fromisoformat(f"{self.year}-{season.end}"),
+                season,
+            )
+            for season in self.seasons
+        ]
+
+    @model_validator(mode="after")
+    def seasons_in_order_without_overlap(self) -> "Pricing":
+        try:
+            spans = self.season_dates()
+        except ValueError as error:
+            raise ValueError(f"invalid season date in {self.year}: {error}") from error
+        for start, end, season in spans:
+            if end < start:
+                raise ValueError(f"season {season.start}..{season.end} ends before it starts")
+        neighbours = zip(spans, spans[1:], strict=False)
+        for (_, previous_end, previous), (next_start, _, following) in neighbours:
+            if next_start <= previous_end:
+                raise ValueError(
+                    f"seasons {previous.start}..{previous.end} and "
+                    f"{following.start}..{following.end} overlap or are out of order"
+                )
+        return self
+
+
 class Hero(Strict):
     video: str
     poster: str
@@ -74,6 +116,7 @@ class SiteConfig(Strict):
     gallery: list[str]
     hero: Hero
     og_image: OgImage
+    pricing: Pricing
 
     @field_validator("languages")
     @classmethod
@@ -206,6 +249,25 @@ class Book(Strict):
     instagram_label: str
 
 
+class PricesCopy(Strict):
+    """Labels for the seasons table; {placeholders} are filled from site.json."""
+
+    title: str = Field(description="Contains {year}")
+    dates_header: str
+    price_header: str
+    stay_header: str
+    price_format: str = Field(description="Contains {price}")
+    nights_format: str = Field(description="Contains {nights}")
+    months: list[str] = Field(min_length=12, max_length=12)
+    day_format: str = Field(description="Contains {day} and {month}")
+    note: str = Field(description="Contains {guests}")
+    closed_note: str = Field(description="Contains {closed_from} and {closed_to}")
+    faq_question: str
+    faq_answer: str = Field(
+        description="Contains {year}, {min_price}, {max_price}, {min_nights}, {max_nights}"
+    )
+
+
 class Footer(Strict):
     tagline: str
     location: str
@@ -235,6 +297,7 @@ class PageContent(Strict):
     location: Location
     faq: Faq
     book: Book
+    prices: PricesCopy
     footer: Footer
     not_found: NotFound
     alts: dict[str, str]
