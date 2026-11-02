@@ -2,7 +2,8 @@
   "widths": [
     480,
     960,
-    1600
+    1600,
+    2400
   ],
   "quality": 76,
   "images": [
@@ -117,6 +118,42 @@
     {
       "slug": "villa-night",
       "source": "assets/images/villa-by-night.jpeg"
+    },
+    {
+      "slug": "aerial-dusk",
+      "source": "assets/images/drive/villa_01.jpeg"
+    },
+    {
+      "slug": "bathroom-stone-sink",
+      "source": "assets/images/drive/villa_23.jpeg"
+    },
+    {
+      "slug": "bathroom-stone-basin",
+      "source": "assets/images/drive/villa_21.jpeg"
+    },
+    {
+      "slug": "kitchen-tiles",
+      "source": "assets/images/drive/villa_16.jpeg"
+    },
+    {
+      "slug": "pergola-dusk",
+      "source": "assets/images/drive/villa_27.jpeg"
+    },
+    {
+      "slug": "outdoor-fireplace",
+      "source": "assets/images/drive/villa_29.jpeg"
+    },
+    {
+      "slug": "table-set",
+      "source": "assets/images/drive/villa_31.jpeg"
+    },
+    {
+      "slug": "pergola-lounge",
+      "source": "assets/images/drive/villa_33.jpeg"
+    },
+    {
+      "slug": "pool-summer",
+      "source": "assets/images/drive/villa_36.jpeg"
     }
   ],
   "og_image": {
