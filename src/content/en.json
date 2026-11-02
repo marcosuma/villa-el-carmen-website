@@ -7,17 +7,23 @@
   },
   "nav": {
     "villa": "The villa",
+    "experiences": "Experiences",
+    "gallery": "Gallery",
     "location": "Location",
     "faq": "FAQ",
     "book": "Book",
     "menu": "Menu",
     "languages": "Languages"
   },
+  "eyebrows": {
+    "stone": "The stone heart",
+    "work": "Work from Puglia"
+  },
   "hero": {
     "h1": "A villa with a restored trullo and pool near Ostuni",
     "subtitle": "A private retreat among one hectare of olive trees in Puglia. 3 bedrooms, sleeps 5.",
-    "cta_primary": "Check availability on Airbnb",
-    "cta_secondary": "Discover the villa",
+    "cta_primary": "Check availability",
+    "cta_secondary": "View on Airbnb",
     "video_label": "Video of Villa El Carmen: the pool, the villa and the olive grove"
   },
   "facts": {
@@ -89,9 +95,7 @@
         "h3": "Private chef and cooking class",
         "body": "On request we can arrange a private chef or a hands-on cooking class at the villa: learn to make fresh orecchiette and taste traditional Apulian dishes."
       }
-    ],
-    "previous": "Previous slide",
-    "next": "Next slide"
+    ]
   },
   "gallery": {
     "h2": "Moments at the villa",
@@ -148,6 +152,26 @@
     "instagram_label": "Instagram"
   },
   "prices": {"title": "Seasons and prices {year}", "dates_header": "Dates", "price_header": "Per night", "stay_header": "Minimum stay", "price_format": "€{price}", "nights_format": "{nights} nights", "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], "day_format": "{day} {month}", "note": "Prices per night for the whole villa, which sleeps up to {guests}. Airbnb's fees are added when you book, and Airbnb shows the final price for your dates.", "closed_note": "The villa is closed from {closed_from} to {closed_to}.", "faq_question": "How much does the villa cost per night?", "faq_answer": "In {year} the whole villa costs from {min_price} to {max_price} per night depending on the season, with a minimum stay of {min_nights} to {max_nights} nights. Airbnb's fees are added when you book, and Airbnb shows the final price for your dates."},
+  "calendar": {
+    "title": "Availability",
+    "intro": "Choose your arrival and departure dates, then confirm the price on Airbnb.",
+    "arrival": "Arrival",
+    "departure": "Departure",
+    "guests": "Guests",
+    "select_arrival": "Select your arrival date",
+    "select_departure": "Now select your departure date",
+    "nights": {"one": "{n} night", "other": "{n} nights"},
+    "guest_count": {"one": "{n} guest", "other": "{n} guests"},
+    "available": "Available",
+    "booked": "Booked",
+    "clear": "Clear dates",
+    "cta_dates": "See the price on Airbnb",
+    "previous_month": "Previous month",
+    "next_month": "Next month",
+    "loading": "Loading availability…",
+    "error": "The calendar can't be loaded right now. See live dates on Airbnb.",
+    "note": "Booked dates come from Airbnb and are updated every hour. Airbnb confirms the price and the minimum stay."
+  },
   "footer": {
     "tagline": "Villa with trullo and pool among the olive trees",
     "location": "San Vito dei Normanni (BR), Puglia, Italy",
@@ -186,6 +210,15 @@
     "aperitivo": "Aperitivo board with wine on the terrace",
     "outdoor-dining": "Covered outdoor dining table for ten",
     "orecchiette": "Fresh orecchiette made by hand during a cooking class",
-    "countryside-aerial": "Aerial view of the olive groves around the villa"
+    "countryside-aerial": "Aerial view of the olive groves around the villa",
+    "aerial-dusk": "Aerial view of the villa and the lit pool at dusk, among the olive groves",
+    "bathroom-stone-sink": "Bathroom with a stone sink and a wooden-framed mirror",
+    "bathroom-stone-basin": "Bathroom with a round stone washbasin",
+    "kitchen-tiles": "Kitchen with patterned tiles and a window onto the olive trees",
+    "pergola-dusk": "Covered terrace lit at dusk",
+    "outdoor-fireplace": "Outdoor fireplace and barbecue",
+    "table-set": "Table set for lunch under the pergola, by an old stone wall",
+    "pergola-lounge": "Outdoor lounge under the pergola, looking out to the pool",
+    "pool-summer": "The pool on a summer day, with a parasol among the olive trees"
   }
 }

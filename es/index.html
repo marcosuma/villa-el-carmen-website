@@ -13,7 +13,7 @@
 <link rel="alternate" hreflang="es" href="https://elcarmenpuglia.com/es/">
 <link rel="alternate" hreflang="x-default" href="https://elcarmenpuglia.com/">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="theme-color" content="#4e443a">
+<meta name="theme-color" content="#34251a">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Villa El Carmen">
 <meta property="og:title" content="Villa El Carmen: villa con trullo y piscina cerca de Ostuni">
@@ -33,10 +33,10 @@
 <meta name="twitter:image" content="https://elcarmenpuglia.com/assets/img/og-villa-el-carmen.jpg">
 <link rel="icon" type="image/png" sizes="180x180" href="/assets/icons/web/favicon.png">
 <link rel="apple-touch-icon" href="/assets/icons/web/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lato:wght@300;400;700&display=swap">
-<link rel="stylesheet" href="/assets/css/site.css"><link rel="preload" as="image" href="/assets/img/hero-poster.webp" fetchpriority="high">
+<link rel="preload" href="/assets/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/work-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript><link rel="preload" as="image" href="/assets/img/hero-poster.webp" fetchpriority="high">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -232,25 +232,29 @@
 }
 </script>
 </head>
-<body class="leading-normal tracking-normal">
+<body>
 <a href="#main" class="skip-link">La villa</a>
 
 <header class="site-header">
-  <div class="container mx-auto flex flex-wrap items-center justify-between py-2 px-4">
-    <a class="flex items-center text-white text-2xl" href="/es/">
-      <img src="/assets/icons/web/logo.webp" width="40" height="40" alt="" class="h-10 w-10 mr-3 rounded-full object-cover">
-      <span class="font-display font-bold">Villa El Carmen</span>
+  <div class="container-wide flex flex-wrap items-center justify-between gap-x-4 py-3">
+    <a class="flex items-center gap-2 sm:gap-3" href="/es/">
+      <img src="/assets/icons/web/logo.webp" width="36" height="36" alt="" class="h-9 w-9 rounded-full object-cover">
+      <span class="font-display text-xl sm:text-2xl">Villa El Carmen</span>
     </a>
-    <button type="button" class="lg:hidden p-2 text-white" data-nav-toggle aria-controls="site-nav" aria-expanded="false">
-      <span class="sr-only">Menú</span>
-      <svg class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-    </button>
+    <div class="flex items-center gap-2 lg:order-last">
+      <a href="#book" class="btn btn-primary px-4 py-2 sm:px-5">Reservar</a>
+      <button type="button" class="rounded-full p-2 hover:bg-olive-fg/10 lg:hidden" data-nav-toggle aria-controls="site-nav" aria-expanded="false">
+        <span class="sr-only">Menú</span>
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
+    </div>
     <nav id="site-nav" class="site-nav hidden lg:flex" aria-label="Menú">
-      <ul class="flex flex-col lg:flex-row items-center gap-1 lg:gap-2">
+      <ul class="flex flex-col items-center gap-1 lg:flex-row lg:gap-7">
         <li><a href="#villa">La villa</a></li>
+        <li><a href="#experiences">Experiencias</a></li>
+        <li><a href="#gallery">Galería</a></li>
         <li><a href="#location">Ubicación</a></li>
         <li><a href="#faq">Preguntas</a></li>
-        <li><a href="#book" class="nav-book">Reservar</a></li>
       </ul>
       <ul class="language-switcher" aria-label="Idiomas">
         <li>
@@ -279,364 +283,324 @@
       <source src="/assets/video/villa-el-carmen.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay"></div>
-    <div class="relative z-10 text-center text-white px-6 max-w-4xl">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Villa con trullo restaurado y piscina cerca de Ostuni</h1>
-      <p class="text-lg md:text-2xl font-light mb-8">Un refugio privado entre una hectárea de olivos en Puglia. 3 dormitorios, hasta 5 huéspedes.</p>
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="https://www.airbnb.es/rooms/1205785008353242688" target="_blank" rel="noopener" class="btn-primary py-3 px-8 rounded-full text-lg uppercase tracking-wider">Consultar disponibilidad en Airbnb</a>
-        <a href="#villa" class="btn-secondary py-3 px-8 rounded-full text-lg uppercase tracking-wider">Descubrir la villa</a>
+    <div class="container-wide relative pb-20 pt-32 text-olive-fg md:pb-24">
+      <p class="eyebrow text-peach">San Vito dei Normanni · Puglia</p>
+      <h1 class="max-w-4xl text-5xl leading-[1.05] md:text-7xl lg:text-8xl">Villa con trullo restaurado y piscina cerca de Ostuni</h1>
+      <p class="mt-6 max-w-xl text-lg opacity-90">Un refugio privado entre una hectárea de olivos en Puglia. 3 dormitorios, hasta 5 huéspedes.</p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="#book" class="btn btn-primary">Ver disponibilidad</a>
+        <a href="https://www.airbnb.es/rooms/1205785008353242688" target="_blank" rel="noopener" class="btn btn-ghost">Ver en Airbnb</a>
       </div>
     </div>
   </section>
 
-  <section class="py-10 bg-theme-white border-b border-theme-line" aria-label="La villa">
-    <ul class="container mx-auto px-6 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-6 text-center text-theme-muted">
-      <li class="flex flex-col items-center">
-        <img src="/assets/icons/web/guests.webp" width="48" height="48" alt="" class="w-10 h-10 mb-2 object-contain" loading="lazy">
-        <span class="font-semibold">5 huéspedes</span>
+  <section class="bg-olive text-olive-fg" aria-label="La villa">
+    <ul class="container-wide grid grid-cols-2 gap-6 py-10 sm:grid-cols-4 lg:grid-cols-8">
+      <li class="flex flex-col items-center gap-2 text-center text-sm">
+        <svg class="h-6 w-6 text-peach" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span>5 huéspedes</span>
       </li>
-      <li class="flex flex-col items-center">
-        <img src="/assets/icons/web/bedroom.webp" width="48" height="48" alt="" class="w-10 h-10 mb-2 object-contain" loading="lazy">
-        <span class="font-semibold">3 dormitorios</span>
+      <li class="flex flex-col items-center gap-2 text-center text-sm">
+        <svg class="h-6 w-6 text-peach" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>
+        <span>3 dormitorios</span>
       </li>
-      <li class="flex flex-col items-center">
-        <svg class="w-10 h-10 mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 12h18v2a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5v-2Z"/><path d="M6 12V6a2 2 0 0 1 4 0"/><path d="M7 19l-1 2M17 19l1 2"/></svg>
-        <span class="font-semibold">3 baños</span>
+      <li class="flex flex-col items-center gap-2 text-center text-sm">
+        <svg class="h-6 w-6 text-peach" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 4 8 6"/><path d="M17 19v2"/><path d="M2 12h20"/><path d="M7 19v2"/><path d="M9 5 7.621 3.621A2.121 2.121 0 0 0 4 5v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/></svg>
+        <span>3 baños</span>
       </li>
-      <li class="flex flex-col items-center">
-        <img src="/assets/icons/web/swimming-pool.webp" width="48" height="48" alt="" class="w-10 h-10 mb-2 object-contain" loading="lazy">
-        <span class="font-semibold">Piscina privada</span>
+      <li class="flex flex-col items-center gap-2 text-center text-sm">
+        <svg class="h-6 w-6 text-peach" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>
+        <span>Piscina privada</span>
       </li>
-      <li class="flex flex-col items-center">
-        <img src="/assets/icons/web/wifi.webp" width="48" height="48" alt="" class="w-10 h-10 mb-2 object-contain" loading="lazy">
-        <span class="font-semibold">WiFi Starlink</span>
+      <li class="flex flex-col items-center gap-2 text-center text-sm">
+        <svg class="h-6 w-6 text-peach" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg>
+        <span>WiFi Starlink</span>
       </li>
-      <li class="flex flex-col items-center">
-        <img src="/assets/icons/web/air-conditioning.webp" width="48" height="48" alt="" class="w-10 h-10 mb-2 object-contain" loading="lazy">
-        <span class="font-semibold">Aire acondicionado</span>
+      <li class="flex flex-col items-center gap-2 text-center text-sm">
+        <svg class="h-6 w-6 text-peach" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="2" x2="22" y1="12" y2="12"/><line x1="12" x2="12" y1="2" y2="22"/><path d="m20 16-4-4 4-4"/><path d="m4 8 4 4-4 4"/><path d="m16 4-4 4-4-4"/><path d="m8 20 4-4 4 4"/></svg>
+        <span>Aire acondicionado</span>
       </li>
-      <li class="flex flex-col items-center">
-        <img src="/assets/icons/web/barbecue.webp" width="48" height="48" alt="" class="w-10 h-10 mb-2 object-contain" loading="lazy">
-        <span class="font-semibold">Cocina exterior y barbacoa</span>
+      <li class="flex flex-col items-center gap-2 text-center text-sm">
+        <svg class="h-6 w-6 text-peach" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+        <span>Cocina exterior y barbacoa</span>
       </li>
-      <li class="flex flex-col items-center">
-        <svg class="w-10 h-10 mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg>
-        <span class="font-semibold">Aparcamiento privado</span>
+      <li class="flex flex-col items-center gap-2 text-center text-sm">
+        <svg class="h-6 w-6 text-peach" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+        <span>Aparcamiento privado</span>
       </li>
     </ul>
   </section>
 
-  <section id="villa" class="py-20 bg-theme-sand">
-    <div class="container mx-auto px-6 lg:px-20 text-center fade-in-up">
-      <h2 class="text-4xl font-bold mb-6">La base tranquila para descubrir Puglia</h2>
-      <p class="text-lg text-theme-muted max-w-3xl mx-auto leading-relaxed mb-4">Villa El Carmen es una villa privada rodeada de más de una hectárea de olivos, en el campo de San Vito dei Normanni, entre Ostuni y la costa adriática. La casa reúne un trullo restaurado y una lamia tradicional con todas las comodidades modernas: tres dormitorios, tres baños, aire acondicionado y calefacción en todas las estancias y WiFi Starlink rápido.</p>
-      <p class="text-lg text-theme-muted max-w-3xl mx-auto leading-relaxed mb-4">Está pensada para familias y grupos de amigos que buscan una sola base tranquila para su semana en Puglia: por la mañana en la piscina, por la tarde en las playas de Specchiolla y Torre Guaceto, por la noche en la ciudad blanca de Ostuni o en la mesa al aire libre bajo los olivos.</p>
+  <section id="villa" class="container-wide section grid items-center gap-12 md:grid-cols-2 md:gap-16">
+    <div class="reveal">
+      <p class="eyebrow text-terracotta-dark">La villa</p>
+      <h2 class="section-heading">La base tranquila para descubrir Puglia</h2>
+      <p class="mt-6 leading-relaxed text-muted">Villa El Carmen es una villa privada rodeada de más de una hectárea de olivos, en el campo de San Vito dei Normanni, entre Ostuni y la costa adriática. La casa reúne un trullo restaurado y una lamia tradicional con todas las comodidades modernas: tres dormitorios, tres baños, aire acondicionado y calefacción en todas las estancias y WiFi Starlink rápido.</p>
+      <p class="mt-6 leading-relaxed text-muted">Está pensada para familias y grupos de amigos que buscan una sola base tranquila para su semana en Puglia: por la mañana en la piscina, por la tarde en las playas de Specchiolla y Torre Guaceto, por la noche en la ciudad blanca de Ostuni o en la mesa al aire libre bajo los olivos.</p>
     </div>
-  </section>
-
-  <section class="py-20 bg-theme-white">
-    <div class="container mx-auto px-6 lg:px-20">
-      <div class="section-title fade-in-up">
-  <h2>Un trullo restaurado y una lamia histórica</h2>
-<p>El corazón de piedra de la villa: techos abovedados, muros gruesos que mantienen frescas las estancias en verano y la artesanía del campo de Puglia.</p></div>
-      <div class="grid md:grid-cols-2 gap-12">
-        <article class="bg-theme-sand rounded-lg shadow-xl overflow-hidden feature-card fade-in-up">
-          <img src="/assets/img/trullo-interior-960.webp" srcset="/assets/img/trullo-interior-480.webp 480w, /assets/img/trullo-interior-960.webp 960w, /assets/img/trullo-interior-1600.webp 1600w" sizes="(min-width: 768px) 50vw, 100vw"
-     width="960" height="1280" alt="El interior del trullo restaurado, con su cúpula de piedra seca"
-     class="w-full h-80 object-cover js-lightbox cursor-zoom-in"
-data-full="/assets/img/trullo-interior-1600.webp"loading="lazy" decoding="async">
-          <div class="p-8">
-            <h3 class="text-3xl font-bold mb-3">El trullo</h3>
-            <p class="text-theme-muted leading-relaxed">Nuestro trullo restaurado conserva su cúpula original de piedra seca y sus hornacinas: hoy es un rincón tranquilo para leer y descansar. Los trulli son el símbolo de Puglia, y tener uno solo para vosotros forma parte de la experiencia.</p>
-          </div>
-        </article>
-        <article class="bg-theme-sand rounded-lg shadow-xl overflow-hidden feature-card fade-in-up">
-          <img src="/assets/img/lamia-dining-960.webp" srcset="/assets/img/lamia-dining-480.webp 480w, /assets/img/lamia-dining-960.webp 960w, /assets/img/lamia-dining-1440.webp 1440w" sizes="(min-width: 768px) 50vw, 100vw"
-     width="960" height="1280" alt="Comedor bajo el techo abovedado de la lamia"
-     class="w-full h-80 object-cover js-lightbox cursor-zoom-in"
-data-full="/assets/img/lamia-dining-1440.webp"loading="lazy" decoding="async">
-          <div class="p-8">
-            <h3 class="text-3xl font-bold mb-3">La lamia</h3>
-            <p class="text-theme-muted leading-relaxed">La lamia, con sus techos abovedados de piedra, alberga la cocina y el comedor. Cada estancia se ha renovado con cuidado, combinando materiales tradicionales y confort moderno.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-20 bg-theme-sand">
-    <div class="container mx-auto px-6 lg:px-20 grid md:grid-cols-2 gap-12">
-      <article class="bg-theme-white rounded-lg shadow-xl overflow-hidden feature-card fade-in-up">
-        <img src="/assets/img/pool-day-960.webp" srcset="/assets/img/pool-day-480.webp 480w, /assets/img/pool-day-960.webp 960w, /assets/img/pool-day-1600.webp 1600w" sizes="(min-width: 768px) 50vw, 100vw"
-     width="960" height="1280" alt="La piscina privada de día, con la villa al fondo"
-     class="w-full h-64 object-cover js-lightbox cursor-zoom-in"
-data-full="/assets/img/pool-day-1600.webp"loading="lazy" decoding="async">
-        <div class="p-8">
-          <h3 class="text-3xl font-bold mb-3">La piscina</h3>
-          <p class="text-theme-muted leading-relaxed">Una piscina de 40 m² con tumbonas, rodeada de césped y olivos e iluminada por la noche. El lugar perfecto para refrescarse después de un día de excursiones.</p>
-        </div>
-      </article>
-      <article class="bg-theme-white rounded-lg shadow-xl overflow-hidden feature-card fade-in-up">
-        <img src="/assets/img/olive-grove-960.webp" srcset="/assets/img/olive-grove-480.webp 480w, /assets/img/olive-grove-960.webp 960w, /assets/img/olive-grove-1600.webp 1600w" sizes="(min-width: 768px) 50vw, 100vw"
-     width="960" height="539" alt="El olivar que rodea la villa"
-     class="w-full h-64 object-cover js-lightbox cursor-zoom-in"
-data-full="/assets/img/olive-grove-1600.webp"loading="lazy" decoding="async">
-        <div class="p-8">
-          <h3 class="text-3xl font-bold mb-3">Una hectárea de olivos</h3>
-          <p class="text-theme-muted leading-relaxed">La villa está rodeada de olivos. Pasead por el olivar, disfrutad de la tranquilidad y la privacidad, y probad el aceite que elaboramos con estos mismos árboles.</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="py-20 bg-theme-white">
-    <div class="container mx-auto px-6 lg:px-20 flex flex-col md:flex-row items-center gap-12 fade-in-up">
-      <div class="md:w-1/2">
-        <img src="/assets/img/workspace-olive-view-960.webp" srcset="/assets/img/workspace-olive-view-480.webp 480w, /assets/img/workspace-olive-view-960.webp 960w, /assets/img/workspace-olive-view-1600.webp 1600w" sizes="(min-width: 768px) 50vw, 100vw"
-     width="960" height="1280" alt="Escritorio junto a una ventana con vistas al olivar"
-     class="rounded-lg shadow-2xl w-full max-h-[32rem] object-cover js-lightbox cursor-zoom-in"
-data-full="/assets/img/workspace-olive-view-1600.webp"loading="lazy" decoding="async">
-      </div>
-      <div class="md:w-1/2">
-        <h2 class="text-4xl font-bold mb-4">Espacio para trabajar, si lo necesitas</h2>
-        <p class="text-lg text-theme-muted mb-4 leading-relaxed">Un WiFi Starlink rápido y fiable cubre toda la propiedad, y dos escritorios propios, uno de ellos regulable en altura, miran al olivar.</p>
-        <p class="text-lg text-theme-muted mb-4 leading-relaxed">Ideal para estancias largas en primavera y a principios de otoño, cuando Puglia está más tranquila y todavía hace calor.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-20 bg-theme-sand">
-    <div class="container mx-auto px-6 lg:px-20 flex flex-col md:flex-row-reverse items-center gap-12 fade-in-up">
-      <div class="md:w-1/2">
-        <img src="/assets/img/olive-oil-mill-960.webp" srcset="/assets/img/olive-oil-mill-480.webp 480w, /assets/img/olive-oil-mill-960.webp 960w, /assets/img/olive-oil-mill-1430.webp 1430w" sizes="(min-width: 768px) 50vw, 100vw"
-     width="960" height="1655" alt="Aceite de oliva virgen extra recién prensado en la almazara"
-     class="rounded-lg shadow-2xl w-full max-h-[32rem] object-cover js-lightbox cursor-zoom-in"
-data-full="/assets/img/olive-oil-mill-1430.webp"loading="lazy" decoding="async">
-      </div>
-      <div class="md:w-1/2">
-        <h2 class="text-4xl font-bold mb-4">Oro líquido: nuestro propio aceite</h2>
-        <p class="text-lg text-theme-muted mb-4 leading-relaxed">Elaboramos aceite de oliva virgen extra con las aceitunas recogidas en nuestro olivar. Un regalo de nuestra tierra para vuestra mesa.</p>
-        <p class="text-lg text-theme-muted font-semibold">Cada estancia incluye una botella de regalo, y podéis comprar más para llevaros a casa.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-20 bg-theme-white">
-    <div class="container mx-auto px-6 lg:px-20">
-      <div class="section-title fade-in-up">
-  <h2>Noches de Puglia y comidas al aire libre</h2>
-<p>Una cocina exterior con barbacoa, una mesa para diez y largas noches de verano.</p></div>
-      <div class="carousel max-w-4xl mx-auto rounded-lg shadow-2xl bg-theme-sand fade-in-up" data-carousel>
-        <div class="carousel-track">
-          <div class="carousel-slide p-4 md:p-8" role="group" aria-roledescription="slide" aria-label="1 / 3">
-            <div class="flex flex-col md:flex-row items-center gap-8">
-              <div class="md:w-1/2">
-                <img src="/assets/img/aperitivo-960.webp" srcset="/assets/img/aperitivo-480.webp 480w, /assets/img/aperitivo-960.webp 960w, /assets/img/aperitivo-1600.webp 1600w" sizes="(min-width: 768px) 28rem, 90vw"
-     width="960" height="1280" alt="Tabla de aperitivo con vino en la terraza"
-     class="rounded-lg shadow-lg w-full h-72 object-cover js-lightbox cursor-zoom-in"
-data-full="/assets/img/aperitivo-1600.webp"loading="lazy" decoding="async">
-              </div>
-              <div class="md:w-1/2">
-                <h3 class="text-3xl font-bold mb-4">Aperitivo al atardecer</h3>
-                <p class="text-theme-muted leading-relaxed">Reuníos en la terraza al caer el sol, con un spritz, taralli y una tabla de quesos y embutidos locales.</p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-slide p-4 md:p-8" role="group" aria-roledescription="slide" aria-label="2 / 3">
-            <div class="flex flex-col md:flex-row items-center gap-8">
-              <div class="md:w-1/2">
-                <img src="/assets/img/outdoor-dining-960.webp" srcset="/assets/img/outdoor-dining-480.webp 480w, /assets/img/outdoor-dining-960.webp 960w, /assets/img/outdoor-dining-1600.webp 1600w" sizes="(min-width: 768px) 28rem, 90vw"
-     width="960" height="1280" alt="Mesa de comedor exterior cubierta para diez personas"
-     class="rounded-lg shadow-lg w-full h-72 object-cover js-lightbox cursor-zoom-in"
-data-full="/assets/img/outdoor-dining-1600.webp"loading="lazy" decoding="async">
-              </div>
-              <div class="md:w-1/2">
-                <h3 class="text-3xl font-bold mb-4">Cena bajo los olivos</h3>
-                <p class="text-theme-muted leading-relaxed">El comedor exterior cubierto tiene capacidad para diez personas, junto a una cocina exterior equipada con barbacoa: perfecto para largas cenas con familia y amigos.</p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-slide p-4 md:p-8" role="group" aria-roledescription="slide" aria-label="3 / 3">
-            <div class="flex flex-col md:flex-row items-center gap-8">
-              <div class="md:w-1/2">
-                <img src="/assets/img/orecchiette-960.webp" srcset="/assets/img/orecchiette-480.webp 480w, /assets/img/orecchiette-960.webp 960w, /assets/img/orecchiette-1600.webp 1600w" sizes="(min-width: 768px) 28rem, 90vw"
-     width="960" height="1280" alt="Orecchiette frescas hechas a mano durante una clase de cocina"
-     class="rounded-lg shadow-lg w-full h-72 object-cover js-lightbox cursor-zoom-in"
-data-full="/assets/img/orecchiette-1600.webp"loading="lazy" decoding="async">
-              </div>
-              <div class="md:w-1/2">
-                <h3 class="text-3xl font-bold mb-4">Chef privado y clase de cocina</h3>
-                <p class="text-theme-muted leading-relaxed">Bajo petición organizamos un chef privado o una clase de cocina en la villa: aprended a hacer orecchiette frescas y probad los platos tradicionales de Puglia.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="carousel-button left-2" data-carousel-prev aria-label="Diapositiva anterior">
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-        </button>
-        <button type="button" class="carousel-button right-2" data-carousel-next aria-label="Diapositiva siguiente">
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-        </button>
-        <div class="carousel-dots" data-carousel-dots></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-20 bg-theme-sand">
-    <div class="container mx-auto px-6 lg:px-20">
-      <div class="section-title fade-in-up">
-  <h2>Momentos en la villa</h2>
-<p>Las habitaciones, la piscina, el olivar y las noches en Villa El Carmen.</p></div>
-      <div class="gallery fade-in-up">
-        <div class="gallery-row">
-          <div class="gallery-item">
-            <img src="/assets/img/villa-night-960.webp" srcset="/assets/img/villa-night-480.webp 480w, /assets/img/villa-night-960.webp 960w, /assets/img/villa-night-1440.webp 1440w" sizes="(min-width: 768px) 25vw, 50vw"
-     width="960" height="1280" alt="Villa El Carmen iluminada de noche, con un olivo delante"
-     class=" js-lightbox cursor-zoom-in"
-data-full="/assets/img/villa-night-1440.webp"loading="lazy" decoding="async">
-          </div>
-          <div class="gallery-item">
-            <img src="/assets/img/villa-pool-night-960.webp" srcset="/assets/img/villa-pool-night-480.webp 480w, /assets/img/villa-pool-night-960.webp 960w, /assets/img/villa-pool-night-1600.webp 1600w" sizes="(min-width: 768px) 25vw, 50vw"
-     width="960" height="1280" alt="La villa y la piscina privada de noche"
-     class=" js-lightbox cursor-zoom-in"
-data-full="/assets/img/villa-pool-night-1600.webp"loading="lazy" decoding="async">
-          </div>
-          <div class="gallery-item">
-            <img src="/assets/img/pool-aerial-960.webp" srcset="/assets/img/pool-aerial-480.webp 480w, /assets/img/pool-aerial-960.webp 960w, /assets/img/pool-aerial-1440.webp 1440w" sizes="(min-width: 768px) 25vw, 50vw"
-     width="960" height="640" alt="Vista aérea de la piscina privada y las tumbonas"
-     class=" js-lightbox cursor-zoom-in"
-data-full="/assets/img/pool-aerial-1440.webp"loading="lazy" decoding="async">
-          </div>
-          <div class="gallery-item">
-            <img src="/assets/img/pool-steps-night-960.webp" srcset="/assets/img/pool-steps-night-480.webp 480w, /assets/img/pool-steps-night-960.webp 960w, /assets/img/pool-steps-night-1440.webp 1440w" sizes="(min-width: 768px) 25vw, 50vw"
-     width="960" height="1280" alt="La piscina iluminada de noche, con su escalera de acceso"
-     class=" js-lightbox cursor-zoom-in"
-data-full="/assets/img/pool-steps-night-1440.webp"loading="lazy" decoding="async">
-          </div>
-        </div>
-        <div class="gallery-row">
-          <div class="gallery-item">
-            <img src="/assets/img/living-room-960.webp" srcset="/assets/img/living-room-480.webp 480w, /assets/img/living-room-960.webp 960w, /assets/img/living-room-1200.webp 1200w" sizes="(min-width: 768px) 25vw, 50vw"
-     width="960" height="1280" alt="Salón con sofá bajo un techo abovedado de piedra"
-     class=" js-lightbox cursor-zoom-in"
-data-full="/assets/img/living-room-1200.webp"loading="lazy" decoding="async">
-          </div>
-          <div class="gallery-item">
-            <img src="/assets/img/kitchen-vaulted-960.webp" srcset="/assets/img/kitchen-vaulted-480.webp 480w, /assets/img/kitchen-vaulted-960.webp 960w, /assets/img/kitchen-vaulted-1600.webp 1600w" sizes="(min-width: 768px) 25vw, 50vw"
-     width="960" height="1280" alt="Cocina con techo abovedado y muebles blancos"
-     class=" js-lightbox cursor-zoom-in"
-data-full="/assets/img/kitchen-vaulted-1600.webp"loading="lazy" decoding="async">
-          </div>
-          <div class="gallery-item">
-            <img src="/assets/img/master-bedroom-960.webp" srcset="/assets/img/master-bedroom-480.webp 480w, /assets/img/master-bedroom-960.webp 960w, /assets/img/master-bedroom-1600.webp 1600w" sizes="(min-width: 768px) 25vw, 50vw"
-     width="960" height="1280" alt="Dormitorio principal con cama king size"
-     class=" js-lightbox cursor-zoom-in"
-data-full="/assets/img/master-bedroom-1600.webp"loading="lazy" decoding="async">
-          </div>
-          <div class="gallery-item">
-            <img src="/assets/img/double-bedroom-960.webp" srcset="/assets/img/double-bedroom-480.webp 480w, /assets/img/double-bedroom-960.webp 960w, /assets/img/double-bedroom-1600.webp 1600w" sizes="(min-width: 768px) 25vw, 50vw"
-     width="960" height="1280" alt="Dormitorio doble con ventana al olivar"
-     class=" js-lightbox cursor-zoom-in"
-data-full="/assets/img/double-bedroom-1600.webp"loading="lazy" decoding="async">
-          </div>
-        </div>
-        <div class="gallery-row">
-          <div class="gallery-item">
-            <img src="/assets/img/single-bedroom-960.webp" srcset="/assets/img/single-bedroom-480.webp 480w, /assets/img/single-bedroom-960.webp 960w, /assets/img/single-bedroom-1600.webp 1600w" sizes="(min-width: 768px) 25vw, 50vw"
-     width="960" height="1280" alt="Dormitorio individual con escritorio"
-     class=" js-lightbox cursor-zoom-in"
-data-full="/assets/img/single-bedroom-1600.webp"loading="lazy" decoding="async">
-          </div>
-          <div class="gallery-item">
-            <img src="/assets/img/bedroom-wardrobe-960.webp" srcset="/assets/img/bedroom-wardrobe-480.webp 480w, /assets/img/bedroom-wardrobe-960.webp 960w, /assets/img/bedroom-wardrobe-1600.webp 1600w" sizes="(min-width: 768px) 25vw, 50vw"
-     width="960" height="1280" alt="Dormitorio con un gran armario blanco"
-     class=" js-lightbox cursor-zoom-in"
-data-full="/assets/img/bedroom-wardrobe-1600.webp"loading="lazy" decoding="async">
-          </div>
-          <div class="gallery-item">
-            <img src="/assets/img/stone-arch-960.webp" srcset="/assets/img/stone-arch-480.webp 480w, /assets/img/stone-arch-960.webp 960w, /assets/img/stone-arch-1600.webp 1600w" sizes="(min-width: 768px) 25vw, 50vw"
-     width="960" height="1280" alt="Arco original de piedra en el interior de la villa"
-     class=" js-lightbox cursor-zoom-in"
-data-full="/assets/img/stone-arch-1600.webp"loading="lazy" decoding="async">
-          </div>
-          <div class="gallery-item">
-            <img src="/assets/img/amphora-niche-960.webp" srcset="/assets/img/amphora-niche-480.webp 480w, /assets/img/amphora-niche-960.webp 960w, /assets/img/amphora-niche-1600.webp 1600w" sizes="(min-width: 768px) 25vw, 50vw"
-     width="960" height="1280" alt="Ánfora de terracota en una hornacina blanca"
-     class=" js-lightbox cursor-zoom-in"
-data-full="/assets/img/amphora-niche-1600.webp"loading="lazy" decoding="async">
-          </div>
-        </div>
-        <div class="gallery-row">
-          <div class="gallery-item">
-            <img src="/assets/img/olive-tree-pool-night-960.webp" srcset="/assets/img/olive-tree-pool-night-480.webp 480w, /assets/img/olive-tree-pool-night-960.webp 960w, /assets/img/olive-tree-pool-night-1600.webp 1600w" sizes="(min-width: 768px) 25vw, 50vw"
-     width="960" height="1280" alt="Olivo centenario y piscina iluminada de noche"
-     class=" js-lightbox cursor-zoom-in"
-data-full="/assets/img/olive-tree-pool-night-1600.webp"loading="lazy" decoding="async">
-          </div>
-          <div class="gallery-item">
-            <img src="/assets/img/garden-night-960.webp" srcset="/assets/img/garden-night-480.webp 480w, /assets/img/garden-night-960.webp 960w, /assets/img/garden-night-1600.webp 1600w" sizes="(min-width: 768px) 25vw, 50vw"
-     width="960" height="1280" alt="Sendero del jardín iluminado de noche"
-     class=" js-lightbox cursor-zoom-in"
-data-full="/assets/img/garden-night-1600.webp"loading="lazy" decoding="async">
-          </div>
-          <div class="gallery-item">
-            <img src="/assets/img/stone-niche-960.webp" srcset="/assets/img/stone-niche-480.webp 480w, /assets/img/stone-niche-960.webp 960w, /assets/img/stone-niche-1600.webp 1600w" sizes="(min-width: 768px) 25vw, 50vw"
-     width="960" height="1280" alt="Hornacina de piedra con una silla y una damajuana de vidrio"
-     class=" js-lightbox cursor-zoom-in"
-data-full="/assets/img/stone-niche-1600.webp"loading="lazy" decoding="async">
-          </div>
-          <div class="gallery-item">
-            <img src="/assets/img/olive-trees-960.webp" srcset="/assets/img/olive-trees-480.webp 480w, /assets/img/olive-trees-960.webp 960w, /assets/img/olive-trees-1440.webp 1440w" sizes="(min-width: 768px) 25vw, 50vw"
-     width="960" height="1280" alt="Olivos bajo el cielo azul"
-     class=" js-lightbox cursor-zoom-in"
-data-full="/assets/img/olive-trees-1440.webp"loading="lazy" decoding="async">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="location" class="py-20 bg-theme-white">
-    <div class="container mx-auto px-6 lg:px-20">
-      <div class="section-title fade-in-up">
-  <h2>Dónde estamos</h2>
-<p>En el campo de San Vito dei Normanni (Brindisi), entre Ostuni y el mar Adriático: tranquila y reservada, pero cerca de los pueblos y las playas más bonitas de Puglia.</p></div>
-      <div class="grid lg:grid-cols-2 gap-12 items-start">
-        <div class="fade-in-up">
-          <img src="/assets/img/countryside-aerial-960.webp" srcset="/assets/img/countryside-aerial-480.webp 480w, /assets/img/countryside-aerial-960.webp 960w, /assets/img/countryside-aerial-1600.webp 1600w" sizes="(min-width: 1024px) 50vw, 100vw"
+    <img src="/assets/img/countryside-aerial-960.webp" srcset="/assets/img/countryside-aerial-480.webp 480w, /assets/img/countryside-aerial-960.webp 960w, /assets/img/countryside-aerial-1600.webp 1600w, /assets/img/countryside-aerial-2400.webp 2400w" sizes="(min-width: 768px) 40rem, 100vw"
      width="960" height="538" alt="Vista aérea de los olivares alrededor de la villa"
-     class="rounded-lg shadow-2xl w-full"
-loading="lazy" decoding="async">
-          <p class="mt-6 text-theme-muted leading-relaxed">Para recorrer la zona el coche es imprescindible: la villa está en el campo y el transporte público es escaso. Os ayudamos encantados a alquilar un coche o a reservar un traslado desde el aeropuerto.</p>
-          <a href="https://maps.app.goo.gl/2uRBACUf5y8xNXch9" target="_blank" rel="noopener" class="btn-primary inline-block mt-6 py-3 px-8 rounded-full uppercase tracking-wider">Abrir en Google Maps</a>
-        </div>
-        <div class="fade-in-up">
-          <h3 class="text-3xl font-bold mb-4">Tiempos en coche desde la villa</h3>
-          <dl class="distance-list">
-            <div><dt>San Vito dei Normanni (tiendas y restaurantes)</dt><dd>8 min</dd></div>
-            <div><dt>Ostuni, la Ciudad Blanca</dt><dd>20 min</dd></div>
-            <div><dt>Playa de Specchiolla</dt><dd>20 min</dd></div>
-            <div><dt>Reserva natural de Torre Guaceto</dt><dd>24 min</dd></div>
-            <div><dt>Aeropuerto de Brindisi</dt><dd>24 min</dd></div>
-            <div><dt>Lecce</dt><dd>44 min</dd></div>
-            <div><dt>Alberobello y sus trulli</dt><dd>48 min</dd></div>
-            <div><dt>Polignano a Mare</dt><dd>48 min</dd></div>
-            <div><dt>Aeropuerto de Bari</dt><dd>1 h 12</dd></div>
-          </dl>
-          <h3 class="text-3xl font-bold mt-10 mb-4">Playas cercanas</h3>
-          <ul class="list-disc pl-6 space-y-2 text-theme-muted">
-<li>Specchiolla y Apani: playas de arena y pequeñas calas de roca, a unos 20–24 minutos.</li><li>Torre Guaceto: una reserva natural protegida con dunas y agua cristalina, a unos 24 minutos.</li><li>La costa de Ostuni y, para una excursión, las playas jónicas de Porto Cesareo, a unos 48 minutos.</li>          </ul>
-        </div>
+     class="reveal aspect-[4/5] w-full rounded-lg object-cover"loading="lazy" decoding="async">
+  </section>
+
+  <section class="section bg-linen">
+    <div class="container-wide">
+      <div class="reveal mx-auto max-w-3xl text-center">
+<p class="eyebrow text-terracotta-dark">El corazón de piedra</p>  <h2 class="section-heading">Un trullo restaurado y una lamia histórica</h2>
+<p class="mt-6 lead">El corazón de piedra de la villa: techos abovedados, muros gruesos que mantienen frescas las estancias en verano y la artesanía del campo de Puglia.</p></div>
+      <div class="mt-16 grid gap-10 md:grid-cols-2">
+        <article class="reveal group">
+          <div class="zoom-frame">
+            <button type="button" class="lightbox-trigger block w-full" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/trullo-interior-960.webp" srcset="/assets/img/trullo-interior-480.webp 480w, /assets/img/trullo-interior-960.webp 960w, /assets/img/trullo-interior-1600.webp 1600w, /assets/img/trullo-interior-2400.webp 2400w" sizes="(min-width: 768px) 40rem, 100vw"
+     width="960" height="1280" alt="El interior del trullo restaurado, con su cúpula de piedra seca"
+     class="aspect-[4/3] w-full object-cover" data-full="/assets/img/trullo-interior-2400.webp"loading="lazy" decoding="async">
+</button>
+          </div>
+          <h3 class="mt-6 text-3xl">El trullo</h3>
+          <p class="mt-2 leading-relaxed text-muted">Nuestro trullo restaurado conserva su cúpula original de piedra seca y sus hornacinas: hoy es un rincón tranquilo para leer y descansar. Los trulli son el símbolo de Puglia, y tener uno solo para vosotros forma parte de la experiencia.</p>
+        </article>
+        <article class="reveal group">
+          <div class="zoom-frame">
+            <button type="button" class="lightbox-trigger block w-full" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/lamia-dining-960.webp" srcset="/assets/img/lamia-dining-480.webp 480w, /assets/img/lamia-dining-960.webp 960w, /assets/img/lamia-dining-1440.webp 1440w" sizes="(min-width: 768px) 40rem, 100vw"
+     width="960" height="1280" alt="Comedor bajo el techo abovedado de la lamia"
+     class="aspect-[4/3] w-full object-cover" data-full="/assets/img/lamia-dining-1440.webp"loading="lazy" decoding="async">
+</button>
+          </div>
+          <h3 class="mt-6 text-3xl">La lamia</h3>
+          <p class="mt-2 leading-relaxed text-muted">La lamia, con sus techos abovedados de piedra, alberga la cocina y el comedor. Cada estancia se ha renovado con cuidado, combinando materiales tradicionales y confort moderno.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <section id="faq" class="py-20 bg-theme-sand">
-    <div class="container mx-auto px-6 lg:px-20 max-w-3xl">
-      <div class="section-title fade-in-up">
-  <h2>Preguntas frecuentes</h2>
+  <section class="relative flex min-h-[80vh] items-center py-24">
+    <img src="/assets/img/pool-day-960.webp" srcset="/assets/img/pool-day-480.webp 480w, /assets/img/pool-day-960.webp 960w, /assets/img/pool-day-1600.webp 1600w, /assets/img/pool-day-2400.webp 2400w" sizes="100vw"
+     width="960" height="1280" alt="La piscina privada de día, con la villa al fondo"
+     class="band-image"loading="lazy" decoding="async">
+    <div class="overlay"></div>
+    <div class="container-wide relative grid gap-12 text-olive-fg md:grid-cols-2">
+      <div class="reveal">
+        <h2 class="section-heading">La piscina</h2>
+        <p class="mt-4 text-lg leading-relaxed opacity-90">Una piscina de 40 m² con tumbonas, rodeada de césped y olivos e iluminada por la noche. El lugar perfecto para refrescarse después de un día de excursiones.</p>
+      </div>
+      <div class="reveal">
+        <h2 class="section-heading">Una hectárea de olivos</h2>
+        <p class="mt-4 text-lg leading-relaxed opacity-90">La villa está rodeada de olivos. Pasead por el olivar, disfrutad de la tranquilidad y la privacidad, y probad el aceite que elaboramos con estos mismos árboles.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiences" class="container-wide section">
+    <div class="reveal max-w-3xl">
+<p class="eyebrow text-terracotta-dark">Experiencias</p>  <h2 class="section-heading">Noches de Puglia y comidas al aire libre</h2>
+<p class="mt-6 lead">Una cocina exterior con barbacoa, una mesa para diez y largas noches de verano.</p></div>
+    <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <article class="reveal group">
+        <div class="zoom-frame">
+          <button type="button" class="lightbox-trigger block w-full" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/olive-oil-mill-960.webp" srcset="/assets/img/olive-oil-mill-480.webp 480w, /assets/img/olive-oil-mill-960.webp 960w, /assets/img/olive-oil-mill-1430.webp 1430w" sizes="(min-width: 1024px) 20rem, (min-width: 640px) 50vw, 100vw"
+     width="960" height="1655" alt="Aceite de oliva virgen extra recién prensado en la almazara"
+     class="aspect-[4/3] w-full object-cover sm:aspect-[3/4]" data-full="/assets/img/olive-oil-mill-1430.webp"loading="lazy" decoding="async">
+</button>
+        </div>
+        <h3 class="mt-5 text-2xl">Oro líquido: nuestro propio aceite</h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted">Elaboramos aceite de oliva virgen extra con las aceitunas recogidas en nuestro olivar. Un regalo de nuestra tierra para vuestra mesa. Cada estancia incluye una botella de regalo, y podéis comprar más para llevaros a casa.</p>
+      </article>
+      <article class="reveal group">
+        <div class="zoom-frame">
+          <button type="button" class="lightbox-trigger block w-full" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/aperitivo-960.webp" srcset="/assets/img/aperitivo-480.webp 480w, /assets/img/aperitivo-960.webp 960w, /assets/img/aperitivo-1600.webp 1600w, /assets/img/aperitivo-2400.webp 2400w" sizes="(min-width: 1024px) 20rem, (min-width: 640px) 50vw, 100vw"
+     width="960" height="1280" alt="Tabla de aperitivo con vino en la terraza"
+     class="aspect-[4/3] w-full object-cover sm:aspect-[3/4]" data-full="/assets/img/aperitivo-2400.webp"loading="lazy" decoding="async">
+</button>
+        </div>
+        <h3 class="mt-5 text-2xl">Aperitivo al atardecer</h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted">Reuníos en la terraza al caer el sol, con un spritz, taralli y una tabla de quesos y embutidos locales.</p>
+      </article>
+      <article class="reveal group">
+        <div class="zoom-frame">
+          <button type="button" class="lightbox-trigger block w-full" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/outdoor-dining-960.webp" srcset="/assets/img/outdoor-dining-480.webp 480w, /assets/img/outdoor-dining-960.webp 960w, /assets/img/outdoor-dining-1600.webp 1600w, /assets/img/outdoor-dining-2400.webp 2400w" sizes="(min-width: 1024px) 20rem, (min-width: 640px) 50vw, 100vw"
+     width="960" height="1280" alt="Mesa de comedor exterior cubierta para diez personas"
+     class="aspect-[4/3] w-full object-cover sm:aspect-[3/4]" data-full="/assets/img/outdoor-dining-2400.webp"loading="lazy" decoding="async">
+</button>
+        </div>
+        <h3 class="mt-5 text-2xl">Cena bajo los olivos</h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted">El comedor exterior cubierto tiene capacidad para diez personas, junto a una cocina exterior equipada con barbacoa: perfecto para largas cenas con familia y amigos.</p>
+      </article>
+      <article class="reveal group">
+        <div class="zoom-frame">
+          <button type="button" class="lightbox-trigger block w-full" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/orecchiette-960.webp" srcset="/assets/img/orecchiette-480.webp 480w, /assets/img/orecchiette-960.webp 960w, /assets/img/orecchiette-1600.webp 1600w, /assets/img/orecchiette-2400.webp 2400w" sizes="(min-width: 1024px) 20rem, (min-width: 640px) 50vw, 100vw"
+     width="960" height="1280" alt="Orecchiette frescas hechas a mano durante una clase de cocina"
+     class="aspect-[4/3] w-full object-cover sm:aspect-[3/4]" data-full="/assets/img/orecchiette-2400.webp"loading="lazy" decoding="async">
+</button>
+        </div>
+        <h3 class="mt-5 text-2xl">Chef privado y clase de cocina</h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted">Bajo petición organizamos un chef privado o una clase de cocina en la villa: aprended a hacer orecchiette frescas y probad los platos tradicionales de Puglia.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="bg-olive text-olive-fg">
+    <div class="container-wide section grid items-center gap-12 md:grid-cols-2 md:gap-16">
+      <img src="/assets/img/workspace-olive-view-960.webp" srcset="/assets/img/workspace-olive-view-480.webp 480w, /assets/img/workspace-olive-view-960.webp 960w, /assets/img/workspace-olive-view-1600.webp 1600w, /assets/img/workspace-olive-view-2400.webp 2400w" sizes="(min-width: 768px) 40rem, 100vw"
+     width="960" height="1280" alt="Escritorio junto a una ventana con vistas al olivar"
+     class="reveal aspect-[4/3] w-full rounded-lg object-cover"loading="lazy" decoding="async">
+      <div class="reveal">
+        <p class="eyebrow text-peach">Trabajar desde Puglia</p>
+        <h2 class="section-heading">Espacio para trabajar, si lo necesitas</h2>
+        <p class="mt-6 leading-relaxed opacity-90">Un WiFi Starlink rápido y fiable cubre toda la propiedad, y dos escritorios propios, uno de ellos regulable en altura, miran al olivar.</p>
+        <p class="mt-6 leading-relaxed opacity-90">Ideal para estancias largas en primavera y a principios de otoño, cuando Puglia está más tranquila y todavía hace calor.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="container-wide section">
+    <div class="reveal max-w-3xl">
+<p class="eyebrow text-terracotta-dark">Galería</p>  <h2 class="section-heading">Momentos en la villa</h2>
+<p class="mt-6 lead">Las habitaciones, la piscina, el olivar y las noches en Villa El Carmen.</p></div>
+    <div class="gallery-grid mt-12">
+      <button type="button" class="lightbox-trigger gallery-item featured" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/aerial-dusk-960.webp" srcset="/assets/img/aerial-dusk-480.webp 480w, /assets/img/aerial-dusk-960.webp 960w, /assets/img/aerial-dusk-1200.webp 1200w" sizes="(min-width: 768px) 40rem, 100vw"
+     width="960" height="640" alt="Vista aérea de la villa y la piscina iluminada al atardecer, entre olivos"
+     class="" data-full="/assets/img/aerial-dusk-1200.webp"loading="lazy" decoding="async">
+</button>
+      <button type="button" class="lightbox-trigger gallery-item" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/living-room-960.webp" srcset="/assets/img/living-room-480.webp 480w, /assets/img/living-room-960.webp 960w, /assets/img/living-room-1200.webp 1200w" sizes="(min-width: 768px) 20rem, 50vw"
+     width="960" height="1280" alt="Salón con sofá bajo un techo abovedado de piedra"
+     class="" data-full="/assets/img/living-room-1200.webp"loading="lazy" decoding="async">
+</button>
+      <button type="button" class="lightbox-trigger gallery-item" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/kitchen-vaulted-960.webp" srcset="/assets/img/kitchen-vaulted-480.webp 480w, /assets/img/kitchen-vaulted-960.webp 960w, /assets/img/kitchen-vaulted-1600.webp 1600w, /assets/img/kitchen-vaulted-2400.webp 2400w" sizes="(min-width: 768px) 20rem, 50vw"
+     width="960" height="1280" alt="Cocina con techo abovedado y muebles blancos"
+     class="" data-full="/assets/img/kitchen-vaulted-2400.webp"loading="lazy" decoding="async">
+</button>
+      <button type="button" class="lightbox-trigger gallery-item" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/master-bedroom-960.webp" srcset="/assets/img/master-bedroom-480.webp 480w, /assets/img/master-bedroom-960.webp 960w, /assets/img/master-bedroom-1600.webp 1600w, /assets/img/master-bedroom-2400.webp 2400w" sizes="(min-width: 768px) 20rem, 50vw"
+     width="960" height="1280" alt="Dormitorio principal con cama king size"
+     class="" data-full="/assets/img/master-bedroom-2400.webp"loading="lazy" decoding="async">
+</button>
+      <button type="button" class="lightbox-trigger gallery-item" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/pergola-lounge-960.webp" srcset="/assets/img/pergola-lounge-480.webp 480w, /assets/img/pergola-lounge-960.webp 960w, /assets/img/pergola-lounge-1200.webp 1200w" sizes="(min-width: 768px) 20rem, 50vw"
+     width="960" height="1280" alt="Salón exterior bajo la pérgola, con vistas a la piscina"
+     class="" data-full="/assets/img/pergola-lounge-1200.webp"loading="lazy" decoding="async">
+</button>
+      <button type="button" class="lightbox-trigger gallery-item featured" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/villa-pool-night-960.webp" srcset="/assets/img/villa-pool-night-480.webp 480w, /assets/img/villa-pool-night-960.webp 960w, /assets/img/villa-pool-night-1600.webp 1600w, /assets/img/villa-pool-night-2400.webp 2400w" sizes="(min-width: 768px) 40rem, 100vw"
+     width="960" height="1280" alt="La villa y la piscina privada de noche"
+     class="" data-full="/assets/img/villa-pool-night-2400.webp"loading="lazy" decoding="async">
+</button>
+      <button type="button" class="lightbox-trigger gallery-item" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/double-bedroom-960.webp" srcset="/assets/img/double-bedroom-480.webp 480w, /assets/img/double-bedroom-960.webp 960w, /assets/img/double-bedroom-1600.webp 1600w, /assets/img/double-bedroom-2400.webp 2400w" sizes="(min-width: 768px) 20rem, 50vw"
+     width="960" height="1280" alt="Dormitorio doble con ventana al olivar"
+     class="" data-full="/assets/img/double-bedroom-2400.webp"loading="lazy" decoding="async">
+</button>
+      <button type="button" class="lightbox-trigger gallery-item" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/bathroom-stone-sink-960.webp" srcset="/assets/img/bathroom-stone-sink-480.webp 480w, /assets/img/bathroom-stone-sink-960.webp 960w, /assets/img/bathroom-stone-sink-1200.webp 1200w" sizes="(min-width: 768px) 20rem, 50vw"
+     width="960" height="1280" alt="Baño con lavabo de piedra y espejo con marco de madera"
+     class="" data-full="/assets/img/bathroom-stone-sink-1200.webp"loading="lazy" decoding="async">
+</button>
+      <button type="button" class="lightbox-trigger gallery-item" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/single-bedroom-960.webp" srcset="/assets/img/single-bedroom-480.webp 480w, /assets/img/single-bedroom-960.webp 960w, /assets/img/single-bedroom-1600.webp 1600w, /assets/img/single-bedroom-2400.webp 2400w" sizes="(min-width: 768px) 20rem, 50vw"
+     width="960" height="1280" alt="Dormitorio individual con escritorio"
+     class="" data-full="/assets/img/single-bedroom-2400.webp"loading="lazy" decoding="async">
+</button>
+      <button type="button" class="lightbox-trigger gallery-item" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/kitchen-tiles-960.webp" srcset="/assets/img/kitchen-tiles-480.webp 480w, /assets/img/kitchen-tiles-960.webp 960w, /assets/img/kitchen-tiles-1200.webp 1200w" sizes="(min-width: 768px) 20rem, 50vw"
+     width="960" height="1280" alt="Cocina con azulejos decorados y ventana a los olivos"
+     class="" data-full="/assets/img/kitchen-tiles-1200.webp"loading="lazy" decoding="async">
+</button>
+      <button type="button" class="lightbox-trigger gallery-item featured" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/pool-summer-960.webp" srcset="/assets/img/pool-summer-480.webp 480w, /assets/img/pool-summer-960.webp 960w, /assets/img/pool-summer-1200.webp 1200w" sizes="(min-width: 768px) 40rem, 100vw"
+     width="960" height="1280" alt="La piscina en un día de verano, con una sombrilla entre los olivos"
+     class="" data-full="/assets/img/pool-summer-1200.webp"loading="lazy" decoding="async">
+</button>
+      <button type="button" class="lightbox-trigger gallery-item" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/stone-arch-960.webp" srcset="/assets/img/stone-arch-480.webp 480w, /assets/img/stone-arch-960.webp 960w, /assets/img/stone-arch-1600.webp 1600w, /assets/img/stone-arch-2400.webp 2400w" sizes="(min-width: 768px) 20rem, 50vw"
+     width="960" height="1280" alt="Arco original de piedra en el interior de la villa"
+     class="" data-full="/assets/img/stone-arch-2400.webp"loading="lazy" decoding="async">
+</button>
+      <button type="button" class="lightbox-trigger gallery-item" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/table-set-960.webp" srcset="/assets/img/table-set-480.webp 480w, /assets/img/table-set-960.webp 960w, /assets/img/table-set-1200.webp 1200w" sizes="(min-width: 768px) 20rem, 50vw"
+     width="960" height="1280" alt="Mesa puesta bajo la pérgola, junto a un antiguo muro de piedra"
+     class="" data-full="/assets/img/table-set-1200.webp"loading="lazy" decoding="async">
+</button>
+      <button type="button" class="lightbox-trigger gallery-item" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/bathroom-stone-basin-960.webp" srcset="/assets/img/bathroom-stone-basin-480.webp 480w, /assets/img/bathroom-stone-basin-960.webp 960w, /assets/img/bathroom-stone-basin-1200.webp 1200w" sizes="(min-width: 768px) 20rem, 50vw"
+     width="960" height="1280" alt="Baño con lavabo redondo de piedra"
+     class="" data-full="/assets/img/bathroom-stone-basin-1200.webp"loading="lazy" decoding="async">
+</button>
+      <button type="button" class="lightbox-trigger gallery-item" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/outdoor-fireplace-960.webp" srcset="/assets/img/outdoor-fireplace-480.webp 480w, /assets/img/outdoor-fireplace-960.webp 960w, /assets/img/outdoor-fireplace-1200.webp 1200w" sizes="(min-width: 768px) 20rem, 50vw"
+     width="960" height="720" alt="Chimenea exterior con barbacoa"
+     class="" data-full="/assets/img/outdoor-fireplace-1200.webp"loading="lazy" decoding="async">
+</button>
+      <button type="button" class="lightbox-trigger gallery-item featured" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/pergola-dusk-960.webp" srcset="/assets/img/pergola-dusk-480.webp 480w, /assets/img/pergola-dusk-960.webp 960w, /assets/img/pergola-dusk-1200.webp 1200w" sizes="(min-width: 768px) 40rem, 100vw"
+     width="960" height="1280" alt="Terraza cubierta iluminada al atardecer"
+     class="" data-full="/assets/img/pergola-dusk-1200.webp"loading="lazy" decoding="async">
+</button>
+      <button type="button" class="lightbox-trigger gallery-item" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/amphora-niche-960.webp" srcset="/assets/img/amphora-niche-480.webp 480w, /assets/img/amphora-niche-960.webp 960w, /assets/img/amphora-niche-1600.webp 1600w, /assets/img/amphora-niche-2400.webp 2400w" sizes="(min-width: 768px) 20rem, 50vw"
+     width="960" height="1280" alt="Ánfora de terracota en una hornacina blanca"
+     class="" data-full="/assets/img/amphora-niche-2400.webp"loading="lazy" decoding="async">
+</button>
+      <button type="button" class="lightbox-trigger gallery-item" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/garden-night-960.webp" srcset="/assets/img/garden-night-480.webp 480w, /assets/img/garden-night-960.webp 960w, /assets/img/garden-night-1600.webp 1600w, /assets/img/garden-night-2400.webp 2400w" sizes="(min-width: 768px) 20rem, 50vw"
+     width="960" height="1280" alt="Sendero del jardín iluminado de noche"
+     class="" data-full="/assets/img/garden-night-2400.webp"loading="lazy" decoding="async">
+</button>
+      <button type="button" class="lightbox-trigger gallery-item" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/villa-night-960.webp" srcset="/assets/img/villa-night-480.webp 480w, /assets/img/villa-night-960.webp 960w, /assets/img/villa-night-1440.webp 1440w" sizes="(min-width: 768px) 20rem, 50vw"
+     width="960" height="1280" alt="Villa El Carmen iluminada de noche, con un olivo delante"
+     class="" data-full="/assets/img/villa-night-1440.webp"loading="lazy" decoding="async">
+</button>
+      <button type="button" class="lightbox-trigger gallery-item" data-lightbox aria-haspopup="dialog">
+  <img src="/assets/img/pool-aerial-960.webp" srcset="/assets/img/pool-aerial-480.webp 480w, /assets/img/pool-aerial-960.webp 960w, /assets/img/pool-aerial-1440.webp 1440w" sizes="(min-width: 768px) 20rem, 50vw"
+     width="960" height="640" alt="Vista aérea de la piscina privada y las tumbonas"
+     class="" data-full="/assets/img/pool-aerial-1440.webp"loading="lazy" decoding="async">
+</button>
+    </div>
+  </section>
+
+  <section id="location" class="section bg-linen">
+    <div class="container-wide grid gap-16 lg:grid-cols-2">
+      <div class="reveal">
+        <p class="eyebrow text-terracotta-dark">Ubicación</p>
+        <h2 class="section-heading">Dónde estamos</h2>
+        <p class="lead mt-6">En el campo de San Vito dei Normanni (Brindisi), entre Ostuni y el mar Adriático: tranquila y reservada, pero cerca de los pueblos y las playas más bonitas de Puglia.</p>
+        <p class="mt-4 leading-relaxed text-muted">Para recorrer la zona el coche es imprescindible: la villa está en el campo y el transporte público es escaso. Os ayudamos encantados a alquilar un coche o a reservar un traslado desde el aeropuerto.</p>
+        <h3 class="mt-10 text-3xl">Playas cercanas</h3>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-muted marker:text-terracotta">
+<li>Specchiolla y Apani: playas de arena y pequeñas calas de roca, a unos 20–24 minutos.</li><li>Torre Guaceto: una reserva natural protegida con dunas y agua cristalina, a unos 24 minutos.</li><li>La costa de Ostuni y, para una excursión, las playas jónicas de Porto Cesareo, a unos 48 minutos.</li>        </ul>
+        <a href="https://maps.app.goo.gl/2uRBACUf5y8xNXch9" target="_blank" rel="noopener" class="btn btn-outline mt-10"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Abrir en Google Maps</a>
+      </div>
+      <div class="reveal">
+        <h3 class="text-3xl">Tiempos en coche desde la villa</h3>
+        <dl class="distance-list mt-4">
+          <div><dt>San Vito dei Normanni (tiendas y restaurantes)</dt><dd>8 min</dd></div>
+          <div><dt>Ostuni, la Ciudad Blanca</dt><dd>20 min</dd></div>
+          <div><dt>Playa de Specchiolla</dt><dd>20 min</dd></div>
+          <div><dt>Reserva natural de Torre Guaceto</dt><dd>24 min</dd></div>
+          <div><dt>Aeropuerto de Brindisi</dt><dd>24 min</dd></div>
+          <div><dt>Lecce</dt><dd>44 min</dd></div>
+          <div><dt>Alberobello y sus trulli</dt><dd>48 min</dd></div>
+          <div><dt>Polignano a Mare</dt><dd>48 min</dd></div>
+          <div><dt>Aeropuerto de Bari</dt><dd>1 h 12</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <div class="mx-auto max-w-3xl px-6">
+      <div class="reveal mx-auto max-w-3xl text-center">
+<p class="eyebrow text-terracotta-dark">Preguntas</p>  <h2 class="section-heading">Preguntas frecuentes</h2>
 </div>
-      <div class="space-y-4 fade-in-up">
+      <div class="reveal mt-12 border-t border-line">
         <details class="faq-item">
           <summary>¿A qué distancia está la villa de la playa?</summary>
           <p>Las playas más cercanas, Specchiolla y Apani, están a unos 20–24 minutos en coche, y la reserva de Torre Guaceto a unos 24 minutos. La costa jónica cerca de Porto Cesareo está a unos 48 minutos.</p>
@@ -685,63 +649,112 @@ loading="lazy" decoding="async">
     </div>
   </section>
 
-  <section id="book" class="py-20 bg-theme-white">
-    <div class="container mx-auto px-6 lg:px-20 max-w-3xl text-center fade-in-up">
-      <h2 class="text-4xl font-bold mb-4">Reserva tu estancia</h2>
-      <p class="text-lg text-theme-muted mb-4 leading-relaxed">Consulta la disponibilidad y los precios para tus fechas en Airbnb, donde puedes reservar con seguridad.</p>
-      <h3 class="text-2xl font-bold mt-10 mb-4">Temporadas y precios 2027</h3>
-      <table class="price-table">
-        <thead>
-          <tr><th scope="col">Fechas</th><th scope="col">Por noche</th><th scope="col">Estancia mínima</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>1 abr – 31 may</td><td>420 €</td><td>3 noches</td></tr>
-          <tr><td>1 jun – 14 jun</td><td>500 €</td><td>3 noches</td></tr>
-          <tr><td>15 jun – 9 jul</td><td>580 €</td><td>4 noches</td></tr>
-          <tr><td>10 jul – 7 ago</td><td>660 €</td><td>5 noches</td></tr>
-          <tr><td>8 ago – 22 ago</td><td>740 €</td><td>6 noches</td></tr>
-          <tr><td>23 ago – 6 sept</td><td>580 €</td><td>4 noches</td></tr>
-          <tr><td>7 sept – 30 sept</td><td>540 €</td><td>4 noches</td></tr>
-          <tr><td>1 oct – 6 oct</td><td>420 €</td><td>3 noches</td></tr>
-        </tbody>
-      </table>
-      <p class="text-sm text-theme-muted mt-4 leading-relaxed">Precios por noche para toda la villa, con capacidad para 5 huéspedes. Las tarifas de Airbnb se añaden al reservar; Airbnb muestra el precio final para tus fechas. La villa está cerrada del 7 oct al 31 mar.</p>
-      <p class="text-theme-muted mt-10 mb-8 font-semibold">&#34;Favorito entre huéspedes&#34; en Airbnb, con una valoración de 5,0.</p>
-      <a href="https://www.airbnb.es/rooms/1205785008353242688" target="_blank" rel="noopener" class="btn-primary inline-block py-4 px-10 rounded-full text-lg uppercase tracking-wider">Ver fechas y precios en Airbnb</a>
-      <p class="mt-10 text-theme-muted">¿Preguntas antes de reservar? Escríbenos.</p>
-      <div class="mt-4 flex flex-col sm:flex-row justify-center gap-4">
-        <a href="mailto:villaelcarmensanvito@gmail.com" class="btn-outline py-2 px-6 rounded-full">Email</a>
-        <a href="https://www.instagram.com/villa_elcarmen_puglia/" target="_blank" rel="noopener" class="btn-outline py-2 px-6 rounded-full">Instagram</a>
+  <section id="book" class="relative">
+    <img src="/assets/img/villa-pool-night-960.webp" srcset="/assets/img/villa-pool-night-480.webp 480w, /assets/img/villa-pool-night-960.webp 960w, /assets/img/villa-pool-night-1600.webp 1600w, /assets/img/villa-pool-night-2400.webp 2400w" sizes="100vw"
+     width="960" height="1280" alt=""
+     class="band-image"loading="lazy" decoding="async">
+    <div class="overlay"></div>
+    <div class="container-wide section relative grid items-start gap-12 lg:grid-cols-2">
+      <div class="text-olive-fg lg:sticky lg:top-28">
+        <h2 class="section-heading">Reserva tu estancia</h2>
+        <p class="mt-6 text-lg leading-relaxed opacity-90">Consulta la disponibilidad y los precios para tus fechas en Airbnb, donde puedes reservar con seguridad.</p>
+        <h3 class="mt-10 text-3xl">Temporadas y precios 2027</h3>
+        <table class="price-table">
+          <thead>
+            <tr><th scope="col">Fechas</th><th scope="col">Por noche</th><th scope="col">Estancia mínima</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1 abr – 31 may</td><td>420 €</td><td>3 noches</td></tr>
+            <tr><td>1 jun – 14 jun</td><td>500 €</td><td>3 noches</td></tr>
+            <tr><td>15 jun – 9 jul</td><td>580 €</td><td>4 noches</td></tr>
+            <tr><td>10 jul – 7 ago</td><td>660 €</td><td>5 noches</td></tr>
+            <tr><td>8 ago – 22 ago</td><td>740 €</td><td>6 noches</td></tr>
+            <tr><td>23 ago – 6 sept</td><td>580 €</td><td>4 noches</td></tr>
+            <tr><td>7 sept – 30 sept</td><td>540 €</td><td>4 noches</td></tr>
+            <tr><td>1 oct – 6 oct</td><td>420 €</td><td>3 noches</td></tr>
+          </tbody>
+        </table>
+        <p class="mt-4 text-sm leading-relaxed opacity-80">Precios por noche para toda la villa, con capacidad para 5 huéspedes. Las tarifas de Airbnb se añaden al reservar; Airbnb muestra el precio final para tus fechas. La villa está cerrada del 7 oct al 31 mar.</p>
+        <p class="mt-8 flex items-center gap-3">
+          <span class="flex gap-0.5 text-peach"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></span>
+          <span class="text-sm">&#34;Favorito entre huéspedes&#34; en Airbnb, con una valoración de 5,0.</span>
+        </p>
+        <p class="mt-10 opacity-90">¿Preguntas antes de reservar? Escríbenos.</p>
+        <div class="mt-4 flex flex-wrap gap-3">
+          <a href="mailto:villaelcarmensanvito@gmail.com" class="btn btn-ghost px-5 py-2"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Email</a>
+          <a href="https://www.instagram.com/villa_elcarmen_puglia/" target="_blank" rel="noopener" class="btn btn-ghost px-5 py-2"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>Instagram</a>
+        </div>
       </div>
+<div class="calendar-card" data-calendar data-endpoint="/api/availability/" data-airbnb="https://www.airbnb.es/rooms/1205785008353242688" data-lang="es">
+  <h3 class="text-3xl">Disponibilidad</h3>
+  <p class="mt-2 text-sm leading-relaxed text-muted">Elige las fechas de llegada y salida y confirma el precio en Airbnb.</p>
+
+  <div data-cal-ui hidden>
+    <div class="mt-6 flex items-center justify-between gap-2">
+      <button type="button" class="calendar-nav" data-cal-prev aria-label="Mes anterior"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg></button>
+      <p class="text-center text-sm font-medium" data-cal-hint aria-live="polite">Selecciona la fecha de llegada</p>
+      <button type="button" class="calendar-nav" data-cal-next aria-label="Mes siguiente"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></button>
     </div>
+    <div class="calendar-months mt-4" data-cal-months></div>
+    <p class="calendar-legend mt-4"><span class="is-available">Libre</span><span class="is-booked">Ocupado</span></p>
+    <dl class="mt-6 grid grid-cols-2 gap-4 border-t border-line pt-5">
+      <div><dt class="field-label">Llegada</dt><dd class="mt-1 font-medium" data-cal-arrival>—</dd></div>
+      <div><dt class="field-label">Salida</dt><dd class="mt-1 font-medium" data-cal-departure>—</dd></div>
+    </dl>
+    <p class="mt-2 min-h-[1.25rem] text-sm text-muted" data-cal-nights></p>
+  </div>
+
+  <p class="mt-6 text-sm text-muted empty:hidden" data-cal-status role="status"></p>
+  <noscript><p class="mt-6 text-sm text-muted">El calendario no se puede cargar ahora. Consulta las fechas en Airbnb.</p></noscript>
+
+  <label class="mt-5 block">
+    <span class="field-label">Huéspedes</span>
+    <select class="field" data-cal-guests>
+      <option value="1">1 huésped</option>
+      <option value="2" selected>2 huéspedes</option>
+      <option value="3">3 huéspedes</option>
+      <option value="4">4 huéspedes</option>
+      <option value="5">5 huéspedes</option>
+    </select>
+  </label>
+  <a href="https://www.airbnb.es/rooms/1205785008353242688" target="_blank" rel="noopener" class="btn btn-primary mt-6 w-full" data-cal-cta>Ver fechas y precios en Airbnb</a>
+  <button type="button" class="mt-3 w-full text-sm text-muted underline underline-offset-4 hover:text-ink" data-cal-clear hidden>Borrar fechas</button>
+  <p class="mt-6 text-xs leading-relaxed text-muted">Las fechas ocupadas vienen de Airbnb y se actualizan cada hora. Airbnb confirma el precio y la estancia mínima.</p>
+  <script type="application/json" data-cal-strings>{"arrival": "Llegada", "available": "Libre", "booked": "Ocupado", "clear": "Borrar fechas", "cta_dates": "Ver el precio en Airbnb", "departure": "Salida", "error": "El calendario no se puede cargar ahora. Consulta las fechas en Airbnb.", "guest_count": {"one": "{n} hu\u00e9sped", "other": "{n} hu\u00e9spedes"}, "guests": "Hu\u00e9spedes", "intro": "Elige las fechas de llegada y salida y confirma el precio en Airbnb.", "loading": "Cargando disponibilidad\u2026", "next_month": "Mes siguiente", "nights": {"one": "{n} noche", "other": "{n} noches"}, "note": "Las fechas ocupadas vienen de Airbnb y se actualizan cada hora. Airbnb confirma el precio y la estancia m\u00ednima.", "previous_month": "Mes anterior", "select_arrival": "Selecciona la fecha de llegada", "select_departure": "Ahora selecciona la fecha de salida", "title": "Disponibilidad"}</script>
+</div>    </div>
   </section>
 </main>
 
-<footer class="footer-bg text-white py-12">
-  <div class="container mx-auto px-6 text-center">
-    <p class="font-display text-3xl font-bold mb-2">Villa El Carmen</p>
-    <p class="mb-1">Villa con trullo y piscina entre olivos</p>
-    <p class="text-sm opacity-80">San Vito dei Normanni (BR), Puglia, Italia</p>
-    <p class="mt-4"><a href="mailto:villaelcarmensanvito@gmail.com" class="hover:underline">villaelcarmensanvito@gmail.com</a></p>
-    <p class="mt-2"><a href="https://www.instagram.com/villa_elcarmen_puglia/" target="_blank" rel="noopener" class="hover:underline">Instagram @villa_elcarmen_puglia</a></p>
-    <p class="mt-6 text-sm flex flex-col sm:flex-row justify-center gap-1 sm:gap-4">
-      <span>CIN: <span class="font-semibold">IT074017C200100796</span></span>
-      <span>CIS: <span class="font-semibold">BR07401791000058399</span></span>
-    </p>
-    <ul class="mt-6 flex justify-center gap-4 text-sm" aria-label="Idiomas">
-      <li><a href="/" hreflang="en" lang="en" class="hover:underline">English</a></li>
-      <li><a href="/it/" hreflang="it" lang="it" class="hover:underline">Italiano</a></li>
-      <li><a href="/de/" hreflang="de" lang="de" class="hover:underline">Deutsch</a></li>
-      <li><a href="/fr/" hreflang="fr" lang="fr" class="hover:underline">Français</a></li>
-      <li><a href="/es/" hreflang="es" lang="es" class="hover:underline">Español</a></li>
-    </ul>
-    <p class="text-sm text-gray-300 mt-8">&copy; 2026 Villa El Carmen. Todos los derechos reservados.</p>
+<footer class="bg-olive-dark text-olive-fg">
+  <div class="container-wide grid gap-10 py-14 text-sm md:grid-cols-3">
+    <div>
+      <p class="font-display text-3xl">Villa El Carmen</p>
+      <p class="mt-2 opacity-80">Villa con trullo y piscina entre olivos</p>
+    </div>
+    <div class="space-y-3">
+      <p class="opacity-90">San Vito dei Normanni (BR), Puglia, Italia</p>
+      <p><a href="mailto:villaelcarmensanvito@gmail.com" class="inline-flex items-center gap-2 hover:text-peach"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>villaelcarmensanvito@gmail.com</a></p>
+      <p><a href="https://www.instagram.com/villa_elcarmen_puglia/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-peach"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>@villa_elcarmen_puglia</a></p>
+    </div>
+    <div class="space-y-1 md:text-right">
+      <p>CIN: <span class="font-medium">IT074017C200100796</span></p>
+      <p>CIS: <span class="font-medium">BR07401791000058399</span></p>
+      <ul class="flex flex-wrap gap-x-4 gap-y-1 pt-4 md:justify-end" aria-label="Idiomas">
+        <li><a href="/" hreflang="en" lang="en" class="hover:text-peach">English</a></li>
+        <li><a href="/it/" hreflang="it" lang="it" class="hover:text-peach">Italiano</a></li>
+        <li><a href="/de/" hreflang="de" lang="de" class="hover:text-peach">Deutsch</a></li>
+        <li><a href="/fr/" hreflang="fr" lang="fr" class="hover:text-peach">Français</a></li>
+        <li><a href="/es/" hreflang="es" lang="es" class="hover:text-peach">Español</a></li>
+      </ul>
+      <p class="pt-4 opacity-70">&copy; 2026 Villa El Carmen. Todos los derechos reservados.</p>
+    </div>
   </div>
 </footer>
-<div id="lightbox" class="lightbox" hidden>
-  <button type="button" class="lightbox-close" aria-label="Cerrar">&times;</button>
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Momentos en la villa" hidden>
+  <button type="button" class="lightbox-close" aria-label="Cerrar"><svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
   <img alt="" class="lightbox-image">
 </div>
 <script src="/assets/js/main.js" defer></script>
+<script type="module" src="/assets/js/calendar.mjs"></script>
 </body>
 </html>

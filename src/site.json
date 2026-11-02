@@ -45,10 +45,10 @@
     {"key": "bari_airport", "minutes": 72}
   ],
   "gallery": [
-    "villa-night", "villa-pool-night", "pool-aerial", "pool-steps-night",
-    "living-room", "kitchen-vaulted", "master-bedroom", "double-bedroom",
-    "single-bedroom", "bedroom-wardrobe", "stone-arch", "amphora-niche",
-    "olive-tree-pool-night", "garden-night", "stone-niche", "olive-trees"
+    "aerial-dusk", "living-room", "kitchen-vaulted", "master-bedroom", "pergola-lounge",
+    "villa-pool-night", "double-bedroom", "bathroom-stone-sink", "single-bedroom", "kitchen-tiles",
+    "pool-summer", "stone-arch", "table-set", "bathroom-stone-basin", "outdoor-fireplace",
+    "pergola-dusk", "amphora-niche", "garden-night", "villa-night", "pool-aerial"
   ],
   "hero": {"video": "/assets/video/villa-el-carmen.mp4", "poster": "/assets/img/hero-poster.webp"},
   "og_image": {"path": "/assets/img/og-villa-el-carmen.jpg", "width": 1200, "height": 630},

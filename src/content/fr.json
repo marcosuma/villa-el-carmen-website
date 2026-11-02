@@ -7,17 +7,23 @@
   },
   "nav": {
     "villa": "La villa",
+    "experiences": "Expériences",
+    "gallery": "Galerie",
     "location": "Situation",
     "faq": "FAQ",
     "book": "Réserver",
     "menu": "Menu",
     "languages": "Langues"
   },
+  "eyebrows": {
+    "stone": "Le cœur de pierre",
+    "work": "Travailler depuis les Pouilles"
+  },
   "hero": {
     "h1": "Villa avec trullo restauré et piscine près d'Ostuni",
     "subtitle": "Un refuge privé au milieu d'un hectare d'oliviers dans les Pouilles. 3 chambres, jusqu'à 5 voyageurs.",
-    "cta_primary": "Voir les disponibilités sur Airbnb",
-    "cta_secondary": "Découvrir la villa",
+    "cta_primary": "Voir les disponibilités",
+    "cta_secondary": "Voir sur Airbnb",
     "video_label": "Vidéo de la Villa El Carmen : la piscine, la villa et l'oliveraie"
   },
   "facts": {
@@ -89,9 +95,7 @@
         "h3": "Chef privé et cours de cuisine",
         "body": "Sur demande, nous organisons un chef privé ou un cours de cuisine à la villa : apprenez à faire des orecchiette fraîches et goûtez les plats traditionnels des Pouilles."
       }
-    ],
-    "previous": "Diapositive précédente",
-    "next": "Diapositive suivante"
+    ]
   },
   "gallery": {
     "h2": "Moments à la villa",
@@ -148,6 +152,26 @@
     "instagram_label": "Instagram"
   },
   "prices": {"title": "Saisons et tarifs {year}", "dates_header": "Dates", "price_header": "Par nuit", "stay_header": "Séjour minimum", "price_format": "{price} €", "nights_format": "{nights} nuits", "months": ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."], "day_format": "{day} {month}", "note": "Prix par nuit pour toute la villa, qui accueille jusqu'à {guests} voyageurs. Les frais Airbnb s'ajoutent à la réservation ; Airbnb affiche le prix final pour vos dates.", "closed_note": "La villa est fermée du {closed_from} au {closed_to}.", "faq_question": "Combien coûte la villa par nuit ?", "faq_answer": "En {year}, la villa entière coûte de {min_price} à {max_price} par nuit selon la saison, avec un séjour minimum de {min_nights} à {max_nights} nuits. Les frais Airbnb s'ajoutent à la réservation ; Airbnb affiche le prix final pour vos dates."},
+  "calendar": {
+    "title": "Disponibilités",
+    "intro": "Choisissez vos dates d'arrivée et de départ, puis confirmez le prix sur Airbnb.",
+    "arrival": "Arrivée",
+    "departure": "Départ",
+    "guests": "Voyageurs",
+    "select_arrival": "Sélectionnez votre date d'arrivée",
+    "select_departure": "Sélectionnez maintenant votre date de départ",
+    "nights": {"one": "{n} nuit", "other": "{n} nuits"},
+    "guest_count": {"one": "{n} voyageur", "other": "{n} voyageurs"},
+    "available": "Libre",
+    "booked": "Réservé",
+    "clear": "Effacer les dates",
+    "cta_dates": "Voir le prix sur Airbnb",
+    "previous_month": "Mois précédent",
+    "next_month": "Mois suivant",
+    "loading": "Chargement des disponibilités…",
+    "error": "Le calendrier ne peut pas être chargé pour le moment. Consultez les dates sur Airbnb.",
+    "note": "Les dates réservées proviennent d'Airbnb et sont mises à jour toutes les heures. Airbnb confirme le prix et la durée minimale du séjour."
+  },
   "footer": {
     "tagline": "Villa avec trullo et piscine au milieu des oliviers",
     "location": "San Vito dei Normanni (BR), Pouilles, Italie",
@@ -186,6 +210,15 @@
     "aperitivo": "Planche apéritive avec du vin sur la terrasse",
     "outdoor-dining": "Table de repas extérieure couverte pour dix personnes",
     "orecchiette": "Orecchiette fraîches faites à la main pendant un cours de cuisine",
-    "countryside-aerial": "Vue aérienne des oliveraies autour de la villa"
+    "countryside-aerial": "Vue aérienne des oliveraies autour de la villa",
+    "aerial-dusk": "Vue aérienne de la villa et de la piscine éclairée au crépuscule, au milieu des oliviers",
+    "bathroom-stone-sink": "Salle de bain avec vasque en pierre et miroir encadré de bois",
+    "bathroom-stone-basin": "Salle de bain avec vasque ronde en pierre",
+    "kitchen-tiles": "Cuisine aux carreaux décorés, avec une fenêtre sur les oliviers",
+    "pergola-dusk": "Terrasse couverte éclairée au crépuscule",
+    "outdoor-fireplace": "Cheminée extérieure avec barbecue",
+    "table-set": "Table dressée sous la pergola, contre un vieux mur en pierre",
+    "pergola-lounge": "Salon extérieur sous la pergola, avec vue sur la piscine",
+    "pool-summer": "La piscine un jour d'été, avec un parasol au milieu des oliviers"
   }
 }

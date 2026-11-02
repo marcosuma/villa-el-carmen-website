@@ -220,6 +220,8 @@ class Meta(Strict):
 
 class Nav(Strict):
     villa: str
+    experiences: str
+    gallery: str
     location: str
     faq: str
     book: str
@@ -272,8 +274,11 @@ class Dining(Strict):
     h2: str
     intro: str
     slides: list[Card] = Field(min_length=3, max_length=3)
-    previous: str
-    next: str
+
+
+class Eyebrows(Strict):
+    stone: str
+    work: str
 
 
 class Gallery(Strict):
@@ -339,6 +344,34 @@ class PricesCopy(Strict):
     )
 
 
+class Plural(Strict):
+    """Forms for Intl.PluralRules categories; {n} is replaced by the number."""
+
+    one: str = Field(pattern=r"\{n\}")
+    other: str = Field(pattern=r"\{n\}")
+
+
+class Calendar(Strict):
+    title: str
+    intro: str
+    arrival: str
+    departure: str
+    guests: str
+    select_arrival: str
+    select_departure: str
+    nights: Plural
+    guest_count: Plural
+    available: str
+    booked: str
+    clear: str
+    cta_dates: str
+    previous_month: str
+    next_month: str
+    loading: str
+    error: str
+    note: str
+
+
 class Footer(Strict):
     tagline: str
     location: str
@@ -356,6 +389,7 @@ class NotFound(Strict):
 class PageContent(Strict):
     meta: Meta
     nav: Nav
+    eyebrows: Eyebrows
     hero: HeroCopy
     facts: FactLabels
     about: Section
@@ -369,6 +403,7 @@ class PageContent(Strict):
     faq: Faq
     book: Book
     prices: PricesCopy
+    calendar: Calendar
     footer: Footer
     not_found: NotFound
     alts: dict[str, str]

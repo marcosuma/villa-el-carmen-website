@@ -1,4 +1,5 @@
-{% from "_macros.html.j2" import picture, section_title %}
+{% from "_macros.html.j2" import picture, zoomable, section_title %}
+{% from "_icons.html.j2" import icon %}
 <!DOCTYPE html>
 <html lang="{{ lang.code }}">
 <head>
@@ -11,7 +12,7 @@
 {{ structured_data|safe }}
 </script>
 </head>
-<body class="leading-normal tracking-normal">
+<body>
 <a href="#main" class="skip-link">{{ page.nav.villa }}</a>
 
 {% include "_header.html.j2" %}
@@ -23,186 +24,146 @@
       <source src="{{ site.hero.video }}" type="video/mp4">
     </video>
     <div class="hero-overlay"></div>
-    <div class="relative z-10 text-center text-white px-6 max-w-4xl">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">{{ page.hero.h1 }}</h1>
-      <p class="text-lg md:text-2xl font-light mb-8">{{ page.hero.subtitle }}</p>
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="{{ airbnb }}" target="_blank" rel="noopener" class="btn-primary py-3 px-8 rounded-full text-lg uppercase tracking-wider">{{ page.hero.cta_primary }}</a>
-        <a href="#villa" class="btn-secondary py-3 px-8 rounded-full text-lg uppercase tracking-wider">{{ page.hero.cta_secondary }}</a>
+    <div class="container-wide relative pb-20 pt-32 text-olive-fg md:pb-24">
+      <p class="eyebrow text-peach">{{ site.address.locality }} · {{ site.address.region }}</p>
+      <h1 class="max-w-4xl text-5xl leading-[1.05] md:text-7xl lg:text-8xl">{{ page.hero.h1 }}</h1>
+      <p class="mt-6 max-w-xl text-lg opacity-90">{{ page.hero.subtitle }}</p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="#book" class="btn btn-primary">{{ page.hero.cta_primary }}</a>
+        <a href="{{ airbnb }}" target="_blank" rel="noopener" class="btn btn-ghost">{{ page.hero.cta_secondary }}</a>
       </div>
     </div>
   </section>
 
-  <section class="py-10 bg-theme-white border-b border-theme-line" aria-label="{{ page.nav.villa }}">
-    <ul class="container mx-auto px-6 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-6 text-center text-theme-muted">
-      {% set fact_icons = [
-        ("guests", "/assets/icons/web/guests.webp", page.facts.guests),
-        ("bedrooms", "/assets/icons/web/bedroom.webp", page.facts.bedrooms),
-        ("bathrooms", None, page.facts.bathrooms),
-        ("pool", "/assets/icons/web/swimming-pool.webp", page.facts.pool),
-        ("wifi", "/assets/icons/web/wifi.webp", page.facts.wifi),
-        ("ac", "/assets/icons/web/air-conditioning.webp", page.facts.air_conditioning),
-        ("bbq", "/assets/icons/web/barbecue.webp", page.facts.barbecue),
-        ("parking", None, page.facts.parking),
-      ] %}
-      {% for key, icon, label in fact_icons %}
-      <li class="flex flex-col items-center">
-        {% if icon %}
-        <img src="{{ icon }}" width="48" height="48" alt="" class="w-10 h-10 mb-2 object-contain" loading="lazy">
-        {% elif key == "bathrooms" %}
-        <svg class="w-10 h-10 mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 12h18v2a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5v-2Z"/><path d="M6 12V6a2 2 0 0 1 4 0"/><path d="M7 19l-1 2M17 19l1 2"/></svg>
-        {% else %}
-        <svg class="w-10 h-10 mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg>
-        {% endif %}
-        <span class="font-semibold">{{ label }}</span>
+  <section class="bg-olive text-olive-fg" aria-label="{{ page.nav.villa }}">
+    {% set facts = [
+      ("users", page.facts.guests), ("bed-double", page.facts.bedrooms), ("bath", page.facts.bathrooms),
+      ("waves", page.facts.pool), ("wifi", page.facts.wifi), ("snowflake", page.facts.air_conditioning),
+      ("flame", page.facts.barbecue), ("car", page.facts.parking),
+    ] %}
+    <ul class="container-wide grid grid-cols-2 gap-6 py-10 sm:grid-cols-4 lg:grid-cols-8">
+      {% for name, label in facts %}
+      <li class="flex flex-col items-center gap-2 text-center text-sm">
+        {{ icon(name, "h-6 w-6 text-peach", stroke=1.4) }}
+        <span>{{ label }}</span>
       </li>
       {% endfor %}
     </ul>
   </section>
 
-  <section id="villa" class="py-20 bg-theme-sand">
-    <div class="container mx-auto px-6 lg:px-20 text-center fade-in-up">
-      <h2 class="text-4xl font-bold mb-6">{{ page.about.h2 }}</h2>
+  <section id="villa" class="container-wide section grid items-center gap-12 md:grid-cols-2 md:gap-16">
+    <div class="reveal">
+      <p class="eyebrow text-terracotta-dark">{{ page.nav.villa }}</p>
+      <h2 class="section-heading">{{ page.about.h2 }}</h2>
       {% for paragraph in page.about.paragraphs %}
-      <p class="text-lg text-theme-muted max-w-3xl mx-auto leading-relaxed mb-4">{{ paragraph }}</p>
+      <p class="mt-6 leading-relaxed text-muted">{{ paragraph }}</p>
       {% endfor %}
     </div>
+    {{ picture(img, "countryside-aerial", page.alts["countryside-aerial"], "(min-width: 768px) 40rem, 100vw", "reveal aspect-[4/5] w-full rounded-lg object-cover") }}
   </section>
 
-  <section class="py-20 bg-theme-white">
-    <div class="container mx-auto px-6 lg:px-20">
-      {{ section_title(page.trullo.h2, page.trullo.intro) }}
-      <div class="grid md:grid-cols-2 gap-12">
+  <section class="section bg-linen">
+    <div class="container-wide">
+      {{ section_title(page.eyebrows.stone, page.trullo.h2, page.trullo.intro, centered=True) }}
+      <div class="mt-16 grid gap-10 md:grid-cols-2">
         {% for card, slug in zip(page.trullo.cards, ["trullo-interior", "lamia-dining"]) %}
-        <article class="bg-theme-sand rounded-lg shadow-xl overflow-hidden feature-card fade-in-up">
-          {{ picture(img, slug, page.alts[slug], "(min-width: 768px) 50vw, 100vw", "w-full h-80 object-cover", clickable=True) }}
-          <div class="p-8">
-            <h3 class="text-3xl font-bold mb-3">{{ card.h3 }}</h3>
-            <p class="text-theme-muted leading-relaxed">{{ card.body }}</p>
+        <article class="reveal group">
+          <div class="zoom-frame">
+            {{ zoomable(img, slug, page.alts[slug], "(min-width: 768px) 40rem, 100vw", "aspect-[4/3] w-full object-cover", "block w-full") }}
           </div>
+          <h3 class="mt-6 text-3xl">{{ card.h3 }}</h3>
+          <p class="mt-2 leading-relaxed text-muted">{{ card.body }}</p>
         </article>
         {% endfor %}
       </div>
     </div>
   </section>
 
-  <section class="py-20 bg-theme-sand">
-    <div class="container mx-auto px-6 lg:px-20 grid md:grid-cols-2 gap-12">
-      {% for card, slug in zip(page.features, ["pool-day", "olive-grove"]) %}
-      <article class="bg-theme-white rounded-lg shadow-xl overflow-hidden feature-card fade-in-up">
-        {{ picture(img, slug, page.alts[slug], "(min-width: 768px) 50vw, 100vw", "w-full h-64 object-cover", clickable=True) }}
-        <div class="p-8">
-          <h3 class="text-3xl font-bold mb-3">{{ card.h3 }}</h3>
-          <p class="text-theme-muted leading-relaxed">{{ card.body }}</p>
+  <section class="relative flex min-h-[80vh] items-center py-24">
+    {{ picture(img, "pool-day", page.alts["pool-day"], "100vw", "band-image") }}
+    <div class="overlay"></div>
+    <div class="container-wide relative grid gap-12 text-olive-fg md:grid-cols-2">
+      {% for card in page.features %}
+      <div class="reveal">
+        <h2 class="section-heading">{{ card.h3 }}</h2>
+        <p class="mt-4 text-lg leading-relaxed opacity-90">{{ card.body }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section id="experiences" class="container-wide section">
+    {{ section_title(page.nav.experiences, page.dining.h2, page.dining.intro) }}
+    {% set experiences = [
+      ("olive-oil-mill", page.olive_oil.h2, page.olive_oil.body ~ " " ~ page.olive_oil.note),
+      ("aperitivo", page.dining.slides[0].h3, page.dining.slides[0].body),
+      ("outdoor-dining", page.dining.slides[1].h3, page.dining.slides[1].body),
+      ("orecchiette", page.dining.slides[2].h3, page.dining.slides[2].body),
+    ] %}
+    <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      {% for slug, title, body in experiences %}
+      <article class="reveal group">
+        <div class="zoom-frame">
+          {{ zoomable(img, slug, page.alts[slug], "(min-width: 1024px) 20rem, (min-width: 640px) 50vw, 100vw", "aspect-[4/3] w-full object-cover sm:aspect-[3/4]", "block w-full") }}
         </div>
+        <h3 class="mt-5 text-2xl">{{ title }}</h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted">{{ body }}</p>
       </article>
       {% endfor %}
     </div>
   </section>
 
-  <section class="py-20 bg-theme-white">
-    <div class="container mx-auto px-6 lg:px-20 flex flex-col md:flex-row items-center gap-12 fade-in-up">
-      <div class="md:w-1/2">
-        {{ picture(img, "workspace-olive-view", page.alts["workspace-olive-view"], "(min-width: 768px) 50vw, 100vw", "rounded-lg shadow-2xl w-full max-h-[32rem] object-cover", clickable=True) }}
-      </div>
-      <div class="md:w-1/2">
-        <h2 class="text-4xl font-bold mb-4">{{ page.work.h2 }}</h2>
+  <section class="bg-olive text-olive-fg">
+    <div class="container-wide section grid items-center gap-12 md:grid-cols-2 md:gap-16">
+      {{ picture(img, "workspace-olive-view", page.alts["workspace-olive-view"], "(min-width: 768px) 40rem, 100vw", "reveal aspect-[4/3] w-full rounded-lg object-cover") }}
+      <div class="reveal">
+        <p class="eyebrow text-peach">{{ page.eyebrows.work }}</p>
+        <h2 class="section-heading">{{ page.work.h2 }}</h2>
         {% for paragraph in page.work.paragraphs %}
-        <p class="text-lg text-theme-muted mb-4 leading-relaxed">{{ paragraph }}</p>
+        <p class="mt-6 leading-relaxed opacity-90">{{ paragraph }}</p>
         {% endfor %}
       </div>
     </div>
   </section>
 
-  <section class="py-20 bg-theme-sand">
-    <div class="container mx-auto px-6 lg:px-20 flex flex-col md:flex-row-reverse items-center gap-12 fade-in-up">
-      <div class="md:w-1/2">
-        {{ picture(img, "olive-oil-mill", page.alts["olive-oil-mill"], "(min-width: 768px) 50vw, 100vw", "rounded-lg shadow-2xl w-full max-h-[32rem] object-cover", clickable=True) }}
-      </div>
-      <div class="md:w-1/2">
-        <h2 class="text-4xl font-bold mb-4">{{ page.olive_oil.h2 }}</h2>
-        <p class="text-lg text-theme-muted mb-4 leading-relaxed">{{ page.olive_oil.body }}</p>
-        <p class="text-lg text-theme-muted font-semibold">{{ page.olive_oil.note }}</p>
-      </div>
+  <section id="gallery" class="container-wide section">
+    {{ section_title(page.nav.gallery, page.gallery.h2, page.gallery.intro) }}
+    <div class="gallery-grid mt-12">
+      {% for slug in site.gallery %}
+      {% set featured = loop.index0 % 5 == 0 %}
+      {{ zoomable(img, slug, page.alts[slug], "(min-width: 768px) " ~ ("40rem" if featured else "20rem") ~ ", " ~ ("100vw" if featured else "50vw"), "", "gallery-item" ~ (" featured" if featured else "")) }}
+      {% endfor %}
     </div>
   </section>
 
-  <section class="py-20 bg-theme-white">
-    <div class="container mx-auto px-6 lg:px-20">
-      {{ section_title(page.dining.h2, page.dining.intro) }}
-      <div class="carousel max-w-4xl mx-auto rounded-lg shadow-2xl bg-theme-sand fade-in-up" data-carousel>
-        <div class="carousel-track">
-          {% for slide, slug in zip(page.dining.slides, ["aperitivo", "outdoor-dining", "orecchiette"]) %}
-          <div class="carousel-slide p-4 md:p-8" role="group" aria-roledescription="slide" aria-label="{{ loop.index }} / {{ loop.length }}">
-            <div class="flex flex-col md:flex-row items-center gap-8">
-              <div class="md:w-1/2">
-                {{ picture(img, slug, page.alts[slug], "(min-width: 768px) 28rem, 90vw", "rounded-lg shadow-lg w-full h-72 object-cover", clickable=True) }}
-              </div>
-              <div class="md:w-1/2">
-                <h3 class="text-3xl font-bold mb-4">{{ slide.h3 }}</h3>
-                <p class="text-theme-muted leading-relaxed">{{ slide.body }}</p>
-              </div>
-            </div>
-          </div>
+  <section id="location" class="section bg-linen">
+    <div class="container-wide grid gap-16 lg:grid-cols-2">
+      <div class="reveal">
+        <p class="eyebrow text-terracotta-dark">{{ page.nav.location }}</p>
+        <h2 class="section-heading">{{ page.location.h2 }}</h2>
+        <p class="lead mt-6">{{ page.location.intro }}</p>
+        <p class="mt-4 leading-relaxed text-muted">{{ page.location.car_note }}</p>
+        <h3 class="mt-10 text-3xl">{{ page.location.beaches_title }}</h3>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-muted marker:text-terracotta">
+          {% for beach in page.location.beaches %}<li>{{ beach }}</li>{% endfor %}
+        </ul>
+        <a href="{{ site.google_maps_url }}" target="_blank" rel="noopener" class="btn btn-outline mt-10">{{ icon("map-pin", "h-4 w-4") }}{{ page.location.map_button }}</a>
+      </div>
+      <div class="reveal">
+        <h3 class="text-3xl">{{ page.location.distances_title }}</h3>
+        <dl class="distance-list mt-4">
+          {% for label, duration in distances %}
+          <div><dt>{{ label }}</dt><dd>{{ duration }}</dd></div>
           {% endfor %}
-        </div>
-        <button type="button" class="carousel-button left-2" data-carousel-prev aria-label="{{ page.dining.previous }}">
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-        </button>
-        <button type="button" class="carousel-button right-2" data-carousel-next aria-label="{{ page.dining.next }}">
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-        </button>
-        <div class="carousel-dots" data-carousel-dots></div>
+        </dl>
       </div>
     </div>
   </section>
 
-  <section class="py-20 bg-theme-sand">
-    <div class="container mx-auto px-6 lg:px-20">
-      {{ section_title(page.gallery.h2, page.gallery.intro) }}
-      <div class="gallery fade-in-up">
-        {% for row in site.gallery|batch(4) %}
-        <div class="gallery-row">
-          {% for slug in row %}
-          <div class="gallery-item">
-            {{ picture(img, slug, page.alts[slug], "(min-width: 768px) 25vw, 50vw", "", clickable=True) }}
-          </div>
-          {% endfor %}
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-
-  <section id="location" class="py-20 bg-theme-white">
-    <div class="container mx-auto px-6 lg:px-20">
-      {{ section_title(page.location.h2, page.location.intro) }}
-      <div class="grid lg:grid-cols-2 gap-12 items-start">
-        <div class="fade-in-up">
-          {{ picture(img, "countryside-aerial", page.alts["countryside-aerial"], "(min-width: 1024px) 50vw, 100vw", "rounded-lg shadow-2xl w-full") }}
-          <p class="mt-6 text-theme-muted leading-relaxed">{{ page.location.car_note }}</p>
-          <a href="{{ site.google_maps_url }}" target="_blank" rel="noopener" class="btn-primary inline-block mt-6 py-3 px-8 rounded-full uppercase tracking-wider">{{ page.location.map_button }}</a>
-        </div>
-        <div class="fade-in-up">
-          <h3 class="text-3xl font-bold mb-4">{{ page.location.distances_title }}</h3>
-          <dl class="distance-list">
-            {% for label, duration in distances %}
-            <div><dt>{{ label }}</dt><dd>{{ duration }}</dd></div>
-            {% endfor %}
-          </dl>
-          <h3 class="text-3xl font-bold mt-10 mb-4">{{ page.location.beaches_title }}</h3>
-          <ul class="list-disc pl-6 space-y-2 text-theme-muted">
-            {% for beach in page.location.beaches %}<li>{{ beach }}</li>{% endfor %}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq" class="py-20 bg-theme-sand">
-    <div class="container mx-auto px-6 lg:px-20 max-w-3xl">
-      {{ section_title(page.faq.h2) }}
-      <div class="space-y-4 fade-in-up">
+  <section id="faq" class="section">
+    <div class="mx-auto max-w-3xl px-6">
+      {{ section_title(page.nav.faq, page.faq.h2, centered=True) }}
+      <div class="reveal mt-12 border-t border-line">
         {% for item in faq_items %}
         <details class="faq-item">
           <summary>{{ item.question }}</summary>
@@ -213,39 +174,47 @@
     </div>
   </section>
 
-  <section id="book" class="py-20 bg-theme-white">
-    <div class="container mx-auto px-6 lg:px-20 max-w-3xl text-center fade-in-up">
-      <h2 class="text-4xl font-bold mb-4">{{ page.book.h2 }}</h2>
-      <p class="text-lg text-theme-muted mb-4 leading-relaxed">{{ page.book.body }}</p>
-      <h3 class="text-2xl font-bold mt-10 mb-4">{{ prices.title }}</h3>
-      <table class="price-table">
-        <thead>
-          <tr><th scope="col">{{ page.prices.dates_header }}</th><th scope="col">{{ page.prices.price_header }}</th><th scope="col">{{ page.prices.stay_header }}</th></tr>
-        </thead>
-        <tbody>
-          {% for row in prices.rows %}
-          <tr><td>{{ row.dates }}</td><td>{{ row.price }}</td><td>{{ row.stay }}</td></tr>
-          {% endfor %}
-        </tbody>
-      </table>
-      <p class="text-sm text-theme-muted mt-4 leading-relaxed">{{ prices.note }} {{ prices.closed }}</p>
-      <p class="text-theme-muted mt-10 mb-8 font-semibold">{{ page.book.trust }}</p>
-      <a href="{{ airbnb }}" target="_blank" rel="noopener" class="btn-primary inline-block py-4 px-10 rounded-full text-lg uppercase tracking-wider">{{ page.book.cta }}</a>
-      <p class="mt-10 text-theme-muted">{{ page.book.questions }}</p>
-      <div class="mt-4 flex flex-col sm:flex-row justify-center gap-4">
-        <a href="mailto:{{ site.email }}" class="btn-outline py-2 px-6 rounded-full">{{ page.book.email_label }}</a>
-        <a href="{{ site.instagram_url }}" target="_blank" rel="noopener" class="btn-outline py-2 px-6 rounded-full">{{ page.book.instagram_label }}</a>
+  <section id="book" class="relative">
+    {{ picture(img, "villa-pool-night", "", "100vw", "band-image") }}
+    <div class="overlay"></div>
+    <div class="container-wide section relative grid items-start gap-12 lg:grid-cols-2">
+      <div class="text-olive-fg lg:sticky lg:top-28">
+        <h2 class="section-heading">{{ page.book.h2 }}</h2>
+        <p class="mt-6 text-lg leading-relaxed opacity-90">{{ page.book.body }}</p>
+        <h3 class="mt-10 text-3xl">{{ prices.title }}</h3>
+        <table class="price-table">
+          <thead>
+            <tr><th scope="col">{{ page.prices.dates_header }}</th><th scope="col">{{ page.prices.price_header }}</th><th scope="col">{{ page.prices.stay_header }}</th></tr>
+          </thead>
+          <tbody>
+            {% for row in prices.rows %}
+            <tr><td>{{ row.dates }}</td><td>{{ row.price }}</td><td>{{ row.stay }}</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <p class="mt-4 text-sm leading-relaxed opacity-80">{{ prices.note }} {{ prices.closed }}</p>
+        <p class="mt-8 flex items-center gap-3">
+          <span class="flex gap-0.5 text-peach">{% for _ in range(5) %}{{ icon("star", "h-5 w-5", fill="currentColor") }}{% endfor %}</span>
+          <span class="text-sm">{{ page.book.trust }}</span>
+        </p>
+        <p class="mt-10 opacity-90">{{ page.book.questions }}</p>
+        <div class="mt-4 flex flex-wrap gap-3">
+          <a href="mailto:{{ site.email }}" class="btn btn-ghost px-5 py-2">{{ icon("mail", "h-4 w-4") }}{{ page.book.email_label }}</a>
+          <a href="{{ site.instagram_url }}" target="_blank" rel="noopener" class="btn btn-ghost px-5 py-2">{{ icon("instagram", "h-4 w-4") }}{{ page.book.instagram_label }}</a>
+        </div>
       </div>
+      {% include "_calendar.html.j2" %}
     </div>
   </section>
 </main>
 
 {% include "_footer.html.j2" %}
 
-<div id="lightbox" class="lightbox" hidden>
-  <button type="button" class="lightbox-close" aria-label="{{ page.gallery.close }}">&times;</button>
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="{{ page.gallery.h2 }}" hidden>
+  <button type="button" class="lightbox-close" aria-label="{{ page.gallery.close }}">{{ icon("x", "h-8 w-8") }}</button>
   <img alt="" class="lightbox-image">
 </div>
 <script src="/assets/js/main.js" defer></script>
+<script type="module" src="/assets/js/calendar.mjs"></script>
 </body>
 </html>

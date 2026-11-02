@@ -7,17 +7,23 @@
   },
   "nav": {
     "villa": "Die Villa",
+    "experiences": "Erlebnisse",
+    "gallery": "Galerie",
     "location": "Lage",
     "faq": "FAQ",
     "book": "Buchen",
     "menu": "Menü",
     "languages": "Sprachen"
   },
+  "eyebrows": {
+    "stone": "Das Herz aus Stein",
+    "work": "Arbeiten in Apulien"
+  },
   "hero": {
     "h1": "Villa mit restauriertem Trullo und Pool bei Ostuni",
     "subtitle": "Ein privater Rückzugsort inmitten von einem Hektar Olivenbäumen in Apulien. 3 Schlafzimmer, bis zu 5 Gäste.",
-    "cta_primary": "Verfügbarkeit auf Airbnb prüfen",
-    "cta_secondary": "Die Villa entdecken",
+    "cta_primary": "Verfügbarkeit prüfen",
+    "cta_secondary": "Auf Airbnb ansehen",
     "video_label": "Video der Villa El Carmen: Pool, Villa und Olivenhain"
   },
   "facts": {
@@ -89,9 +95,7 @@
         "h3": "Privatkoch und Kochkurs",
         "body": "Auf Wunsch organisieren wir einen Privatkoch oder einen Kochkurs in der Villa: Lernen Sie, frische Orecchiette zu machen, und probieren Sie traditionelle apulische Gerichte."
       }
-    ],
-    "previous": "Vorherige Folie",
-    "next": "Nächste Folie"
+    ]
   },
   "gallery": {
     "h2": "Momente in der Villa",
@@ -148,6 +152,26 @@
     "instagram_label": "Instagram"
   },
   "prices": {"title": "Saisons und Preise {year}", "dates_header": "Zeitraum", "price_header": "Pro Nacht", "stay_header": "Mindestaufenthalt", "price_format": "{price} €", "nights_format": "{nights} Nächte", "months": ["Jan.", "Feb.", "März", "Apr.", "Mai", "Juni", "Juli", "Aug.", "Sept.", "Okt.", "Nov.", "Dez."], "day_format": "{day}. {month}", "note": "Preise pro Nacht für die ganze Villa, die bis zu {guests} Gästen Platz bietet. Die Airbnb-Gebühren kommen bei der Buchung hinzu; den Endpreis für Ihre Reisedaten zeigt Airbnb.", "closed_note": "Die Villa ist vom {closed_from} bis {closed_to} geschlossen.", "faq_question": "Was kostet die Villa pro Nacht?", "faq_answer": "{year} kostet die ganze Villa je nach Saison {min_price} bis {max_price} pro Nacht, bei einem Mindestaufenthalt von {min_nights} bis {max_nights} Nächten. Die Airbnb-Gebühren kommen bei der Buchung hinzu; den Endpreis für Ihre Reisedaten zeigt Airbnb."},
+  "calendar": {
+    "title": "Verfügbarkeit",
+    "intro": "Wählen Sie An- und Abreisedatum und prüfen Sie dann den Preis auf Airbnb.",
+    "arrival": "Anreise",
+    "departure": "Abreise",
+    "guests": "Gäste",
+    "select_arrival": "Wählen Sie Ihr Anreisedatum",
+    "select_departure": "Wählen Sie jetzt Ihr Abreisedatum",
+    "nights": {"one": "{n} Nacht", "other": "{n} Nächte"},
+    "guest_count": {"one": "{n} Gast", "other": "{n} Gäste"},
+    "available": "Frei",
+    "booked": "Belegt",
+    "clear": "Daten löschen",
+    "cta_dates": "Preis auf Airbnb ansehen",
+    "previous_month": "Vorheriger Monat",
+    "next_month": "Nächster Monat",
+    "loading": "Verfügbarkeit wird geladen…",
+    "error": "Der Kalender kann gerade nicht geladen werden. Die aktuellen Termine finden Sie auf Airbnb.",
+    "note": "Belegte Tage stammen von Airbnb und werden stündlich aktualisiert. Preis und Mindestaufenthalt bestätigt Airbnb."
+  },
   "footer": {
     "tagline": "Villa mit Trullo und Pool im Olivenhain",
     "location": "San Vito dei Normanni (BR), Apulien, Italien",
@@ -186,6 +210,15 @@
     "aperitivo": "Aperitivo-Platte mit Wein auf der Terrasse",
     "outdoor-dining": "Überdachter Esstisch im Freien für zehn Personen",
     "orecchiette": "Frische, handgemachte Orecchiette bei einem Kochkurs",
-    "countryside-aerial": "Luftaufnahme der Olivenhaine rund um die Villa"
+    "countryside-aerial": "Luftaufnahme der Olivenhaine rund um die Villa",
+    "aerial-dusk": "Luftaufnahme der Villa und des beleuchteten Pools in der Abenddämmerung, inmitten von Olivenhainen",
+    "bathroom-stone-sink": "Badezimmer mit Steinwaschbecken und Spiegel im Holzrahmen",
+    "bathroom-stone-basin": "Badezimmer mit rundem Steinwaschbecken",
+    "kitchen-tiles": "Küche mit gemusterten Fliesen und Fenster zu den Olivenbäumen",
+    "pergola-dusk": "Überdachte Terrasse, beleuchtet in der Abenddämmerung",
+    "outdoor-fireplace": "Außenkamin mit Grill",
+    "table-set": "Gedeckter Tisch unter der Pergola an einer alten Steinmauer",
+    "pergola-lounge": "Lounge unter der Pergola mit Blick auf den Pool",
+    "pool-summer": "Der Pool an einem Sommertag, mit Sonnenschirm zwischen den Olivenbäumen"
   }
 }

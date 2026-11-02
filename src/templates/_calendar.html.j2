@@ -1,0 +1,39 @@
+{% from "_icons.html.j2" import icon %}
+{% set cal = page.calendar %}
+{#- Rendered without dates; assets/js/calendar.mjs fills it from /api/availability/. Without
+    JavaScript it still offers the guest count and the Airbnb button. -#}
+<div class="calendar-card" data-calendar data-endpoint="/api/availability/" data-airbnb="{{ airbnb }}" data-lang="{{ lang.code }}">
+  <h3 class="text-3xl">{{ cal.title }}</h3>
+  <p class="mt-2 text-sm leading-relaxed text-muted">{{ cal.intro }}</p>
+
+  <div data-cal-ui hidden>
+    <div class="mt-6 flex items-center justify-between gap-2">
+      <button type="button" class="calendar-nav" data-cal-prev aria-label="{{ cal.previous_month }}">{{ icon("chevron-left") }}</button>
+      <p class="text-center text-sm font-medium" data-cal-hint aria-live="polite">{{ cal.select_arrival }}</p>
+      <button type="button" class="calendar-nav" data-cal-next aria-label="{{ cal.next_month }}">{{ icon("chevron-right") }}</button>
+    </div>
+    <div class="calendar-months mt-4" data-cal-months></div>
+    <p class="calendar-legend mt-4"><span class="is-available">{{ cal.available }}</span><span class="is-booked">{{ cal.booked }}</span></p>
+    <dl class="mt-6 grid grid-cols-2 gap-4 border-t border-line pt-5">
+      <div><dt class="field-label">{{ cal.arrival }}</dt><dd class="mt-1 font-medium" data-cal-arrival>—</dd></div>
+      <div><dt class="field-label">{{ cal.departure }}</dt><dd class="mt-1 font-medium" data-cal-departure>—</dd></div>
+    </dl>
+    <p class="mt-2 min-h-[1.25rem] text-sm text-muted" data-cal-nights></p>
+  </div>
+
+  <p class="mt-6 text-sm text-muted empty:hidden" data-cal-status role="status"></p>
+  <noscript><p class="mt-6 text-sm text-muted">{{ cal.error }}</p></noscript>
+
+  <label class="mt-5 block">
+    <span class="field-label">{{ cal.guests }}</span>
+    <select class="field" data-cal-guests>
+      {% for n in range(1, site.facts.guests + 1) %}
+      <option value="{{ n }}"{% if n == 2 %} selected{% endif %}>{{ (cal.guest_count.one if n == 1 else cal.guest_count.other).replace("{n}", n|string) }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <a href="{{ airbnb }}" target="_blank" rel="noopener" class="btn btn-primary mt-6 w-full" data-cal-cta>{{ page.book.cta }}</a>
+  <button type="button" class="mt-3 w-full text-sm text-muted underline underline-offset-4 hover:text-ink" data-cal-clear hidden>{{ cal.clear }}</button>
+  <p class="mt-6 text-xs leading-relaxed text-muted">{{ cal.note }}</p>
+  <script type="application/json" data-cal-strings>{{ cal.model_dump()|tojson }}</script>
+</div>

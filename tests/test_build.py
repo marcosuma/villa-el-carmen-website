@@ -1,7 +1,9 @@
 import json
+import re
 from pathlib import Path
 
 import pytest
+from markupsafe import escape
 
 from sitebuild import ROOT
 from sitebuild.build import image_attributes
@@ -183,3 +185,37 @@ def test_vercel_keeps_build_sources_off_the_site():
     allowed, _ = vercel_rules()
     assert {"index.html", "404.html", "robots.txt", "sitemap.xml"} <= allowed
     assert not allowed & {"src", "sitebuild", "tests", "tools", "docs", "README.md", ".github"}
+
+
+CALENDAR_STRINGS = re.compile(
+    r'<script type="application/json" data-cal-strings>(.*?)</script>', re.S
+)
+
+
+@pytest.mark.parametrize("code", LANGUAGE_FILES)
+def test_calendar_card_is_wired_to_the_availability_function(built_site, pages, code):
+    html = (built_site / LANGUAGE_FILES[code]).read_text(encoding="utf-8")
+    assert 'data-endpoint="/api/availability/"' in html
+    assert '<script type="module" src="/assets/js/calendar.mjs"></script>' in html
+    strings = json.loads(CALENDAR_STRINGS.search(html).group(1))
+    assert strings == pages[code].calendar.model_dump()
+
+
+@pytest.mark.parametrize("code", LANGUAGE_FILES)
+def test_hero_sends_guests_to_the_calendar_first(built_site, pages, code):
+    html = (built_site / LANGUAGE_FILES[code]).read_text(encoding="utf-8")
+    cta = escape(pages[code].hero.cta_primary)
+    assert f'<a href="#book" class="btn btn-primary">{cta}</a>' in html
+
+
+@pytest.mark.parametrize("code", LANGUAGE_FILES)
+def test_fonts_are_self_hosted(built_site, code):
+    html = (built_site / LANGUAGE_FILES[code]).read_text(encoding="utf-8")
+    assert "fonts.googleapis.com" not in html
+    assert "fonts.gstatic.com" not in html
+
+
+def test_vercel_deploys_the_availability_function():
+    allowed, _ = vercel_rules()
+    assert {"api", "lib"} <= allowed
+    assert (ROOT / "api" / "availability.mjs").is_file()

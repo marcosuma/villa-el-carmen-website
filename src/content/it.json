@@ -7,17 +7,23 @@
   },
   "nav": {
     "villa": "La villa",
+    "experiences": "Esperienze",
+    "gallery": "Galleria",
     "location": "Dove siamo",
     "faq": "Domande",
     "book": "Prenota",
     "menu": "Menu",
     "languages": "Lingue"
   },
+  "eyebrows": {
+    "stone": "Il cuore di pietra",
+    "work": "Lavorare dalla Puglia"
+  },
   "hero": {
     "h1": "Villa con trullo restaurato e piscina vicino a Ostuni",
     "subtitle": "Un rifugio privato tra un ettaro di ulivi in Puglia. 3 camere, fino a 5 ospiti.",
-    "cta_primary": "Verifica le date su Airbnb",
-    "cta_secondary": "Scopri la villa",
+    "cta_primary": "Verifica la disponibilità",
+    "cta_secondary": "Vedi su Airbnb",
     "video_label": "Video di Villa El Carmen: la piscina, la villa e l'uliveto"
   },
   "facts": {
@@ -89,9 +95,7 @@
         "h3": "Chef privato e corso di cucina",
         "body": "Su richiesta organizziamo uno chef privato o un corso di cucina in villa: imparate a fare le orecchiette fresche e assaggiate i piatti della tradizione pugliese."
       }
-    ],
-    "previous": "Slide precedente",
-    "next": "Slide successiva"
+    ]
   },
   "gallery": {
     "h2": "Momenti in villa",
@@ -148,6 +152,26 @@
     "instagram_label": "Instagram"
   },
   "prices": {"title": "Stagioni e prezzi {year}", "dates_header": "Date", "price_header": "A notte", "stay_header": "Soggiorno minimo", "price_format": "{price} €", "nights_format": "{nights} notti", "months": ["gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"], "day_format": "{day} {month}", "note": "Prezzi a notte per l'intera villa, che ospita fino a {guests} persone. Le commissioni di Airbnb si aggiungono al momento della prenotazione: Airbnb mostra il prezzo finale per le tue date.", "closed_note": "La villa è chiusa dal {closed_from} al {closed_to}.", "faq_question": "Quanto costa la villa a notte?", "faq_answer": "Nel {year} l'intera villa costa da {min_price} a {max_price} a notte a seconda della stagione, con un soggiorno minimo da {min_nights} a {max_nights} notti. Le commissioni di Airbnb si aggiungono al momento della prenotazione: Airbnb mostra il prezzo finale per le tue date."},
+  "calendar": {
+    "title": "Disponibilità",
+    "intro": "Scegli le date di arrivo e partenza, poi verifica il prezzo su Airbnb.",
+    "arrival": "Arrivo",
+    "departure": "Partenza",
+    "guests": "Ospiti",
+    "select_arrival": "Seleziona la data di arrivo",
+    "select_departure": "Ora seleziona la data di partenza",
+    "nights": {"one": "{n} notte", "other": "{n} notti"},
+    "guest_count": {"one": "{n} ospite", "other": "{n} ospiti"},
+    "available": "Disponibile",
+    "booked": "Occupato",
+    "clear": "Cancella le date",
+    "cta_dates": "Vedi il prezzo su Airbnb",
+    "previous_month": "Mese precedente",
+    "next_month": "Mese successivo",
+    "loading": "Caricamento della disponibilità…",
+    "error": "Il calendario non è disponibile in questo momento. Controlla le date su Airbnb.",
+    "note": "Le date occupate arrivano da Airbnb e vengono aggiornate ogni ora. Prezzo e soggiorno minimo sono confermati su Airbnb."
+  },
   "footer": {
     "tagline": "Villa con trullo e piscina tra gli ulivi",
     "location": "San Vito dei Normanni (BR), Puglia, Italia",
@@ -186,6 +210,15 @@
     "aperitivo": "Tagliere per l'aperitivo con vino sulla terrazza",
     "outdoor-dining": "Tavolo da pranzo esterno coperto per dieci persone",
     "orecchiette": "Orecchiette fresche fatte a mano durante un corso di cucina",
-    "countryside-aerial": "Vista aerea degli uliveti intorno alla villa"
+    "countryside-aerial": "Vista aerea degli uliveti intorno alla villa",
+    "aerial-dusk": "Vista aerea della villa e della piscina illuminata al tramonto, tra gli ulivi",
+    "bathroom-stone-sink": "Bagno con lavabo in pietra e specchio con cornice in legno",
+    "bathroom-stone-basin": "Bagno con lavabo tondo in pietra",
+    "kitchen-tiles": "Cucina con piastrelle decorate e finestra sugli ulivi",
+    "pergola-dusk": "Veranda coperta illuminata al tramonto",
+    "outdoor-fireplace": "Camino esterno con barbecue",
+    "table-set": "Tavola apparecchiata sotto il pergolato, accanto a un antico muro in pietra",
+    "pergola-lounge": "Salotto esterno sotto il pergolato, con vista sulla piscina",
+    "pool-summer": "La piscina in una giornata d'estate, con un ombrellone tra gli ulivi"
   }
 }

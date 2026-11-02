@@ -36,16 +36,16 @@ IMAGE_URL_PREFIX = "/assets/img"
 
 # Images placed by the template outside the gallery; each needs alt text in every language.
 PAGE_IMAGES = {
+    "countryside-aerial",
     "trullo-interior",
     "lamia-dining",
     "pool-day",
-    "olive-grove",
-    "workspace-olive-view",
     "olive-oil-mill",
     "aperitivo",
     "outdoor-dining",
     "orecchiette",
-    "countryside-aerial",
+    "workspace-olive-view",
+    "villa-pool-night",
 }
 
 
