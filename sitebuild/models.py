@@ -47,43 +47,113 @@ class Distance(Strict):
     minutes: int = Field(gt=0)
 
 
+MONTH_DAY = r"^\d{2}-\d{2}$"
+
+
 class Season(Strict):
-    start: str = Field(pattern=r"^\d{2}-\d{2}$", description="MM-DD, first night")
-    end: str = Field(pattern=r"^\d{2}-\d{2}$", description="MM-DD, last night")
+    """Nights that repeat every year at the same price and minimum stay."""
+
+    start: str = Field(pattern=MONTH_DAY, description="MM-DD, first night")
+    end: str = Field(pattern=MONTH_DAY, description="MM-DD, last night")
     price: int = Field(gt=0, description="Euro per night for the whole villa")
     min_nights: int = Field(gt=0)
+    rule_set: str = Field(min_length=1, description="Airbnb rule set that charges this")
+
+
+class PriceException(Strict):
+    """Nights of one specific year priced differently from their season (e.g. Easter)."""
+
+    start: date = Field(description="First night")
+    end: date = Field(description="Last night")
+    price: int = Field(gt=0)
+    min_nights: int = Field(gt=0)
+    rule_set: str = Field(min_length=1)
+    reason: str = Field(min_length=1)
 
 
 class Pricing(Strict):
-    year: int = Field(ge=2026)
-    seasons: list[Season] = Field(min_length=1)
+    """The one place the season plan lives: the pages, prices.json and, through
+    prices.json, the weekly pricing check all read it."""
 
-    def season_dates(self) -> list[tuple[date, date, Season]]:
+    shown_year: int = Field(ge=2026, description="Year whose prices the pages show")
+    base_price: int = Field(gt=0, description="Airbnb base price the rule sets adjust")
+    seasons: list[Season] = Field(min_length=1)
+    exceptions: list[PriceException] = Field(default_factory=list)
+    closed_days: list[str] = Field(
+        default_factory=list, description="MM-DD nights blocked every year inside a season"
+    )
+
+    def season_dates(self, year: int) -> list[tuple[date, date, Season]]:
         return [
             (
-                date.fromisoformat(f"{self.year}-{season.start}"),
-                date.fromisoformat(f"{self.year}-{season.end}"),
+                date.fromisoformat(f"{year}-{season.start}"),
+                date.fromisoformat(f"{year}-{season.end}"),
                 season,
             )
             for season in self.seasons
         ]
 
+    def season_on(self, night: date) -> Season | None:
+        for start, end, season in self.season_dates(night.year):
+            if start <= night <= end:
+                return season
+        return None
+
+    def exception_on(self, night: date) -> PriceException | None:
+        for exception in self.exceptions:
+            if exception.start <= night <= exception.end:
+                return exception
+        return None
+
     @model_validator(mode="after")
     def seasons_in_order_without_overlap(self) -> "Pricing":
-        try:
-            spans = self.season_dates()
-        except ValueError as error:
-            raise ValueError(f"invalid season date in {self.year}: {error}") from error
-        for start, end, season in spans:
-            if end < start:
-                raise ValueError(f"season {season.start}..{season.end} ends before it starts")
-        neighbours = zip(spans, spans[1:], strict=False)
-        for (_, previous_end, previous), (next_start, _, following) in neighbours:
-            if next_start <= previous_end:
+        # Two consecutive years, so a 29 February in a season is caught either way.
+        for year in (self.shown_year, self.shown_year + 1):
+            try:
+                spans = self.season_dates(year)
+            except ValueError as error:
+                raise ValueError(f"invalid season date in {year}: {error}") from error
+            for start, end, season in spans:
+                if end < start:
+                    raise ValueError(f"season {season.start}..{season.end} ends before it starts")
+            neighbours = zip(spans, spans[1:], strict=False)
+            for (_, previous_end, previous), (next_start, _, following) in neighbours:
+                if next_start <= previous_end:
+                    raise ValueError(
+                        f"seasons {previous.start}..{previous.end} and "
+                        f"{following.start}..{following.end} overlap or are out of order"
+                    )
+        return self
+
+    @model_validator(mode="after")
+    def exceptions_inside_seasons(self) -> "Pricing":
+        ordered = sorted(self.exceptions, key=lambda exception: exception.start)
+        for exception in ordered:
+            label = f"exception {exception.start}..{exception.end}"
+            if exception.end < exception.start:
+                raise ValueError(f"{label} ends before it starts")
+            if exception.start.year != exception.end.year:
+                raise ValueError(f"{label} crosses into another year")
+            for night in (exception.start, exception.end):
+                if self.season_on(night) is None:
+                    raise ValueError(f"{label} falls outside the seasons (the villa is closed)")
+        for previous, following in zip(ordered, ordered[1:], strict=False):
+            if following.start <= previous.end:
                 raise ValueError(
-                    f"seasons {previous.start}..{previous.end} and "
-                    f"{following.start}..{following.end} overlap or are out of order"
+                    f"exceptions {previous.start}..{previous.end} and "
+                    f"{following.start}..{following.end} overlap"
                 )
+        return self
+
+    @model_validator(mode="after")
+    def closed_days_inside_seasons(self) -> "Pricing":
+        for day in self.closed_days:
+            try:
+                night = date.fromisoformat(f"{self.shown_year}-{day}")
+            except ValueError as error:
+                raise ValueError(f"invalid closed day {day!r}: {error}") from error
+            if self.season_on(night) is None:
+                raise ValueError(f"closed day {day} is already in the winter closure")
         return self
 
 

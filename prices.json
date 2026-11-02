@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "about": "Season prices of Villa El Carmen in euro per night for the whole villa (up to 5 guests), before Airbnb fees. Seasons repeat every year; exceptions apply to their dates only. Generated from src/site.json.",
+  "booking_url": "https://www.airbnb.com/rooms/1205785008353242688",
+  "currency": "EUR",
+  "shown_year": 2027,
+  "base_price": 500,
+  "seasons": [
+    {
+      "start": "04-01",
+      "end": "05-31",
+      "price": 420,
+      "min_nights": 3,
+      "rule_set": "Bassa"
+    },
+    {
+      "start": "06-01",
+      "end": "06-14",
+      "price": 500,
+      "min_nights": 3,
+      "rule_set": "Spalla"
+    },
+    {
+      "start": "06-15",
+      "end": "07-09",
+      "price": 580,
+      "min_nights": 4,
+      "rule_set": "Alta"
+    },
+    {
+      "start": "07-10",
+      "end": "08-07",
+      "price": 660,
+      "min_nights": 5,
+      "rule_set": "Altissima"
+    },
+    {
+      "start": "08-08",
+      "end": "08-22",
+      "price": 740,
+      "min_nights": 6,
+      "rule_set": "Ferragosto"
+    },
+    {
+      "start": "08-23",
+      "end": "09-06",
+      "price": 580,
+      "min_nights": 4,
+      "rule_set": "Alta"
+    },
+    {
+      "start": "09-07",
+      "end": "09-30",
+      "price": 540,
+      "min_nights": 4,
+      "rule_set": "Settembre"
+    },
+    {
+      "start": "10-01",
+      "end": "10-06",
+      "price": 420,
+      "min_nights": 3,
+      "rule_set": "Bassa"
+    }
+  ],
+  "exceptions": [
+    {
+      "start": "2028-04-13",
+      "end": "2028-04-16",
+      "price": 500,
+      "min_nights": 3,
+      "rule_set": "Spalla",
+      "reason": "Easter"
+    },
+    {
+      "start": "2028-04-22",
+      "end": "2028-04-24",
+      "price": 500,
+      "min_nights": 3,
+      "rule_set": "Spalla",
+      "reason": "25 April long weekend"
+    }
+  ],
+  "closed_days": [
+    "08-15",
+    "08-16"
+  ],
+  "closure": {
+    "from": "10-07",
+    "to": "03-31"
+  }
+}

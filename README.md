@@ -43,7 +43,8 @@ npm --prefix tools/css ci
 |---|---|
 | Change text in any language | edit `src/content/<lang>.json`, then `.venv/bin/python -m sitebuild.build` |
 | Change a shared fact (distance, guests, CIN) | edit `src/site.json`, then rebuild |
-| Change prices or seasons | edit `pricing` in `src/site.json`, rebuild; also update the plan in the pricing check's `prompts/weekly_check.md` |
+| Change prices, seasons or minimum stays | first change the rule sets on Airbnb, then edit `pricing` in `src/site.json` the same way, rebuild and push (see below) |
+| Show next year's prices | set `pricing.shown_year` in `src/site.json`, rebuild and push |
 | Change the layout | edit `src/templates/`, rebuild, then recompile the CSS (below) |
 | Recompile the CSS | `npm --prefix tools/css run css` |
 | Add or replace a photo | put the original in `assets/images/`, map it in `src/media.json`, run `.venv/bin/python -m sitebuild.media --no-video`, then rebuild |
@@ -67,6 +68,20 @@ waits until Vercel serves the new HTML and submits the changed URLs to Bing
 and the other IndexNow search engines. To submit every page, run the workflow
 by hand from the Actions tab. To see the request without sending it:
 `.venv/bin/python -m sitebuild.indexnow --all --dry-run`.
+
+## Prices: one plan for the site and Airbnb
+
+`pricing` in `src/site.json` is the only place the season plan is written:
+seasons with price, minimum stay and the Airbnb rule set that charges them,
+dated exceptions (for example Easter 2028), the days blocked every year and
+`shown_year`, the year the pages show. The build turns it into the price
+table, the price FAQ, `priceRange` in the structured data and `/prices.json`.
+
+The weekly pricing check (separate repository) reads the live
+`/prices.json` and compares it with Airbnb's calendar. When a price on
+Airbnb no longer matches the site, or the season shown here has ended, it
+says so in its weekly notification until the two agree again. So after
+changing a rule set on Airbnb, change `src/site.json` too and push.
 
 ## Legal identifiers
 

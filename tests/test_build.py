@@ -6,6 +6,7 @@ import pytest
 from sitebuild import ROOT
 from sitebuild.build import image_attributes
 from sitebuild.models import ImageInfo
+from sitebuild.pricing import plan_document, spans
 from tests.helpers import parse
 
 LANGUAGE_FILES = {
@@ -16,7 +17,13 @@ LANGUAGE_FILES = {
     "es": "es/index.html",
 }
 INDEXNOW_KEY = json.loads((ROOT / "src" / "site.json").read_text(encoding="utf-8"))["indexnow_key"]
-GENERATED = [*LANGUAGE_FILES.values(), "404.html", "robots.txt", f"{INDEXNOW_KEY}.txt"]
+GENERATED = [
+    *LANGUAGE_FILES.values(),
+    "404.html",
+    "robots.txt",
+    "prices.json",
+    f"{INDEXNOW_KEY}.txt",
+]
 
 
 def read_page(root: Path, code: str):
@@ -137,7 +144,7 @@ def test_page_lists_every_season_with_price_and_minimum_stay(built_site, site, c
     html = (built_site / LANGUAGE_FILES[code]).read_text(encoding="utf-8")
     table = html[html.index('class="price-table"') : html.index("</table>")]
 
-    assert table.count("<tr><td>") == len(site.pricing.seasons)
+    assert table.count("<tr><td>") == len(spans(site.pricing, site.pricing.shown_year))
     assert "740" in table and "420" in table
 
 
@@ -158,6 +165,18 @@ def test_vercel_deploys_the_indexnow_key_file(site):
     allowed, _ = vercel_rules()
 
     assert f"{site.indexnow_key}.txt" in allowed
+
+
+def test_build_writes_the_plan_for_the_pricing_check(built_site, site):
+    published = json.loads((built_site / "prices.json").read_text(encoding="utf-8"))
+
+    assert published == plan_document(site)
+
+
+def test_vercel_deploys_the_plan():
+    allowed, _ = vercel_rules()
+
+    assert "prices.json" in allowed
 
 
 def test_vercel_keeps_build_sources_off_the_site():

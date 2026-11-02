@@ -22,7 +22,7 @@
 | `sitebuild/` | The Python builder | yes |
 | `tests/` | pytest suite | yes |
 | `tools/css/` | Tailwind CLI, pinned; kept out of the root so Vercel sees no `package.json` | yes |
-| `index.html`, `it/` … `es/`, `404.html`, `sitemap.xml`, `robots.txt` | Generated pages | no (`sitebuild.build`) |
+| `index.html`, `it/` … `es/`, `404.html`, `sitemap.xml`, `robots.txt`, `prices.json` | Generated pages and the public price plan | no (`sitebuild.build`) |
 | `assets/css/site.css` | Compiled, minified CSS | no (`npm run css`) |
 | `assets/img/`, `assets/video/`, `assets/icons/web/` | Generated web media | no (`sitebuild.media`) |
 | `assets/images/`, `assets/videos/`, `assets/icons/*.png` | Originals, the source for the generated media | add only |
@@ -38,9 +38,12 @@
 - `sitebuild/seo.py`: URLs, hreflang alternates, structured data, sitemap
   and robots.txt.
 - `sitebuild/pricing.py`: turns the season plan into the table rows, the
-  closure note, the price FAQ answer and the JSON-LD price range. Language
-  files hold only templates with `{placeholders}`; the build refuses a
-  template with a missing or unknown placeholder.
+  closure note, the price FAQ answer, the JSON-LD price range and
+  `prices.json`. Exceptions split a season into extra table rows for their
+  year only. Language files hold only templates with `{placeholders}`; the
+  build refuses a template with a missing or unknown placeholder. The models
+  refuse overlapping seasons or exceptions, an exception or a blocked day in
+  the winter closure, and impossible dates.
 - `sitebuild/indexnow.py`: maps a git diff to page URLs, waits until Vercel
   serves the committed HTML and submits the URLs to IndexNow. Run by
   `.github/workflows/indexnow.yml` after pushes to `main`.

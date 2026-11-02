@@ -1,14 +1,18 @@
-"""Turn the season plan in site.json into the text shown on each language page.
+"""Turn the season plan in site.json into everything that shows a price.
 
-Prices live once in site.json; the table, the closure note, the price FAQ answer and
-the JSON-LD priceRange are all derived from it so they can't disagree.
+Prices live once in site.json. The table, the closure note, the price FAQ answer,
+the JSON-LD priceRange and prices.json (which the weekly pricing check reads) are
+all derived from it, so they can't disagree.
 """
 
+import json
 from dataclasses import dataclass
 from datetime import date, timedelta
 from string import Formatter
 
 from sitebuild.models import FaqItem, PageContent, PricesCopy, Pricing, SiteConfig
+
+PLAN_FILE = "prices.json"
 
 PRICE_TEMPLATE_FIELDS: dict[str, set[str]] = {
     "title": {"year"},
@@ -19,6 +23,16 @@ PRICE_TEMPLATE_FIELDS: dict[str, set[str]] = {
     "closed_note": {"closed_from", "closed_to"},
     "faq_answer": {"year", "min_price", "max_price", "min_nights", "max_nights"},
 }
+
+
+@dataclass(frozen=True)
+class Span:
+    """Consecutive nights with the same price and minimum stay."""
+
+    start: date
+    end: date
+    price: int
+    min_nights: int
 
 
 @dataclass(frozen=True)
@@ -53,33 +67,62 @@ def format_price(amount: int, copy: PricesCopy) -> str:
     return copy.price_format.format(price=amount)
 
 
+def nightly_plan(pricing: Pricing, year: int) -> list[tuple[date, int, int]]:
+    """Every open night of the year with its price and minimum stay, exceptions applied."""
+    nights = []
+    for start, end, season in pricing.season_dates(year):
+        night = start
+        while night <= end:
+            exception = pricing.exception_on(night)
+            rule = exception or season
+            nights.append((night, rule.price, rule.min_nights))
+            night += timedelta(days=1)
+    return nights
+
+
+def spans(pricing: Pricing, year: int) -> list[Span]:
+    result: list[Span] = []
+    for night, price, min_nights in nightly_plan(pricing, year):
+        last = result[-1] if result else None
+        if (
+            last
+            and last.end + timedelta(days=1) == night
+            and (last.price, last.min_nights) == (price, min_nights)
+        ):
+            result[-1] = Span(last.start, night, price, min_nights)
+        else:
+            result.append(Span(night, night, price, min_nights))
+    return result
+
+
 def season_rows(pricing: Pricing, copy: PricesCopy) -> list[SeasonRow]:
     return [
         SeasonRow(
-            dates=f"{format_day(start, copy)} – {format_day(end, copy)}",
-            price=format_price(season.price, copy),
-            stay=copy.nights_format.format(nights=season.min_nights),
+            dates=f"{format_day(span.start, copy)} – {format_day(span.end, copy)}",
+            price=format_price(span.price, copy),
+            stay=copy.nights_format.format(nights=span.min_nights),
         )
-        for start, end, season in pricing.season_dates()
+        for span in spans(pricing, pricing.shown_year)
     ]
 
 
 def closure(pricing: Pricing) -> tuple[date, date]:
     """From the day after the last season to the day before the first one next year."""
-    spans = pricing.season_dates()
-    closed_from = spans[-1][1] + timedelta(days=1)
-    first_start = spans[0][0]
+    seasons = pricing.season_dates(pricing.shown_year)
+    closed_from = seasons[-1][1] + timedelta(days=1)
+    first_start = seasons[0][0]
     closed_to = first_start.replace(year=first_start.year + 1) - timedelta(days=1)
     return closed_from, closed_to
 
 
 def price_range(pricing: Pricing) -> tuple[int, int]:
-    prices = [season.price for season in pricing.seasons]
+    """Cheapest and dearest night of the year the pages show."""
+    prices = [span.price for span in spans(pricing, pricing.shown_year)]
     return min(prices), max(prices)
 
 
 def stay_range(pricing: Pricing) -> tuple[int, int]:
-    nights = [season.min_nights for season in pricing.seasons]
+    nights = [span.min_nights for span in spans(pricing, pricing.shown_year)]
     return min(nights), max(nights)
 
 
@@ -97,7 +140,7 @@ def price_faq(pricing: Pricing, copy: PricesCopy) -> FaqItem:
     return FaqItem(
         question=copy.faq_question,
         answer=copy.faq_answer.format(
-            year=pricing.year,
+            year=pricing.shown_year,
             min_price=format_price(low, copy),
             max_price=format_price(high, copy),
             min_nights=min_nights,
@@ -116,3 +159,33 @@ def faq_items(site: SiteConfig, page: PageContent) -> list[FaqItem]:
 def price_range_label(pricing: Pricing) -> str:
     low, high = price_range(pricing)
     return f"€{low}–€{high}"
+
+
+def plan_document(site: SiteConfig) -> dict:
+    """The public, machine-readable plan: what the weekly pricing check compares
+    Airbnb's calendar with, and what AI agents can read without parsing HTML."""
+    pricing = site.pricing
+    closed_from, closed_to = closure(pricing)
+    return {
+        "schema_version": 1,
+        "about": (
+            f"Season prices of {site.name} in euro per night for the whole villa "
+            "(up to {guests} guests), before Airbnb fees. Seasons repeat every year; "
+            "exceptions apply to their dates only. Generated from src/site.json."
+        ).format(guests=site.facts.guests),
+        "booking_url": f"https://www.airbnb.com/rooms/{site.airbnb_listing_id}",
+        "currency": "EUR",
+        "shown_year": pricing.shown_year,
+        "base_price": pricing.base_price,
+        "seasons": [season.model_dump() for season in pricing.seasons],
+        "exceptions": [
+            exception.model_dump(mode="json")
+            for exception in sorted(pricing.exceptions, key=lambda item: item.start)
+        ],
+        "closed_days": list(pricing.closed_days),
+        "closure": {"from": closed_from.strftime("%m-%d"), "to": closed_to.strftime("%m-%d")},
+    }
+
+
+def plan_json(site: SiteConfig) -> str:
+    return json.dumps(plan_document(site), indent=2, ensure_ascii=False) + "\n"

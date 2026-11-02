@@ -81,7 +81,7 @@ search indexes and the pages they can quote. Decisions:
 - **Facts in plain HTML, from one source.** Seasons, prices per night and
   minimum stays come from `pricing` in `src/site.json` and appear as a table, a
   closure note and an FAQ answer in every language, plus `priceRange` in the
-  JSON-LD. Prices are what the Airbnb rule sets charge; the text says Airbnb
+  JSON-LD and the machine-readable `/prices.json`. Prices are what the Airbnb rule sets charge; the text says Airbnb
   adds its fees and shows the final price, without guessing other charges.
 - **Be in more than Google.** Bing feeds Copilot and is one of ChatGPT
   search's sources; Claude's web search uses Brave. A November 2026 test
@@ -117,6 +117,6 @@ search indexes and the pages they can quote. Decisions:
 4. Keep the Google Business Profile consistent with the name, address and
    website shown here.
 5. Check the IndexNow workflow run in the GitHub Actions tab.
-6. When the season plan changes, update `pricing` in `src/site.json` and the
-   plan in the pricing check's prompt, so the site, Airbnb and the weekly
-   check agree.
+6. When the season plan changes on Airbnb, update `pricing` in
+   `src/site.json`. The weekly pricing check reads `/prices.json` and reports
+   any difference until the site and Airbnb agree.

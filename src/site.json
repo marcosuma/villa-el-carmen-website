@@ -53,17 +53,23 @@
   "hero": {"video": "/assets/video/villa-el-carmen.mp4", "poster": "/assets/img/hero-poster.webp"},
   "og_image": {"path": "/assets/img/og-villa-el-carmen.jpg", "width": 1200, "height": 630},
   "pricing": {
-    "year": 2027,
+    "shown_year": 2027,
+    "base_price": 500,
     "seasons": [
-      {"start": "04-01", "end": "05-31", "price": 420, "min_nights": 3},
-      {"start": "06-01", "end": "06-14", "price": 500, "min_nights": 3},
-      {"start": "06-15", "end": "07-09", "price": 580, "min_nights": 4},
-      {"start": "07-10", "end": "08-07", "price": 660, "min_nights": 5},
-      {"start": "08-08", "end": "08-22", "price": 740, "min_nights": 6},
-      {"start": "08-23", "end": "09-06", "price": 580, "min_nights": 4},
-      {"start": "09-07", "end": "09-30", "price": 540, "min_nights": 4},
-      {"start": "10-01", "end": "10-06", "price": 420, "min_nights": 3}
-    ]
+      {"start": "04-01", "end": "05-31", "price": 420, "min_nights": 3, "rule_set": "Bassa"},
+      {"start": "06-01", "end": "06-14", "price": 500, "min_nights": 3, "rule_set": "Spalla"},
+      {"start": "06-15", "end": "07-09", "price": 580, "min_nights": 4, "rule_set": "Alta"},
+      {"start": "07-10", "end": "08-07", "price": 660, "min_nights": 5, "rule_set": "Altissima"},
+      {"start": "08-08", "end": "08-22", "price": 740, "min_nights": 6, "rule_set": "Ferragosto"},
+      {"start": "08-23", "end": "09-06", "price": 580, "min_nights": 4, "rule_set": "Alta"},
+      {"start": "09-07", "end": "09-30", "price": 540, "min_nights": 4, "rule_set": "Settembre"},
+      {"start": "10-01", "end": "10-06", "price": 420, "min_nights": 3, "rule_set": "Bassa"}
+    ],
+    "exceptions": [
+      {"start": "2028-04-13", "end": "2028-04-16", "price": 500, "min_nights": 3, "rule_set": "Spalla", "reason": "Easter"},
+      {"start": "2028-04-22", "end": "2028-04-24", "price": 500, "min_nights": 3, "rule_set": "Spalla", "reason": "25 April long weekend"}
+    ],
+    "closed_days": ["08-15", "08-16"]
   },
   "indexnow_key": "749b52b918ca4541b87182d9bb6d2638"
 }

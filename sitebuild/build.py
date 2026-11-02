@@ -20,7 +20,7 @@ from sitebuild.content import (
     load_site,
 )
 from sitebuild.models import ImageInfo, Language, PageContent, SiteConfig
-from sitebuild.pricing import closed_note, faq_items, season_rows
+from sitebuild.pricing import PLAN_FILE, closed_note, faq_items, plan_json, season_rows
 from sitebuild.seo import (
     airbnb_url,
     alternates,
@@ -100,7 +100,7 @@ def page_context(
         "other_languages": [other for other in site.languages if other.code != language.code],
         "faq_items": faq_items(site, page),
         "prices": {
-            "title": page.prices.title.format(year=site.pricing.year),
+            "title": page.prices.title.format(year=site.pricing.shown_year),
             "rows": season_rows(site.pricing, page.prices),
             "note": page.prices.note.format(guests=site.facts.guests),
             "closed": closed_note(site.pricing, page.prices),
@@ -143,6 +143,7 @@ def build(root: Path = ROOT, today: date | None = None) -> list[Path]:
         ("404.html", not_found),
         ("sitemap.xml", sitemap_xml(site, today)),
         ("robots.txt", robots_txt(site)),
+        (PLAN_FILE, plan_json(site)),
         # IndexNow ownership proof: a file named after the key, containing the key.
         (f"{site.indexnow_key}.txt", site.indexnow_key),
     ):
