@@ -89,7 +89,8 @@ changing a rule set on Airbnb, change `src/site.json` too and push.
 
 `api/availability.mjs` is a Vercel function that downloads the listing's
 calendar export from Airbnb and returns only the booked nights as JSON
-(`{"booked": [["2027-05-01", "2027-05-08"]], "until": "2028-05-04"}`).
+(`{"booked": [["2027-05-01", "2027-05-08"]], "until": "2027-11-02"}`), for the
+12 months Airbnb exports.
 Vercel's CDN caches the answer for an hour.
 
 It needs one environment variable in the Vercel project, for Production and

@@ -53,7 +53,7 @@ describe('handleAvailability', () => {
     assert.equal(response.headers.get('Cache-Control'), CACHE_OK);
     assert.deepEqual(await response.json(), {
       booked: [['2027-05-01', '2027-05-08']],
-      until: '2028-10-31',
+      until: '2028-04-29',
       updated: '2027-04-30T10:00:00.000Z',
     });
     assert.equal(calls[0].url, SECRET_URL);

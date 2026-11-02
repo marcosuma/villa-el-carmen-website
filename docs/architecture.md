@@ -90,7 +90,8 @@
 2. downloads the export (8 s timeout), checks it is an iCalendar file;
 3. keeps only `DTSTART`/`DTEND` of each event: summaries and descriptions,
    which hold reservation links and phone digits, are never read out;
-4. clips to today (Europe/Rome) … +550 days and merges overlapping stays;
+4. clips to today (Europe/Rome) … +365 days, the 12 months Airbnb exports
+   (beyond them the export is empty, not free), and merges overlapping stays;
 5. answers `{booked, until, updated}` with
    `Cache-Control: public, s-maxage=3600, stale-while-revalidate=86400, stale-if-error=86400`.
 
