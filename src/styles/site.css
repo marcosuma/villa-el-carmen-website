@@ -90,7 +90,8 @@
 
   .calendar-card { @apply rounded-xl bg-card p-6 text-ink shadow-2xl md:p-8; }
   .calendar-months { @apply grid gap-6 md:grid-cols-2; }
-  .calendar-month h4 { @apply mb-3 text-center font-display text-xl capitalize; }
+  .calendar-month h4 { @apply mb-3 text-center font-display text-xl; }
+  .calendar-month h4::first-letter { @apply uppercase; }
   .calendar-grid { @apply grid grid-cols-7 gap-y-1 text-center text-sm; }
   .calendar-grid .weekday { @apply pb-1 text-xs font-medium uppercase text-muted; }
   .calendar-day { @apply mx-auto flex h-9 w-9 items-center justify-center rounded-full tabular-nums transition-colors; }
