@@ -4,6 +4,7 @@ Run after editing src/: ``python -m sitebuild.build``. The generated files are
 committed; Vercel serves them as plain static files.
 """
 
+import hashlib
 import sys
 from datetime import date
 from pathlib import Path
@@ -34,6 +35,10 @@ from sitebuild.seo import (
 TEMPLATES = ROOT / "src" / "templates"
 IMAGE_URL_PREFIX = "/assets/img"
 
+# Stylesheet and scripts keep their file names, so each page links them with ?v=<content hash>:
+# a changed file gets a new URL and no browser can pair new HTML with an old cached copy.
+VERSIONED_ASSETS = ("/assets/css/site.css", "/assets/js/main.js", "/assets/js/calendar.mjs")
+
 # Images placed by the template outside the gallery; each needs alt text in every language.
 PAGE_IMAGES = {
     "countryside-aerial",
@@ -47,6 +52,15 @@ PAGE_IMAGES = {
     "workspace-olive-view",
     "villa-pool-night",
 }
+
+
+def asset_version(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()[:12]
+
+
+def versioned_assets(root: Path = ROOT) -> dict[str, str]:
+    """URL to use in the pages for each versioned asset, read from the committed files."""
+    return {url: f"{url}?v={asset_version(root / url.lstrip('/'))}" for url in VERSIONED_ASSETS}
 
 
 def make_environment() -> Environment:
@@ -107,6 +121,7 @@ def page_context(
         },
         "structured_data": structured_data(site, language, page),
         "year": today.year,
+        "assets": versioned_assets(),
     }
 
 

@@ -47,7 +47,7 @@ npm --prefix tools/css ci
 | Change a shared fact (distance, guests, CIN) | edit `src/site.json`, then rebuild |
 | Change prices, seasons or minimum stays | first change the rule sets on Airbnb, then edit `pricing` in `src/site.json` the same way, rebuild and push (see below) |
 | Show next year's prices | set `pricing.shown_year` in `src/site.json`, rebuild and push |
-| Change the layout | edit `src/templates/`, rebuild, then recompile the CSS (below) |
+| Change the layout | edit `src/templates/`, recompile the CSS (below), then rebuild: pages link the CSS and scripts by a hash of their content, so the CSS must be final first |
 | Recompile the CSS | `npm --prefix tools/css run css` |
 | Add or replace a photo | put the original in `assets/images/`, map it in `src/media.json`, run `.venv/bin/python -m sitebuild.media --no-video`, then rebuild |
 | Re-encode the hero video | `.venv/bin/python -m sitebuild.media` |

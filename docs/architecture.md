@@ -81,6 +81,11 @@
   the horizon the function returns.
 - Images use `srcset`/`sizes`, explicit width and height, and lazy loading
   below the fold. The hero video has a poster image.
+- Caching: pages link `site.css`, `main.js` and `calendar.mjs` with
+  `?v=<content hash>` (`VERSIONED_ASSETS` in `sitebuild/build.py`), and
+  `vercel.json` makes browsers revalidate css/js on every visit. Without
+  this, a browser that cached the old stylesheet showed the redesigned HTML
+  unstyled for up to a day after it went live.
 
 ## Availability function
 

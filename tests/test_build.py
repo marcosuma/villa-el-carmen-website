@@ -6,7 +6,7 @@ import pytest
 from markupsafe import escape
 
 from sitebuild import ROOT
-from sitebuild.build import image_attributes
+from sitebuild.build import VERSIONED_ASSETS, asset_version, image_attributes
 from sitebuild.models import ImageInfo
 from sitebuild.pricing import plan_document, spans
 from tests.helpers import parse
@@ -96,7 +96,8 @@ def test_json_ld_is_valid(built_site, code):
 def test_every_local_asset_exists(built_site, code):
     page = read_page(built_site, code)
     local = {asset for asset in page.assets if asset.startswith("/")}
-    missing = sorted(asset for asset in local if not (ROOT / asset.lstrip("/")).is_file())
+    files = {asset.split("?")[0].lstrip("/") for asset in local}
+    missing = sorted(path for path in files if not (ROOT / path).is_file())
     assert missing == []
 
 
@@ -132,7 +133,7 @@ def vercel_rules() -> tuple[set[str], set[str]]:
 def test_vercel_deploys_every_asset_a_page_uses(built_site, code):
     allowed, excluded = vercel_rules()
     page = read_page(built_site, code)
-    local = {asset.lstrip("/") for asset in page.assets if asset.startswith("/")}
+    local = {asset.split("?")[0].lstrip("/") for asset in page.assets if asset.startswith("/")}
     not_deployed = sorted(
         asset
         for asset in local
@@ -196,7 +197,7 @@ CALENDAR_STRINGS = re.compile(
 def test_calendar_card_is_wired_to_the_availability_function(built_site, pages, code):
     html = (built_site / LANGUAGE_FILES[code]).read_text(encoding="utf-8")
     assert 'data-endpoint="/api/availability/"' in html
-    assert '<script type="module" src="/assets/js/calendar.mjs"></script>' in html
+    assert '<script type="module" src="/assets/js/calendar.mjs?v=' in html
     strings = json.loads(CALENDAR_STRINGS.search(html).group(1))
     assert strings == pages[code].calendar.model_dump()
 
@@ -219,3 +220,20 @@ def test_vercel_deploys_the_availability_function():
     allowed, _ = vercel_rules()
     assert {"api", "lib"} <= allowed
     assert (ROOT / "api" / "availability.mjs").is_file()
+
+
+@pytest.mark.parametrize("code", LANGUAGE_FILES)
+def test_stylesheet_and_scripts_are_linked_with_their_content_hash(built_site, code):
+    """New HTML must never be paired with a stylesheet or script a browser cached earlier."""
+    page = read_page(built_site, code)
+    linked = {asset.split("?")[0]: asset for asset in page.assets if asset.startswith("/assets/")}
+    for url in VERSIONED_ASSETS:
+        assert linked[url] == f"{url}?v={asset_version(ROOT / url.lstrip('/'))}"
+
+
+def test_browsers_revalidate_stylesheet_and_scripts():
+    """calendar.mjs imports modules by plain URL, so css/js must never be reused unchecked."""
+    rules = json.loads((ROOT / "vercel.json").read_text(encoding="utf-8"))["headers"]
+    css_js = next(rule for rule in rules if "css|js" in rule["source"])
+    cache = {h["key"]: h["value"] for h in css_js["headers"]}["Cache-Control"]
+    assert "max-age=0" in cache and "must-revalidate" in cache
