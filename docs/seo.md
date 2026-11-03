@@ -9,12 +9,14 @@ puts the two property words first and the best-known nearby town after them:
 
 | Language | Title |
 |---|---|
-| EN | Villa with Trullo & Pool near Ostuni, Puglia \| El Carmen |
+| EN | Trullo Villa with Pool near Ostuni, Puglia \| Villa El Carmen |
 | IT | Villa con trullo e piscina vicino a Ostuni \| Villa El Carmen |
-| DE | Villa mit Trullo und Pool bei Ostuni, Apulien \| El Carmen |
+| DE | Trullo-Villa mit Pool bei Ostuni, Apulien \| Villa El Carmen |
 | FR | Villa avec trullo et piscine près d'Ostuni \| Villa El Carmen |
 | ES | Villa con trullo y piscina cerca de Ostuni \| Villa El Carmen |
 
+Every title ends with the full name, Villa El Carmen: in October 2026 the
+name was the only query bringing clicks, and the site ranked 4.8 for it.
 The Airbnb titles use the same words (without the pool), so the website and
 the listing reinforce each other.
 
